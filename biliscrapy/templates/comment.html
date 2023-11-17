@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+{% block title %}评论抓取{% endblock %}
+{% block content %}
+    <div class="container">
+        <h2>抓取评论</h2>
+        <div class="shadow row-cols-3">
+            <div>{{ message }}</div>
+            <div>是否发起的了新的请求:{{ new_request }}</div>
+            <div>总共有:{{ total }}条评论</div>
+        </div>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" name="bv" placeholder="请输入BV号或链接">
+                <button class="btn btn-primary" type="submit" onclick="startFetching()">抓取评论</button>
+            </div>
+        </form>
+
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>用户名</th>
+                    <th>等级</th>
+                    <th>点赞数</th>
+                    <th>性别</th>
+                    <th>评论时间</th>
+                    <th>评论内容</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for comment in data %}
+                    <tr>
+                        <td>{{ comment.uname }}</td>
+                        <td>{{ comment.current_level }}</td>
+                        <td>{{ comment.like }}</td>
+                        <td>{{ comment.sex }}</td>
+                        <td>{{ comment.ctime }}</td>
+                        <td>{{ comment.message }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            {% if result == 'success' %}
+                <p>共 {{ total }} 条记录</p>
+                {% include 'pagination.html' %}
+            {% endif %}
+            {% if result == 'error' %}
+                <p>{{ message }}</p>
+            {% endif %}
+        </div>
+
+    </div>
+    <!-- 模态框 -->
+    {% include 'motaikuang.html' %}
+
+    <script>
+        function startFetching() {
+            // 显示模态框
+            var loadingModal = document.getElementById('loadingModal');
+            var bootstrapModal = new bootstrap.Modal(loadingModal, {backdrop: 'static', keyboard: false});
+            bootstrapModal.show();
+
+            // 发送异步请求抓取评论
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    // 请求完成后隐藏模态框
+                    bootstrapModal.hide();
+                }
+            };
+
+
+        }
+    </script>
+{% endblock %}

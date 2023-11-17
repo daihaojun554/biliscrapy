@@ -1,0 +1,80 @@
+<!-- pagination.html -->
+{% if data.has_previous or data.has_next %}
+    <nav>
+        <ul class="pagination justify-content-center">
+            {% if data.has_previous %}
+                <li class="page-item">
+                    <form method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="bv" value="{{ url }}">
+                        <input type="hidden" name="page" value="1">
+                        <!-- 其他表单字段 -->
+                        <button class="page-link" type="submit">首页</button>
+                    </form>
+                </li>
+                <li class="page-item">
+                    <form method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="bv" value="{{ url }}">
+                        <input type="hidden" name="page" value="{{ data.previous_page_number }}">
+                        <!-- 其他表单字段 -->
+                        <button class="page-link" type="submit">上一页</button>
+                    </form>
+                </li>
+            {% endif %}
+
+            {% for num in data.paginator.page_range %}
+                {% if num == data.number %}
+                    <li class="page-item active" aria-current="page">
+                        <span class="page-link">{{ num }}</span>
+                    </li>
+                {% elif num > data.number|add:'-5' and num < data.number|add:'5' %}
+                    <li class="page-item">
+                        <form method="post">
+                            {% csrf_token %}
+                            <input type="hidden" name="bv" value="{{ url }}">
+                            <input type="hidden" name="page" value="{{ num }}">
+                            <!-- 其他表单字段 -->
+                            <button class="page-link" type="submit">{{ num }}</button>
+                        </form>
+                    </li>
+                {% endif %}
+            {% endfor %}
+
+            {% if data.has_next %}
+                <li class="page-item">
+                    <form method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="bv" value="{{ url }}">
+                        <input type="hidden" name="page" value="{{ data.next_page_number }}">
+                        <!-- 其他表单字段 -->
+                        <button class="page-link" type="submit">下一页</button>
+                    </form>
+                </li>
+                <li class="page-item">
+                    <form method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="bv" value="{{ url }}">
+                        <input type="hidden" name="page" value="{{ data.paginator.num_pages }}">
+                        <!-- 其他表单字段 -->
+                        <button class="page-link" type="submit">尾页</button>
+                    </form>
+                </li>
+            {% endif %}
+        </ul>
+    </nav>
+
+    <div class="pagination">
+        <form method="post">
+            {% csrf_token %}
+            <input type="hidden" name="bv" value="{{ url }}">
+            <div class="input-group">
+                <input type="number" class="form-control" name="page" placeholder="跳转到页码" min="1" max="{{ data.paginator.num_pages }}">
+                <div class="input-group-append">
+                    <button class="btn btn-primary" type="submit">跳转</button>
+                </div>
+            </div>
+            <!-- 其他表单字段 -->
+        </form>
+    </div>
+{% endif %}

@@ -1,0 +1,180 @@
+[
+  {
+    "domain": ".bilibili.com",
+    "expiry": 1731512885,
+    "httpOnly": false,
+    "name": "header_theme_version",
+    "path": "/",
+    "sameSite": "Lax",
+    "secure": false,
+    "value": "CLOSE"
+  },
+  {
+    "domain": ".bilibili.com",
+    "expiry": 1715528881,
+    "httpOnly": false,
+    "name": "sid",
+    "path": "/",
+    "sameSite": "Lax",
+    "secure": false,
+    "value": "ejhtm72m"
+  },
+  {
+    "domain": ".bilibili.com",
+    "expiry": 1715528881,
+    "httpOnly": false,
+    "name": "DedeUserID__ckMd5",
+    "path": "/",
+    "sameSite": "Lax",
+    "secure": false,
+    "value": "edd3aded6b90c76d"
+  },
+  {
+    "domain": ".bilibili.com",
+    "expiry": 1715528881,
+    "httpOnly": false,
+    "name": "DedeUserID",
+    "path": "/",
+    "sameSite": "Lax",
+    "secure": false,
+    "value": "82684758"
+  },
+  {
+    "domain": ".bilibili.com",
+    "expiry": 1715528881,
+    "httpOnly": true,
+    "name": "SESSDATA",
+    "path": "/",
+    "sameSite": "Lax",
+    "secure": true,
+    "value": "1950fdf5%2C1715528882%2C56148%2Ab2CjDdeR2ZJ4EYuJKJjPxdCA2cRzj4JeoH2lmv9K29jra7gHcJjgflILCM3yeIoCBdQrISVldfS1Y5d2JfbmM4cW14ZThUZm1NZnRpbWd0V1RESFlCUnBESWZuQjVJS0d6Sy1EcFA4eGZxZEhJTEdZd3d4WEF3S3E5UnJZVFExR2V1VXktMjBwV1NRIIEC"
+  },
+  {
+    "domain": ".bilibili.com",
+    "expiry": 1734536874,
+    "httpOnly": false,
+    "name": "buvid_fp",
+    "path": "/",
+    "sameSite": "Lax",
+    "secure": false,
+    "value": "338538adb530be65c5c0587249b661e8"
+  },
+  {
+    "domain": ".bilibili.com",
+    "expiry": 1731512872,
+    "httpOnly": false,
+    "name": "b_nut",
+    "path": "/",
+    "sameSite": "Lax",
+    "secure": false,
+    "value": "1699976873"
+  },
+  {
+    "domain": ".bilibili.com",
+    "expiry": 1731512885,
+    "httpOnly": false,
+    "name": "browser_resolution",
+    "path": "/",
+    "sameSite": "Lax",
+    "secure": false,
+    "value": "1036-679"
+  },
+  {
+    "domain": ".bilibili.com",
+    "expiry": 1731512885,
+    "httpOnly": false,
+    "name": "home_feed_column",
+    "path": "/",
+    "sameSite": "Lax",
+    "secure": false,
+    "value": "4"
+  },
+  {
+    "domain": ".bilibili.com",
+    "expiry": 1731512872,
+    "httpOnly": false,
+    "name": "buvid3",
+    "path": "/",
+    "sameSite": "Lax",
+    "secure": false,
+    "value": "021DD668-6BE7-51E9-C95A-85D3B969603373939infoc"
+  },
+  {
+    "domain": ".bilibili.com",
+    "expiry": 1731512873,
+    "httpOnly": false,
+    "name": "_uuid",
+    "path": "/",
+    "sameSite": "Lax",
+    "secure": false,
+    "value": "EFFB9F106-4CE8-D3B8-C5810-62A9BCC110107973323infoc"
+  },
+  {
+    "domain": ".bilibili.com",
+    "expiry": 1715528881,
+    "httpOnly": false,
+    "name": "bili_jct",
+    "path": "/",
+    "sameSite": "Lax",
+    "secure": false,
+    "value": "3cf011eff7ece7afadf75764f6ef7a47"
+  },
+  {
+    "domain": ".bilibili.com",
+    "expiry": 1731512872,
+    "httpOnly": false,
+    "name": "i-wanna-go-back",
+    "path": "/",
+    "sameSite": "Lax",
+    "secure": false,
+    "value": "-1"
+  },
+  {
+    "domain": ".bilibili.com",
+    "httpOnly": false,
+    "name": "b_lsid",
+    "path": "/",
+    "sameSite": "Lax",
+    "secure": false,
+    "value": "7FC83675_18BCE848559"
+  },
+  {
+    "domain": ".bilibili.com",
+    "expiry": 1731512872,
+    "httpOnly": false,
+    "name": "b_ut",
+    "path": "/",
+    "sameSite": "Lax",
+    "secure": false,
+    "value": "7"
+  },
+  {
+    "domain": ".bilibili.com",
+    "expiry": 1734536873,
+    "httpOnly": false,
+    "name": "buvid4",
+    "path": "/",
+    "sameSite": "Lax",
+    "secure": false,
+    "value": "652220D9-9AE2-4A89-2E25-9B5EF39997A874809-023111415-"
+  },
+  {
+    "domain": ".bilibili.com",
+    "expiry": 1731512885,
+    "httpOnly": false,
+    "name": "enable_web_push",
+    "path": "/",
+    "sameSite": "Lax",
+    "secure": false,
+    "value": "DISABLE"
+  },
+  {
+    "domain": ".bilibili.com",
+    "httpOnly": false,
+    "name": "innersign",
+    "path": "/",
+    "sameSite": "Lax",
+    "secure": false,
+    "value": "0"
+  }
+]

@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% block title %}弹幕抓取{% endblock %}
+{% block content %}
+    <div class="container">
+        <h2>抓取弹幕</h2>
+        <div class="shadow row-cols-3">
+            <div>{{ message }}</div>
+            <div>是否发起的了新的请求:{{ new_request }}</div>
+            <div>总共有:{{ total }}条弹幕</div>
+        </div>
+        <!-- 显示弹幕数据的表格 -->
+        <form method="POST">
+            {% csrf_token %}
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" name="bv" placeholder="请输入BV号或链接">
+                <button class="btn btn-primary" type="submit" onclick="startFetching()">抓取弹幕</button>
+            </div>
+        </form>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>评论内容</th>
+                <th>颜色代码</th>
+                <th>字体大小</th>
+                <th>midHash</th>
+                <th>mode</th>
+                <th>progress</th>
+                <th>时间</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for danmaku in data %}
+                <tr>
+                    <td>{{ danmaku.content }}</td>
+                    <td>{{ danmaku.color }}</td>
+                    <td>{{ danmaku.fontsize }}</td>
+                    <td>{{ danmaku.midHash }}</td>
+                    <td>{{ danmaku.mode }}</td>
+                    <td>{{ danmaku.progress }}</td>
+                    <td>{{ danmaku.ctime }}</td>
+                </tr>
+                <!-- 其他数据列 -->
+            {% endfor %}
+            </tbody>
+        </table>
+        {% if result == 'success' %}
+            <p>共 {{ total }} 条记录</p>
+            {% include 'pagination.html' %}
+        {% endif %}
+        {% if result == 'error' %}
+            <p>{{ message }}</p>
+        {% endif %}
+    </div>
+    {% include 'motaikuang.html' %}
+    <script>
+        function startFetching() {
+            // 显示模态框
+            var loadingModal = document.getElementById('loadingModal');
+            var bootstrapModal = new bootstrap.Modal(loadingModal, {backdrop: 'static', keyboard: false});
+            bootstrapModal.show();
+
+            // 发送异步请求抓取弹幕
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    // 请求完成后隐藏模态框
+                    bootstrapModal.hide();
+                }
+            };
+
+        }
+    </script>
+{% endblock %}
