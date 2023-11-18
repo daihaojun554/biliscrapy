@@ -33,7 +33,7 @@ class BiliComment(models.Model):
         return self.message
 
 
-class Video(models.Model):
+class BiliVideo(models.Model):
     bvid = models.CharField(max_length=30, unique=True)
     avid = models.IntegerField(unique=True)
     oid = models.IntegerField(unique=True)
@@ -45,6 +45,21 @@ class Video(models.Model):
     desc = models.TextField()
     danmu_fetched = models.BooleanField(default=False)
     comment_fetched = models.BooleanField(default=False)
+    danmaku_count = models.IntegerField(default=0)
+    comment_count = models.IntegerField(default=0)
 
     def __str__(self):
         return self.title
+
+
+class Card(models.Model):
+    card_code = models.CharField(max_length=100, unique=True)
+    expiration_date = models.DateTimeField()
+    last_used_address = models.GenericIPAddressField(null=True, blank=True)
+    # action = models.CharField(max_length=100)
+    # is_active = models.BooleanField(default=True)
+    # is_expired = models.BooleanField(default=False)
+    # count = models.IntegerField(default=0)
+
+    def __str__(self):
+        return self.card_code

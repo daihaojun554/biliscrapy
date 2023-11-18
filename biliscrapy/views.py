@@ -1,11 +1,15 @@
+from datetime import datetime
 from django.core.paginator import Paginator
-from django.shortcuts import render
+from django.http import JsonResponse
+from django.shortcuts import render, redirect
 from django.utils.timezone import make_aware
 
-from .models import BiliDanmu, BiliComment, Video
+from .models import BiliDanmu, BiliComment, BiliVideo, Card
 from .network.bilibili_danmu import *
 from .network.bilibili_comment import Comments
 from .network.bilibili_utils import bili_utils
+
+from django.utils import timezone
 
 # Create your views here.
 utils = bili_utils()
@@ -45,26 +49,31 @@ def danmaku(request):
                 ]
                 BiliDanmu.objects.bulk_create(danmu_objects)
             #     不存在 弹幕信息
+            danmaku_count = BiliDanmu.objects.filter(cid=cid).count()
             try:
                 # 尝试更新视频的抓取弹幕的状态
                 print(bvid)
-                video = Video.objects.get(bvid=bvid)
+                video = BiliVideo.objects.get(bvid=bvid)
                 video.danmu_fetched = True
-            except  Video.DoesNotExist:
+                video.danmaku_count = danmaku_count
+                video.save()
+            except  BiliVideo.DoesNotExist:
                 # 如果视频记录不存在，则创建新的视频记录
                 info = utils.get_info_by_bv(bvid)
                 cid = utils.bv2cid(bvid)
-                video = Video(bvid=bvid,
-                              avid=info['aid'],
-                              oid=cid,
-                              title=info['title'],
-                              author=info['owner']['name'],
-                              tag=info['tname'],
-                              pubdate=make_aware(datetime.fromtimestamp(info['pubdate'])),
-                              pic=info['pic'],
-                              desc=info['desc'],
-                              danmu_fetched=True,
-                              )  # 设置弹幕抓取状态
+
+                video = BiliVideo(bvid=bvid,
+                                  avid=info['aid'],
+                                  oid=cid,
+                                  title=info['title'],
+                                  author=info['owner']['name'],
+                                  tag=info['tname'],
+                                  pubdate=make_aware(datetime.fromtimestamp(info['pubdate'])),
+                                  pic=info['pic'],
+                                  desc=info['desc'],
+                                  danmu_fetched=True,
+                                  danmaku_count=danmaku_count
+                                  )  # 设置弹幕抓取状态
                 video.save()
                 print("新视频信息已添加")
             # 查询数据库并返回结果
@@ -115,26 +124,29 @@ def comment(request):
                     message=cmt['message']
                 ) for cmt in comments]
                 BiliComment.objects.bulk_create(comment_obj)
+            bili_comment_count = BiliComment.objects.filter(avid=avid).count()
             try:
                 # 尝试更新视频的抓取弹幕的状态
-                video = Video.objects.get(avid=avid)
+                video = BiliVideo.objects.get(avid=avid)
                 video.comment_fetched = True
+                video.comment_count = bili_comment_count
                 video.save()
-            except Video.DoesNotExist:
+            except BiliVideo.DoesNotExist:
                 # 如果视频记录不存在，则创建新的视频记录
                 info = utils.get_info_by_bv(bv_)
                 cid = utils.bv2cid(bv_)
-                video = Video(avid=avid,
-                              bvid=bv_,
-                              oid=cid,
-                              title=info['title'],
-                              author=info['owner']['name'],
-                              tag=info['tname'],
-                              pubdate=make_aware(datetime.fromtimestamp(info['pubdate'])),
-                              pic=info['pic'],
-                              desc=info['desc'],
-                              comment_fetched=True,
-                              )  # 设置弹幕抓取状态
+                video = BiliVideo(avid=avid,
+                                  bvid=bv_,
+                                  oid=cid,
+                                  title=info['title'],
+                                  author=info['owner']['name'],
+                                  tag=info['tname'],
+                                  pubdate=make_aware(datetime.fromtimestamp(info['pubdate'])),
+                                  pic=info['pic'],
+                                  desc=info['desc'],
+                                  comment_fetched=True,
+                                  comment_count=bili_comment_count
+                                  )  # 设置弹幕抓取状态
                 video.save()
             comments = BiliComment.objects.filter(avid=avid).values().order_by('ctime')
             paginator = Paginator(comments, 15)
@@ -160,3 +172,58 @@ def reflash_cookie(request):
     """
     utils.get_bilibili_cookies()
     return render(request, 'danmaku.html')
+
+
+def generate_chart(request):
+    """
+    生成图表
+    :param request:
+    :return:
+    """
+    context = {
+        'message': 'fail',
+        'data': [],
+        'code': -1,
+
+    }
+    videos = BiliVideo.objects.all().values().order_by('pubdate')
+    # 分页
+    paginator = Paginator(videos, 6)  # 每页显示10个视频
+    page_number = request.GET.get('page', 1)
+    page_obj = paginator.get_page(page_number)
+    if videos:
+        context['message'] = 'success'
+        context['data'] = page_obj
+        context['code'] = 0
+
+    return render(request, 'generate_chart.html', context)
+
+
+def enter_card(request):
+    if request.method == 'POST':
+        card_code = request.POST.get('card_code')
+        path = request.path
+        try:
+            card = Card.objects.get(card_code=card_code)
+            current_datetime = make_aware(datetime.now())
+
+            print('过期时间：', card.expiration_date)
+            print('当前时间：', current_datetime)
+            if card.expiration_date < current_datetime:
+                print('卡密已过期')
+                request.session['valid_card'] = False
+                return render(request, 'enter_card.html', context={'error_message': '卡密已过期!请联系管理员!1842118776@qq.com'})
+            card.last_used_address = request.META.get('REMOTE_ADDR')
+            card.save()
+        except Card.DoesNotExist:
+            print("卡密不存在")
+            request.session['valid_card'] = False
+            request.session['card_code'] = card_code
+            return render(request, 'enter_card.html', context={'error_message': '卡密不存在,请联系管理员!1842118776@qq.com'})
+
+        # 将卡密标记为有效，并将卡密信息保存在session中
+        request.session['valid_card'] = True
+        request.session['card_code'] = card_code
+        return render(request, 'danmaku.html')
+    #     卡密验证成功，
+    return render(request, 'enter_card.html')

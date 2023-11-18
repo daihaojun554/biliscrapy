@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}卡密验证{% endblock %}
+{% block content %}
+    <div class="container">
+        <h1 class="mt-5">卡密验证</h1>
+        {% if error_message %}
+            <div class="alert alert-danger mt-4">
+                {{ error_message }}
+            </div>
+        {% endif %}
+        <form class="mt-4" method="post" action="{% url 'enter_card' %}">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label class="form-label">请输入卡密</label>
+                <input class="form-control" type="text" name="card_code">
+            </div>
+            <button class="btn btn-primary" type="submit">验证</button>
+
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% block title %}生成图表界面{% endblock %}
+{{ message }}
+{% block styles %}
+    <style>
+
+        .item-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .page-title {
+            font-size: 36px;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+{#        {{ data.object_list }}#}
+        <h1 class="page-title ">生成图表</h1>
+
+        <div class="row">
+            {% for video in data %}
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow h-100">
+                        <div class="card-header item-title">
+                            {{ video.title }}
+                        </div>
+                        <div class="card-body">
+
+                            <p class="item-info">弹幕数量: {{ video.danmaku_count }}</p>
+                            <p class="item-info">评论数量: {{ video.comment_count }}</p>
+                            <p class="item-info">avid: {{ video.avid }}</p>
+                            <p class="item-info">bvid: {{ video.bvid }}</p>
+                            <p class="item-info">cvid: {{ video.oid }}</p>
+
+                            <div class="wordcloud h-75">
+                                <!-- 这里放置词云图 -->
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <!-- 词云图按钮 -->
+                            <button class="chart-button">词云图</button>
+                            <!-- 折线图按钮 -->
+                            <button class="chart-button">折线图</button>
+                            <!-- 饼图按钮 -->
+                            <button class="chart-button">饼图</button>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+        <!-- 分页链接 -->
+        <div class="pagination">
+            {% if data.has_previous %}
+                <a href="?page={{ data.previous_page_number }}">上一页</a>
+            {% endif %}
+            <span class="current-page">{{ data.number }}</span>
+            {% if data.has_next %}
+                <a href="?page={{ data.next_page_number }}">下一页</a>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

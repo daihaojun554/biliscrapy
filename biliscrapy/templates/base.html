@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="{% static 'bootstrap-5.0.2-dist/css/bootstrap.css' %}">
     <script type="text/javascript" src="{% static 'bootstrap-5.0.2-dist/js/bootstrap.js' %}"></script>
     <!-- ... -->
+    {% block styles %}
+    {% endblock %}
 </head>
 <body>
 <header>
@@ -26,17 +28,28 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{% url  'parse_danmaku' %}">抓取弹幕</a>
                     </li>
+
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'parse_comments' %}">抓取评论</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">生成图表</a>
+                        <a class="nav-link" href="{% url 'generate_chart' %}">生成图表</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'enter_card' %}">卡密验证</a>
                     </li>
                     <li class="nav-item">
                         <button id="refresh-cookies-btn" class="btn btn-primary">刷新 Cookies</button>
                     </li>
                 </ul>
             </div>
+            {% if request.session.card_code ==  'daihaojun' %}
+                <p>
+                    管理员
+                </p>
+            {% else %}
+                <p>普通用户</p>
+            {% endif %}
         </div>
     </nav>
 </header>

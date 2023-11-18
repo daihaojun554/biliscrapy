@@ -7,3 +7,5 @@ admin.site.register(BiliDanmu)
 
 #
 admin.site.register(BiliComment)
+admin.site.register(BiliVideo)
+admin.site.register(Card)

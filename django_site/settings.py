@@ -39,6 +39,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -46,6 +47,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    'biliscrapy.middleware.Middleware.MyCardMiddleware',
 ]
 
 ROOT_URLCONF = "django_site.urls"
@@ -72,15 +74,12 @@ WSGI_APPLICATION = "django_site.wsgi.application"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    # "default": {
-    #     "ENGINE": "django.db.backends.sqlite3",
-    #     "NAME": BASE_DIR / "db.sqlite3",
-    # }
+
     'default': {
         "ENGINE": 'django.db.backends.mysql',
         'NAME': 'tb_bilibili',
         'USER': 'root',
-        'PASSWORD': 'FbxLDWj85pN3Smp8',
+        'PASSWORD': 'S3NpMfpG4FtDttMP',
         'HOST': '47.97.114.21',
         'PORT': '3306',
         "OPTIONS": {
@@ -107,7 +106,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = "zh-hans"
 
-TIME_ZONE = 'Asia/shanghai'
+TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
 
