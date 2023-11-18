@@ -3,6 +3,11 @@
 {{ message }}
 {% block styles %}
     <style>
+        .current {
+            background-color: #007bff; /* 你希望的背景颜色 */
+            color: #fff; /* 你希望的文本颜色 */
+            border-color: #007bff; /* 你希望的边框颜色 */
+        }
 
         .item-title {
             font-size: 20px;
@@ -24,7 +29,7 @@
 
 {% block content %}
     <div class="container">
-{#        {{ data.object_list }}#}
+        {#        {{ data.object_list }}#}
         <h1 class="page-title ">生成图表</h1>
 
         <div class="row">
@@ -60,13 +65,25 @@
         </div>
 
         <!-- 分页链接 -->
-        <div class="pagination">
+        <div class="pagination justify-content-center">
             {% if data.has_previous %}
-                <a href="?page={{ data.previous_page_number }}">上一页</a>
+                <a class="page-link" href="?page={{ data.previous_page_number }}" aria-label="Previous">
+                    <span aria-hidden="true">&laquo; 上一页</span>
+                </a>
             {% endif %}
-            <span class="current-page">{{ data.number }}</span>
+
+            {% for page_num in data.paginator.page_range %}
+                {% if page_num == data.number %}
+                    <span class="current-page page-link disabled current">{{ page_num }}</span>
+                {% else %}
+                    <a class="page-link" href="?page={{ page_num }}">{{ page_num }}</a>
+                {% endif %}
+            {% endfor %}
+
             {% if data.has_next %}
-                <a href="?page={{ data.next_page_number }}">下一页</a>
+                <a class="page-link" href="?page={{ data.next_page_number }}" aria-label="Next">
+                    <span aria-hidden="true">下一页 &raquo;</span>
+                </a>
             {% endif %}
         </div>
     </div>

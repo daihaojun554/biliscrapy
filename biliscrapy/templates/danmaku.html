@@ -1,10 +1,11 @@
 {% extends 'base.html' %}
 {% block title %}弹幕抓取{% endblock %}
 {% block content %}
+
     <div class="container">
         <h2>抓取弹幕</h2>
         <div class="shadow row-cols-3">
-            <div>{{ message }}</div>
+            <div class="alert-danger">{{ message }}</div>
             <div>是否发起的了新的请求:{{ new_request }}</div>
             <div>总共有:{{ total }}条弹幕</div>
         </div>
@@ -45,6 +46,7 @@
         </table>
         {% if result == 'success' %}
             <p>共 {{ total }} 条记录</p>
+            <button class="btn btn-primary" onclick="showExportFormatModal()">导出数据格式</button>
             {% include 'pagination.html' %}
         {% endif %}
         {% if result == 'error' %}
@@ -52,7 +54,27 @@
         {% endif %}
     </div>
     {% include 'motaikuang.html' %}
+    <div id="exportFormatModal" class="modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">选择导出数据格式</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <ul>
+                        <li><a href="#" onclick="exportData('json',{{ data.object_list.0.cid }})" data-format="json"
+                               data-cid="{{ cid }}">JSON</a></li>
+                        <li><a href="#" onclick="exportData('csv')">CSV</a></li>
+                        <li><a href="#" onclick="exportData('txt')">TXT</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
     <script>
+        var bootstrapModal;
+
         function startFetching() {
             // 显示模态框
             var loadingModal = document.getElementById('loadingModal');
@@ -65,9 +87,83 @@
                 if (xhr.readyState === XMLHttpRequest.DONE) {
                     // 请求完成后隐藏模态框
                     bootstrapModal.hide();
+
                 }
             };
 
         }
+
+        function showExportFormatModal() {
+            var exportFormatModal = document.getElementById('exportFormatModal');
+            bootstrapModal = new bootstrap.Modal(exportFormatModal);
+            bootstrapModal.show();
+        }
+
+        function exportData(format, cid) {
+            var data = {
+                format: format,
+                cid: cid
+            };
+            var csrftoken = getCookie('csrftoken');
+            $.ajax({
+                url: "/bilibili/export_data/",
+                method: "POST",
+                data: JSON.stringify(data),
+                headers: {
+                    "X-CSRFToken": csrftoken,
+                    "Content-Type": "application/json"
+                },
+                xhrFields: {
+                    responseType: 'blob' // 设置响应类型为 blob
+                },
+                success: function (response) {
+                    print(response)
+                    // 创建一个隐藏的 <a> 元素，并设置下载属性
+                    var a = document.createElement('a');
+                    a.style.display = 'none';
+                    document.body.appendChild(a);
+
+                    // 创建 Blob 对象
+                    var blob = new Blob([response], {type: 'application/json'});
+
+                    // 生成临时下载链接
+                    var url = URL.createObjectURL(blob);
+                    a.href = url;
+                    a.download = 'danmaku.json'; // 设置文件名
+
+                    // 模拟点击下载链接
+                    a.click();
+
+                    // 清理临时资源
+                    URL.revokeObjectURL(url);
+                    document.body.removeChild(a);
+
+                },
+                error: function (error) {
+                    console.log(error);
+                }
+            });
+            bootstrapModal.hide()
+
+        }
+
+        // 获取 cookie 的值
+        function getCookie(name) {
+            var cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                var cookies = document.cookie.split(';');
+                for (var i = 0; i < cookies.length; i++) {
+                    var cookie = cookies[i].trim();
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+
+        // 创建表单
+
     </script>
 {% endblock %}

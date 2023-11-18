@@ -1,6 +1,7 @@
+import json
 from datetime import datetime
 from django.core.paginator import Paginator
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse, FileResponse
 from django.shortcuts import render, redirect
 from django.utils.timezone import make_aware
 
@@ -10,6 +11,10 @@ from .network.bilibili_comment import Comments
 from .network.bilibili_utils import bili_utils
 
 from django.utils import timezone
+
+import csv
+
+from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
 utils = bili_utils()
@@ -212,14 +217,16 @@ def enter_card(request):
             if card.expiration_date < current_datetime:
                 print('卡密已过期')
                 request.session['valid_card'] = False
-                return render(request, 'enter_card.html', context={'error_message': '卡密已过期!请联系管理员!1842118776@qq.com'})
+                return render(request, 'enter_card.html',
+                              context={'error_message': '卡密已过期!请联系管理员!1842118776@qq.com'})
             card.last_used_address = request.META.get('REMOTE_ADDR')
             card.save()
         except Card.DoesNotExist:
             print("卡密不存在")
             request.session['valid_card'] = False
             request.session['card_code'] = card_code
-            return render(request, 'enter_card.html', context={'error_message': '卡密不存在,请联系管理员!1842118776@qq.com'})
+            return render(request, 'enter_card.html',
+                          context={'error_message': '卡密不存在,请联系管理员!1842118776@qq.com'})
 
         # 将卡密标记为有效，并将卡密信息保存在session中
         request.session['valid_card'] = True
@@ -227,3 +234,42 @@ def enter_card(request):
         return render(request, 'danmaku.html')
     #     卡密验证成功，
     return render(request, 'enter_card.html')
+
+
+class DateTimeEncoder(json.JSONEncoder):
+    def default(self, obj):
+        if isinstance(obj, datetime):
+            return obj.strftime('%Y-%m-%d %H:%M:%S')
+        return super().default(obj)
+
+
+def export_data(request):
+    if request.method == 'POST':
+        datas = json.loads(request.body)
+        format = datas.get('format')
+        cid = datas.get('cid')
+
+        if format == 'json' and cid is not None:
+            # 去数据库查询弹幕数据
+            danmakus = BiliDanmu.objects.filter(cid=cid).values()
+            danmakus_list = list(danmakus)
+            json_data = json.dumps(danmakus_list, ensure_ascii=False,cls=DateTimeEncoder)
+
+            # 设置文件名
+            filename = f"{cid}_danmaku.json"
+
+            # 创建临时文件
+            # 临时文件路径
+
+            with open(filename, 'w', encoding='utf-8') as f:
+                f.write(json_data)
+
+            # 创建 FileResponse 对象
+            response = FileResponse(open(filename, 'rb'), as_attachment=True, filename=filename)
+
+            # 删除临时文件
+            os.remove(filename)
+
+            return response
+
+    return HttpResponse(status=400)

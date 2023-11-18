@@ -73,30 +73,35 @@ class Danmu:
     '''
 
     def down_so_files(self, oid, dates):
+        if dates == None:
+            return
         if oid == None:
             self.logger.info("请输入正确的 oid 号码!!")
             return
-
         if not os.path.exists(os.path.join(self.script_dir, 'data/danmaku')):
             os.mkdir(os.path.join(self.script_dir, 'data/danmaku'))
-
-        url = f'https://api.bilibili.com/x/v2/dm/web/history/seg.so?type=1&oid={oid}'
-        for date in dates:
-            url_ = f'{url}&date={date}'
-            self.logger.info(f"正在下载 {oid}-{date}.so 文件，请稍后...")
-            response = requests.get(url_, cookies=self.cookies, headers=self.headers)
-            if response.status_code == 200:
-                with open(os.path.join(self.script_dir, 'data/danmaku/', f'{oid}-{date}.so'), 'wb') as f:
-                    f.write(response.content)
-            else:
-                self.logger.info("请检查你输入的 oid 号码!!")
-                self.logger.info(f"当前请求的 URL 为: {url}")
-                return
-        self.logger.info(f"下载完成！")
+        elif dates:
+            url = f'https://api.bilibili.com/x/v2/dm/web/history/seg.so?type=1&oid={oid}'
+            for date in dates:
+                url_ = f'{url}&date={date}'
+                self.logger.info(f"正在下载 {oid}-{date}.so 文件，请稍后...")
+                response = requests.get(url_, cookies=self.cookies, headers=self.headers)
+                if response.status_code == 200:
+                    with open(os.path.join(self.script_dir, 'data/danmaku/', f'{oid}-{date}.so'), 'wb') as f:
+                        f.write(response.content)
+                else:
+                    self.logger.info("请检查你输入的 oid 号码!!")
+                    self.logger.info(f"当前请求的 URL 为: {url}")
+                    return
+            self.logger.info(f"下载完成！")
 
     # 将.so文件解析并保存为JSON文件
     def parse_so_to_json(self, oid, dates):
+
         try:
+            if dates == None:
+                self.logger.info("日期为空")
+                return
             all_danmaku = set()  # 用集合存储所有弹幕数据
             for date in dates:
                 file_path = os.path.join(self.script_dir, 'data/danmaku/', f'{oid}-{date}.so')
