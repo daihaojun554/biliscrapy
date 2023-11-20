@@ -262,4 +262,18 @@ class DateTimeEncoder(json.JSONEncoder):
 
 
 def export_data(request):
-    pass
+    print(request.method)
+    if request.method == 'POST':
+        data = json.loads(request.body.decode('utf-8'))
+        format_ = data.get('format')
+        cid = data.get('cid')
+        print(format_, cid)
+        if format_ == 'json':
+            #         从数据库中查询弹幕的信息，并且返回给前端，前端去下载一个cid—danmaku.json文件
+            danmakus = BiliDanmu.objects.filter(cid=cid).values()
+            return JsonResponse(list(danmakus), encoder=DateTimeEncoder, safe=False)
+        if format_ == 'txt':
+            danmakus = BiliDanmu.objects.filter(cid=cid).values()
+            danmakus = [d['content'] + "," + str(d['ctime']) + "," + d['mode'] + ',' + d['id'] for d in danmakus]
+            return HttpResponse('\n'.join(danmakus))
+    return render(request, 'danmaku.html')
