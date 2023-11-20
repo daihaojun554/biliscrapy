@@ -10,7 +10,7 @@ class MyCardMiddleware(MiddlewareMixin):
         self.get_response = get_response
 
     def __call__(self, request):
-        exclude_paths = ['/bilibili/enter_card.html', '/admin', '/bilibili/enter_card']
+        exclude_paths = ['/bilibili/enter_card.html', '/admin', '/bilibili/enter_card','/bilibili/exit_card']
         # 检查当前请求的路径是否在排除列表之外
         if not any(request.path.startswith(path) for path in exclude_paths):
             card_code = request.session.get('card_code')
