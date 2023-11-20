@@ -7,5 +7,6 @@ urlpatterns = [
     path("flash_cookies", views.reflash_cookie, name='flash_cookies'),
     path('generate-chart/', views.generate_chart, name='generate_chart'),
     path('enter_card.html', views.enter_card, name='enter_card'),
-    path('export_data/',views.export_data,name='export_data')
+    path('export_data/',views.export_data,name='export_data'),
+    path('exit_card',views.exit_card,name='exit_card')
 ]
