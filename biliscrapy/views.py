@@ -1,7 +1,6 @@
 import json
 from datetime import datetime
 from django.core.paginator import Paginator
-from django.http import JsonResponse, HttpResponse, FileResponse
 from django.shortcuts import render, redirect
 from django.utils.timezone import make_aware
 
@@ -207,32 +206,26 @@ def generate_chart(request):
 def enter_card(request):
     if request.method == 'POST':
         card_code = request.POST.get('card_code')
-        path = request.path
+        current_datetime = timezone.now()
         try:
             card = Card.objects.get(card_code=card_code)
-            current_datetime = make_aware(datetime.now())
 
-            print('过期时间：', card.expiration_date)
-            print('当前时间：', current_datetime)
             if card.expiration_date < current_datetime:
-                print('卡密已过期')
-                request.session['valid_card'] = False
-                return render(request, 'enter_card.html',
-                              context={'error_message': '卡密已过期!请联系管理员!1842118776@qq.com'})
-            card.last_used_address = request.META.get('REMOTE_ADDR')
-            card.save()
-        except Card.DoesNotExist:
-            print("卡密不存在")
-            request.session['valid_card'] = False
-            request.session['card_code'] = card_code
-            return render(request, 'enter_card.html',
-                          context={'error_message': '卡密不存在,请联系管理员!1842118776@qq.com'})
+                # 卡密已过期
+                return render(request, 'enter_card.html', context={
+                    "error_message": '卡密已过期，请联系管理员！1842118776@qq.com'
+                })
 
-        # 将卡密标记为有效，并将卡密信息保存在session中
-        request.session['valid_card'] = True
-        request.session['card_code'] = card_code
-        return render(request, 'danmaku.html')
-    #     卡密验证成功，
+            # 将卡密存储在会话中
+            request.session['card_code'] = card_code
+            return redirect('parse_danmaku')  # 跳转到弹幕页面或其他需要卡密验证的页面
+
+        except Card.DoesNotExist:
+            # 卡密不存在
+            return render(request, 'enter_card.html', context={
+                "error_message": '卡密不存在，请联系管理员！'
+            })
+
     return render(request, 'enter_card.html')
 
 
@@ -244,32 +237,4 @@ class DateTimeEncoder(json.JSONEncoder):
 
 
 def export_data(request):
-    if request.method == 'POST':
-        datas = json.loads(request.body)
-        format = datas.get('format')
-        cid = datas.get('cid')
-
-        if format == 'json' and cid is not None:
-            # 去数据库查询弹幕数据
-            danmakus = BiliDanmu.objects.filter(cid=cid).values()
-            danmakus_list = list(danmakus)
-            json_data = json.dumps(danmakus_list, ensure_ascii=False,cls=DateTimeEncoder)
-
-            # 设置文件名
-            filename = f"{cid}_danmaku.json"
-
-            # 创建临时文件
-            # 临时文件路径
-
-            with open(filename, 'w', encoding='utf-8') as f:
-                f.write(json_data)
-
-            # 创建 FileResponse 对象
-            response = FileResponse(open(filename, 'rb'), as_attachment=True, filename=filename)
-
-            # 删除临时文件
-            os.remove(filename)
-
-            return response
-
-    return HttpResponse(status=400)
+    pass

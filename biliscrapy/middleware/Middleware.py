@@ -10,38 +10,20 @@ class MyCardMiddleware(MiddlewareMixin):
         self.get_response = get_response
 
     def __call__(self, request):
-        card_code = request.META.get('HTTP_CARD_CODE')  # 从请求头获取卡密参数
-        #
-        path = request.path  # 获取请求路径
-        print(path)
-        # 如果请求头中包含卡密参数
-        if card_code:
+        exclude_paths = ['/bilibili/enter_card.html', '/admin', '/bilibili/enter_card']
+        # 检查当前请求的路径是否在排除列表之外
+        if not any(request.path.startswith(path) for path in exclude_paths):
+            card_code = request.session.get('card_code')
+            # 检查会话中是否存在卡密
+            if not card_code:
+                # 若卡密不存在，重定向到卡密验证页面
+                return redirect('enter_card')
             try:
                 card = Card.objects.get(card_code=card_code)
+                if card.expiration_date < timezone.now():
+                    # 卡密已过期，重定向到卡密验证页面
+                    return redirect('enter_card')
             except Card.DoesNotExist:
-                return redirect(reverse('invalid_card'))
-
-            current_datetime = timezone.now()
-
-            # 检查卡密是否过期
-            if card.expiration_date < current_datetime:
-                return redirect(reverse('expired_card'))
-
-            # 更新卡密的最后一次使用地址和时间
-            card.last_used_address = request.META.get('REMOTE_ADDR')
-            card.save()
-
-            # 将卡密对象存储在请求的card属性中，以便后续视图函数使用
-            request.card = card
-        if path == '/bilibili/enter_card.html' or path.startswith('/admin'):
-            #     放过请求
-            response = self.get_response(request)
-            return response
-
-
-        # 如果请求中不包含卡密参数，则需要进行卡密验证
-        elif not request.session.get('valid_card'):
-            return redirect(reverse('enter_card'))
-
-        response = self.get_response(request)
-        return response
+                # 卡密不存在，重定向到卡密验证页面
+                return redirect('enter_card')
+        return self.get_response(request)
