@@ -211,17 +211,24 @@ def enter_card(request):
             card = Card.objects.get(card_code=card_code)
             if card.expiration_date < current_datetime:
                 # 卡密已过期
-
                 return render(request, 'enter_card.html', context={
                     "error_message": '卡密已过期，请联系管理员！1842118776@qq.com'
                 })
+            # 判断卡密是否已被使用
+            if card.is_used:
+                # 卡密已被使用
+                return render(request, 'enter_card.html', context={
+                    "error_message": '卡密已被使用！'
+                })
+
+            # 如果卡密尚未被使用，将其设置为已使用状态
+            card.is_used = True
             # 将卡密存储在会话中
             request.session['card_code'] = card_code
+            # 将卡密的最后使用地址存储在卡密表中
             card.last_used_address = request.META.get('HTTP_X_FORWARDED_FOR') or request.META.get('REMOTE_ADDR')
-            print(card.last_used_address)
             card.save()
             return redirect('parse_danmaku')  # 跳转到弹幕页面或其他需要卡密验证的页面
-
         except Card.DoesNotExist:
             # 卡密不存在
             return render(request, 'enter_card.html', context={
@@ -229,6 +236,22 @@ def enter_card(request):
             })
 
     return render(request, 'enter_card.html')
+
+
+# 退出当前卡密
+def exit_card(request):
+    if request.method == 'POST':
+        code_ = request.session.get("card_code")
+        if not code_:
+            return redirect('enter_card')
+        try:
+            card = Card.objects.get(card_code=code_)
+            card.is_used = False
+            card.save()
+            request.session['card_code'] = None
+        except  Card.DoesNotExist:
+            pass
+    return redirect('enter_card')
 
 
 class DateTimeEncoder(json.JSONEncoder):
