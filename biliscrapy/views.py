@@ -209,15 +209,17 @@ def enter_card(request):
         current_datetime = timezone.now()
         try:
             card = Card.objects.get(card_code=card_code)
-
             if card.expiration_date < current_datetime:
                 # 卡密已过期
+
                 return render(request, 'enter_card.html', context={
                     "error_message": '卡密已过期，请联系管理员！1842118776@qq.com'
                 })
-
             # 将卡密存储在会话中
             request.session['card_code'] = card_code
+            card.last_used_address = request.META.get('HTTP_X_FORWARDED_FOR') or request.META.get('REMOTE_ADDR')
+            print(card.last_used_address)
+            card.save()
             return redirect('parse_danmaku')  # 跳转到弹幕页面或其他需要卡密验证的页面
 
         except Card.DoesNotExist:
