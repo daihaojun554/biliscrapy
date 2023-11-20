@@ -1,5 +1,3 @@
-import json
-from datetime import datetime
 from django.core.paginator import Paginator
 from django.shortcuts import render, redirect
 from django.utils.timezone import make_aware
@@ -11,10 +9,7 @@ from .network.bilibili_utils import bili_utils
 
 from django.utils import timezone
 
-import csv
-
-from django.views.decorators.csrf import csrf_exempt
-
+from django.http import JsonResponse, HttpResponse
 # Create your views here.
 utils = bili_utils()
 
@@ -64,6 +59,8 @@ def danmaku(request):
             except  BiliVideo.DoesNotExist:
                 # 如果视频记录不存在，则创建新的视频记录
                 info = utils.get_info_by_bv(bvid)
+                if info is None:
+                    return render(request, 'danmaku.html', context)
                 cid = utils.bv2cid(bvid)
 
                 video = BiliVideo(bvid=bvid,
