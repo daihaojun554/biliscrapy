@@ -45,13 +45,23 @@
                     </li>
                 </ul>
             </div>
-            {% if request.session.card_code ==  'daihaojun' %}
-                <p>
-                    管理员
-                </p>
-            {% else %}
-                <p>普通用户</p>
-            {% endif %}
+
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    {% if request.session.card_code ==  'daihaojun' %}
+                        <a class="nav-link" href="#"> 管理员</a>
+                    {% else %}
+                        <a class="nav-link" href="#"> 普通用户</a>
+                    {% endif %}
+                </li>
+                <li class="nav-item">
+                    <form action="{% url 'exit_card' %}" method="post">
+                        {% csrf_token %}
+                        <input class="shadow" type="submit" name="exit" id="exit" value="退出当前卡密">
+                    </form>
+                </li>
+            </ul>
+
         </div>
     </nav>
 </header>
