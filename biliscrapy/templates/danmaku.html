@@ -65,8 +65,7 @@
                     <ul>
                         <li><a href="#" onclick="exportData('json',{{ data.object_list.0.cid }})" data-format="json"
                                data-cid="{{ cid }}">JSON</a></li>
-                        <li><a href="#" onclick="exportData('csv')">CSV</a></li>
-                        <li><a href="#" onclick="exportData('txt')">TXT</a></li>
+                        <li><a href="#" onclick="exportData('txt',{{ data.object_list.0.cid }})">TXT</a></li>
                     </ul>
                 </div>
             </div>
@@ -102,47 +101,41 @@
         function exportData(format, cid) {
             var data = {
                 format: format,
-                cid: cid
+                cid: cid,
+                type: 'danmaku'
             };
             var csrftoken = getCookie('csrftoken');
-            $.ajax({
-                url: "/bilibili/export_data/",
+            fetch("/bilibili/export_data/", {
                 method: "POST",
-                data: JSON.stringify(data),
                 headers: {
-                    "X-CSRFToken": csrftoken,
-                    "Content-Type": "application/json"
+                    "Content-Type": "application/json",
+                    "X-CSRFToken": csrftoken
                 },
-                xhrFields: {
-                    responseType: 'blob' // 设置响应类型为 blob
-                },
-                success: function (response) {
-                    print(response)
-                    // 创建一个隐藏的 <a> 元素，并设置下载属性
-                    var a = document.createElement('a');
-                    a.style.display = 'none';
-                    document.body.appendChild(a);
-
-                    // 创建 Blob 对象
-                    var blob = new Blob([response], {type: 'application/json'});
-
-                    // 生成临时下载链接
-                    var url = URL.createObjectURL(blob);
+                body: JSON.stringify(data)
+            })
+                .then(async response => {
+                    const blob = await response.blob();
+                    // 创建一个隐藏的 <a> 元素
+                    const a = document.createElement('a');
+                    // 使用URL.createObjectURL()方法生成Blob对象的URL
+                    const url = URL.createObjectURL(blob);
+                    // 设置 <a> 元素的href属性为生成的URL
                     a.href = url;
-                    a.download = 'danmaku.json'; // 设置文件名
+                    // 设置 <a> 元素的download属性为要下载的文件名
+                    if (format === 'json') {
+                        a.download = `${data['cid']}_danmaku.json`;
+                    } else if (format === 'txt') {
+                        a.download = `${data['cid']}_danmaku.txt`;
+                    }
 
-                    // 模拟点击下载链接
+                    // 模拟点击 <a> 元素，以触发文件下载
                     a.click();
-
-                    // 清理临时资源
+                    // 释放URL对象
                     URL.revokeObjectURL(url);
-                    document.body.removeChild(a);
-
-                },
-                error: function (error) {
+                })
+                .catch(error => {
                     console.log(error);
-                }
-            });
+                });
             bootstrapModal.hide()
 
         }
