@@ -56,6 +56,7 @@ class Card(models.Model):
     card_code = models.CharField(max_length=100, unique=True)
     expiration_date = models.DateTimeField()
     last_used_address = models.GenericIPAddressField(null=True, blank=True)
+    is_used =  models.BooleanField(default=False)
     # action = models.CharField(max_length=100)
     # is_active = models.BooleanField(default=True)
     # is_expired = models.BooleanField(default=False)
