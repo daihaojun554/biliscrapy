@@ -54,7 +54,12 @@ class bili_utils:
     def bv2av(self, bv):
         bv2av_url = 'https://api.bilibili.com/x/web-interface/view?bvid='
         if bv.startswith("BV"):
-            js_str = requests.get(bv2av_url + str(bv)).json()
+            uurrll = bv2av_url + str(bv)
+            js_str = requests.get(uurrll).json()
+
+            if js_str['code'] != 0:
+                print("服务器返回错误！请稍后再试！{}".format(js_str))
+                return None
             if js_str['data']['aid']:
                 avid = js_str['data']['aid']
                 self.logger.info(f"找到的avid{avid}")
@@ -115,21 +120,20 @@ class bili_utils:
         search.click()
         time.sleep(3)
         cookies = driver.get_cookies()
-        # self.logger.info(cookies)
-        with open(
-                f'./bilibili_cookies.json',
-                'w') as f:
-            json.dump(cookies, f)
-            f.close()
-
-        # 返回一个文件对象
-        cookies_path = os.path.join(current_path, 'bilibili_cookies.json')
+        # 获取当前脚本的路径
+        current_path = os.path.dirname(os.path.abspath(__file__))
+        with open(os.path.join(current_path, 'bilibili_cookies.json'), 'w') as f:
+            # 写入当前文件
+            f.write(json.dumps(cookies))
+        # 写入成功
+        print('写入成功', cookies)
         driver.quit()
-        return json.loads(open(cookies_path, 'r', encoding='utf-8').read())
+        return
 
     def get_info_by_bv(self, bv):
         url = f"https://api.bilibili.com/x/web-interface/view?bvid={str(bv)}"
         js_str = requests.get(url).json()
+
         if js_str['code'] == 0:
             return js_str['data']
         else:
