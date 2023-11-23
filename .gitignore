@@ -2,5 +2,7 @@
 _pycache_/*
 venv
 db.*
-*/data/*
+
 */migrations/*
+/data/
+/biliscrapy/migrations/
