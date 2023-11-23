@@ -1,3 +1,4 @@
+import random
 import time
 
 import requests
@@ -34,7 +35,7 @@ class Comments:
         file_path = os.path.join(script_dir, 'bilibili_cookies.json')
         if not file_path:
             self.cookies = {}
-        with open(file_path, 'r') as file:
+        with open(file_path, 'r', encoding='utf-8') as file:
             self.cookies_data = json.load(file)
         self.cookies = {cookie['name']: cookie['value'] for cookie in self.cookies_data}
         self.utils = bili_utils()
@@ -78,20 +79,18 @@ class Comments:
             url = f'https://api.bilibili.com/x/v2/reply?type=1&oid={avid}&sort=2&pn={page_num}&ps={page_size}'
             response = requests.get(url, headers=headers, cookies=self.cookies)
             data = response.json()
-
+            if data['code'] != 0:
+                break
             # 提取回复信息
             extracted_data = self.extract_comments(data['data']['replies'])
 
             # 过滤重复的评论
             new_comments = [comment for comment in extracted_data if comment not in comments]
             comments.extend(new_comments)  # 将新的评论添加到列表中
-
             print("提取到了", len(new_comments), "条评论，从第", page_num, "页")
-
             if len(new_comments) == 0:
                 print("提取完毕所有评论，共提取到", len(comments), "条评论", avid)
                 break
-
             # 判断是否有下一页
             total_count = data['data']['page']['count']
             total_pages = (total_count + page_size - 1) // page_size  # 计算总页数
@@ -102,15 +101,15 @@ class Comments:
             # 构建下一页的URL
             page_num += 1
             print("开始提取第", page_num, "页评论")
-            time.sleep(0.5)
-
+            time.sleep(random.uniform(0.5, 1.5))
         print(len(comments))
 
         # 写入JSON文件
         os.makedirs("./data/comment/", exist_ok=True)  # 创建多层目录
         file_path = f'./data/comment/{avid}_{page_num}-{page_size}_{len(comments)}.json'
-        with open(file_path, 'w', encoding='utf-8') as f:
-            json.dump(comments, f, indent=4, ensure_ascii=False)
+        if len(comments) < 1000:
+            with open(file_path, 'w', encoding='utf-8') as f:
+                json.dump(comments, f, indent=4, ensure_ascii=False)
         return comments
 
 #
