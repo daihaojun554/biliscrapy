@@ -110,8 +110,16 @@ def comment(request):
         c = Comments()
         bv_ = utils.bv_get(bv) if bv.startswith("https://www.bilibili.com/video/BV") or bv.startswith(
             "BV") or bv.startswith("bv") else bv
+        print(bv_,"bv_")
         avid = utils.bv2av(bv_)
-        print(avid)
+        if avid is None:
+            context = {
+
+                'result': 'error',
+                'data': [],
+                'message': 'b站服务器返回错误，请重新尝试'
+            }
+            return render(request, 'comment.html', context)
         if avid:
             comments_exist = BiliComment.objects.filter(avid=avid).exists()
             if not comments_exist:
@@ -136,6 +144,8 @@ def comment(request):
             except BiliVideo.DoesNotExist:
                 # 如果视频记录不存在，则创建新的视频记录
                 info = utils.get_info_by_bv(bv_)
+                if info is None:
+                    return render(request, 'comment.html', context)
                 cid = utils.bv2cid(bv_)
                 video = BiliVideo(avid=avid,
                                   bvid=bv_,
@@ -223,6 +233,7 @@ def enter_card(request):
             card.is_used = True
             # 将卡密存储在会话中
             request.session['card_code'] = card_code
+            request.session['expiration_date'] = card.expiration_date.strftime('%Y-%m-%d %H:%M:%S')
             # 将卡密的最后使用地址存储在卡密表中
             card.last_used_address = request.META.get('HTTP_X_FORWARDED_FOR') or request.META.get('REMOTE_ADDR')
             card.save()
