@@ -2,3 +2,5 @@
 _pycache_/*
 venv
 db.*
+*/data/*
+*/migrations/*
