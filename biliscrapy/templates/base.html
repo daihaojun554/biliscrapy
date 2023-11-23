@@ -48,11 +48,10 @@
 
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    {% if request.session.card_code ==  'daihaojun' %}
-                        <a class="nav-link" href="#"> 管理员</a>
-                    {% else %}
-                        <a class="nav-link" href="#"> 普通用户</a>
+                    {% if request.session.card_code %}
+                        <div class="nav-link" href="#">卡密过期时间:{{ request.session.expiration_date }}  </div>
                     {% endif %}
+
                 </li>
                 <li class="nav-item">
                     <form action="{% url 'exit_card' %}" method="post">
