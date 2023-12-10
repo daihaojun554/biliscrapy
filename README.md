@@ -10,7 +10,10 @@ bili_scrapy
 
 python3.10
 
-## 安装
+## 安装依赖
+```bash
+pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
+```
 
 ```bash
 py ./manage.py runserver
