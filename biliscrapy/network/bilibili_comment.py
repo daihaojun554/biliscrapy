@@ -28,7 +28,6 @@ headers = {
 
 
 class Comments:
-
     def __init__(self):
         script_dir = os.path.dirname(os.path.abspath(__file__))
         # 构建文件路径
@@ -40,11 +39,26 @@ class Comments:
         self.cookies = {cookie['name']: cookie['value'] for cookie in self.cookies_data}
         self.utils = bili_utils()
         self.logger = logging.getLogger(__name__)
-        self.logger.setLevel(logging.INFO)
-        self.logger.addHandler(logging.StreamHandler())
+        self.logger.setLevel(logging.DEBUG)
+        formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+        # 添加文件处理程序
+        file_handler = logging.FileHandler('bilibilicomment.log',encoding='utf-8')
+        file_handler.setLevel(logging.DEBUG)
+        file_handler.setFormatter(formatter)
+        self.logger.addHandler(file_handler)
+
+        # 添加控制台处理程序
+        console_handler = logging.StreamHandler()
+        console_handler.setLevel(logging.INFO)
+        console_handler.setFormatter(formatter)
+        self.logger.addHandler(console_handler)
+
+       
 
     def extract_comments(self, replies):
         extracted_comments = []
+        if not replies:
+            return extracted_comments
         for reply in replies:
             extracted_comment = {
                 'uname': reply['member']['uname'],
@@ -63,11 +77,10 @@ class Comments:
         return extracted_comments
 
     def get_comments(self, bvorurl):
-        print("Getting comments for bvorurl:", bvorurl)
+        self.logger.info("Getting comments for bvorurl:{}".format(bvorurl))
         bv = self.utils.bv_get(bvorurl)
         avid = self.utils.bv2av(bv)
-        print(avid)
-
+        self.logger.info(f"avid===>{avid}")
         comments = []  # 使用列表存储评论
 
         # 获取评论总数和每页评论数量
@@ -87,22 +100,22 @@ class Comments:
             # 过滤重复的评论
             new_comments = [comment for comment in extracted_data if comment not in comments]
             comments.extend(new_comments)  # 将新的评论添加到列表中
-            print("提取到了", len(new_comments), "条评论，从第", page_num, "页")
+            self.logger.info(f"提取到了{len(new_comments)}条评论，从第 {page_num} 页")
             if len(new_comments) == 0:
-                print("提取完毕所有评论，共提取到", len(comments), "条评论", avid)
+                self.logger.info("提取完毕所有评论，共提取到{}条评论！=====>avid{}".format(len(comments),avid))
                 break
             # 判断是否有下一页
             total_count = data['data']['page']['count']
             total_pages = (total_count + page_size - 1) // page_size  # 计算总页数
             if page_num >= total_pages:
-                print("提取完毕所有评论，共提取到", len(comments), "条评论", avid)
+                self.logger.info("提取完毕所有评论，共提取到{}条评论！=====>avid{}".format(len(comments),avid))
                 break
 
             # 构建下一页的URL
             page_num += 1
-            print("开始提取第", page_num, "页评论")
+            self.logger.info("开始提取第{}页评论".format(page_num))
             time.sleep(random.uniform(0.5, 1.5))
-        print(len(comments))
+        self.logger.info(f"总共{len(comments)}条评论！")
 
         # 写入JSON文件
         os.makedirs("./data/comment/", exist_ok=True)  # 创建多层目录

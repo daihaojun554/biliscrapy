@@ -33,6 +33,8 @@ def danmaku(request):
                 dates = danmu.get_available_dates(cid)  # 获取视频的所有日期列表
                 danmu.down_so_files(cid, dates)  # 下载所有弹ci幕文件
                 unique_danmakus = danmu.parse_so_to_json(cid, dates)  # 解析并保存为 JSON 文件
+                if unique_danmakus is None:
+                    return render(request, 'danmaku.html', context.update({'message': '解析弹幕失败，请检查BV号是否正确！'}))
                 danmu_objects = [
                     BiliDanmu(
                         id=danmaku['id'],
@@ -63,7 +65,7 @@ def danmaku(request):
                 if info is None:
                     return render(request, 'danmaku.html', context)
                 cid = utils.bv2cid(bvid)
-
+                print(cid, 'cid')
                 video = BiliVideo(bvid=bvid,
                                   avid=info['aid'],
                                   oid=cid,
@@ -110,11 +112,11 @@ def comment(request):
         c = Comments()
         bv_ = utils.bv_get(bv) if bv.startswith("https://www.bilibili.com/video/BV") or bv.startswith(
             "BV") or bv.startswith("bv") else bv
-        print(bv_,"bv_")
+        print(bv_, "bv_")
         avid = utils.bv2av(bv_)
+        print(avid, "avid")
         if avid is None:
             context = {
-
                 'result': 'error',
                 'data': [],
                 'message': 'b站服务器返回错误，请重新尝试'

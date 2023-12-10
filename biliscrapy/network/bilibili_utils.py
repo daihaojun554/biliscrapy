@@ -18,13 +18,6 @@ import logging
 class bili_utils:
     def __init__(self):
         self.logger = logging.getLogger(__name__)
-        self.logger.setLevel(level=logging.INFO)
-        handler = logging.FileHandler("bilibili.log")
-        handler.setLevel(logging.INFO)
-        formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-        handler.setFormatter(formatter)
-        self.logger.addHandler(handler)
-
     def bv_get(self, bvorurl):
         # https://api.bilibili.com/x/web-interface/view?bvid=BV1uG41197Tf
         # 将bv提取出来
@@ -40,13 +33,13 @@ class bili_utils:
                 self.logger.info("你输入的链接地址有误！")
                 return
         elif bv_identifier in bvorurl:  # 如果输入的是BV号
-            self.logger.info("你输入的是BV号，正在解析...")
+            self.logger.info("你输入的是BV号{bvorurl}，正在解析...")
             bv = bvorurl
             return bv
         else:
-            self.logger.info("请输入正确的链接地址或BV号！")
-            return
-
+            self.logger.info(f"请输入正确的链接地址或BV号！,{bvorurl}")
+            return "BV1111111111"
+ 
     '''
         av 就是 oid 评论里面的参数
     '''
@@ -58,7 +51,7 @@ class bili_utils:
             js_str = requests.get(uurrll).json()
 
             if js_str['code'] != 0:
-                print("服务器返回错误！请稍后再试！{}".format(js_str))
+                self.logger.info("服务器返回错误！请稍后再试！{}".format(js_str))
                 return None
             if js_str['data']['aid']:
                 avid = js_str['data']['aid']
@@ -82,12 +75,13 @@ class bili_utils:
             return cid
         else:
             self.logger.error("服务器返回错误！请稍后再试！")
+            self.bv2cid(bv)
             return None
 
     def get_bilibili_cookies(self):
         options = webdriver.ChromeOptions()
         # options.add_argument('--headless')
-        options.add_argument('--disable-gpu')
+        # options.add_argument('--disable-gpu')
         # 动态获取路径 不用每次都手动输入路径
         # chromedriver.exe 的路径
         # 获取当前脚本的绝对路径
@@ -105,7 +99,6 @@ class bili_utils:
         # 打开 Bilibili 网站
         driver.get('https://www.bilibili.com/')
         #
-
         login_btn = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR,
                                                                                     '#i_cecream > div.bili-feed4 > div.bili-header.large-header > div.bili-header__bar > ul.right-entry > li:nth-child(1) > li > div.right-entry__outside.go-login-btn')))
         login_btn.click()
@@ -126,7 +119,7 @@ class bili_utils:
             # 写入当前文件
             f.write(json.dumps(cookies))
         # 写入成功
-        print('写入成功', cookies)
+        self.logger.info('写入成功{}'.format(cookies) )
         driver.quit()
         return
 

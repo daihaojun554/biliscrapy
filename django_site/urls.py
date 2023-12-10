@@ -21,5 +21,5 @@ from django.views.generic import RedirectView
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("bilibili/", include("biliscrapy.urls")),
-    re_path(r'.*?/', RedirectView.as_view(url='/bilibili/danmaku.html', permanent=True)),
+    # re_path(r'.*?/', RedirectView.as_view(url='/bilibili/danmaku.html', permanent=True)),
 ]

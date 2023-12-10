@@ -40,8 +40,20 @@ class Danmu:
         self.cookies = {cookie['name']: cookie['value'] for cookie in self.cookies_data}
         self.headers = headers
         self.logger = logging.getLogger(__name__)
-        self.logger.setLevel(logging.INFO)
-        self.logger.addHandler(logging.StreamHandler())
+        self.logger.setLevel(logging.DEBUG)
+        formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+        # 添加文件处理程序
+        file_handler = logging.FileHandler('bilibilidanmu.log',encoding='utf-8')
+        file_handler.setLevel(logging.DEBUG)
+        file_handler.setFormatter(formatter)
+        self.logger.addHandler(file_handler)
+        
+        # 添加控制台处理程序
+        console_handler = logging.StreamHandler()
+        console_handler.setLevel(logging.INFO)
+        console_handler.setFormatter(formatter)
+        self.logger.addHandler(console_handler)
+       
 
     def bv2cid(self, bvorurl):
         try:
@@ -49,7 +61,7 @@ class Danmu:
             cid = self.utils.bv2cid(bv)
             return cid
         except Exception as e:
-            self.logger.info(e)
+            self.logger.error(e)
             return None
 
     # 获取某个 oid 下存在弹幕的日期列表
@@ -64,8 +76,8 @@ class Danmu:
             data = response.json()
             return data.get("data", [])
         else:
-            self.logger.info("请检查你输入的 oid 号码!!")
-            self.logger.info(f"当前请求的 URL 为: {url}")
+            self.logger.error("请检查你输入的 oid 号码!!")
+            self.logger.error(f"当前请求的 URL 为: {url}")
             return []
 
     '''
@@ -97,10 +109,9 @@ class Danmu:
 
     # 将.so文件解析并保存为JSON文件
     def parse_so_to_json(self, oid, dates):
-
         try:
             if dates == None:
-                self.logger.info("日期为空")
+                self.logger.error("日期为空")
                 return
             all_danmaku = set()  # 用集合存储所有弹幕数据
             for date in dates:

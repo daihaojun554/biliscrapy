@@ -39,7 +39,6 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -121,3 +120,23 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'DEBUG',  # 设置日志记录的级别，例如 DEBUG、INFO、WARNING、ERROR、CRITICAL
+            'class': 'logging.FileHandler',
+            'filename': '../bilibili.log',  # 指定日志文件的路径和名称
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+    }
+}
