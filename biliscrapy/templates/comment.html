@@ -44,18 +44,38 @@
             </table>
             {% if result == 'success' %}
                 <p>共 {{ total }} 条记录</p>
+                <button class="btn btn-primary" onclick="showExportFormatModal()">导出数据格式</button>
                 {% include 'pagination.html' %}
             {% endif %}
             {% if result == 'error' %}
                 <p>{{ message }}</p>
             {% endif %}
+
         </div>
 
     </div>
     <!-- 模态框 -->
     {% include 'motaikuang.html' %}
-
+    <div id="exportFormatModal" class="modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">选择导出数据格式</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <ul>
+                        <li><a href="#" onclick="exportData('json',{{ data.object_list.0.avid }})" data-format="json"
+                               data-cid="{{ cid }}">JSON</a></li>
+                        <li><a href="#" onclick="exportData('txt',{{ data.object_list.0.avid }})">TXT</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
     <script>
+        var bootstrapModal;
+
         function startFetching() {
             // 显示模态框
             var loadingModal = document.getElementById('loadingModal');
@@ -73,5 +93,70 @@
 
 
         }
+
+        function showExportFormatModal() {
+            var exportFormatModal = document.getElementById('exportFormatModal');
+            bootstrapModal = new bootstrap.Modal(exportFormatModal);
+            bootstrapModal.show();
+        }
+
+        function exportData(format, avid) {
+            console.log(format, avid)
+            var data = {
+                format: format,
+                avid: avid,
+                type: 'comment'
+            };
+            var csrftoken = getCookie('csrftoken');
+
+            fetch("/bilibili/export_data/", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "X-CSRFToken": csrftoken
+                },
+                body: JSON.stringify(data)
+            }).then(async response => {
+                const blob = await response.blob();
+                // 创建一个隐藏的 <a> 元素
+                const a = document.createElement('a');
+                // 使用URL.createObjectURL()方法生成Blob对象的URL
+                const url = URL.createObjectURL(blob);
+                // 设置 <a> 元素的href属性为生成的URL
+                a.href = url;
+                // 设置 <a> 元素的download属性为要下载的文件名
+                if (format === 'json') {
+                    a.download = `${data['avid']}_danmaku.json`;
+                } else if (format === 'txt') {
+                    a.download = `${data['avid']}_danmaku.txt`;
+                }
+
+                // 模拟点击 <a> 元素，以触发文件下载
+                a.click();
+                // 释放URL对象
+                URL.revokeObjectURL(url);
+            })
+                .catch(error => {
+                    console.log(error);
+                });
+            bootstrapModal.hide()
+        }
+
+        // 获取 cookie 的值
+        function getCookie(name) {
+            var cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                var cookies = document.cookie.split(';');
+                for (var i = 0; i < cookies.length; i++) {
+                    var cookie = cookies[i].trim();
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+
     </script>
 {% endblock %}
