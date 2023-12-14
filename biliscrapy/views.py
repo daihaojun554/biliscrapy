@@ -281,17 +281,37 @@ class DateTimeEncoder(json.JSONEncoder):
 
 def export_data(request):
     logger.info(request.method)
+
     if request.method == 'POST':
-        data = json.loads(request.body.decode('utf-8'))
-        format_ = data.get('format')
-        cid = data.get('cid')
-        logger.info(f"{format_}======>{cid}")
-        if format_ == 'json':
-            #         从数据库中查询弹幕的信息，并且返回给前端，前端去下载一个cid—danmaku.json文件
-            danmakus = BiliDanmu.objects.filter(cid=cid).values()
-            return JsonResponse(list(danmakus), encoder=DateTimeEncoder, safe=False)
-        if format_ == 'txt':
-            danmakus = BiliDanmu.objects.filter(cid=cid).values()
-            danmakus = [d['content'] + "," + str(d['ctime']) + "," + d['mode'] + ',' + d['id'] for d in danmakus]
-            return HttpResponse('\n'.join(danmakus))
+        try:
+            data = json.loads(request.body.decode('utf-8'))
+            format_ = data.get('format')
+            type = data.get('type')
+            if type == 'danmaku':
+                print(type, 'sssssssssssssssssss')
+                cid = data.get('cid')
+                logger.info(f"开始导出,数据,数据类型为，{type}，cid为{cid}")
+                if format_ == 'json':
+                    # 从数据库中查询弹幕的信息，并且返回给前端，前端去下载一个cid—danmaku.json文件
+                    danmakus = BiliDanmu.objects.filter(cid=cid).values()
+                    return JsonResponse(list(danmakus), encoder=DateTimeEncoder, safe=False)
+                if format_ == 'txt':
+                    danmakus = BiliDanmu.objects.filter(cid=cid).values()
+                    danmakus = [d['content'] + "," + str(d['ctime']) + "," + d['mode'] + ',' + d['id'] for d in
+                                danmakus]
+                    return HttpResponse('\n'.join(danmakus))
+            if type == 'comment':
+                avid = data.get('avid')
+                logger.info(f"开始导出数据,数据类型为，{type}，avid{avid}")
+                if format_ == 'json':
+                    # 从数据库中查询弹幕的信息，并且返回给前端，前端去下载一个avid—comment.json文件
+                    comments = BiliComment.objects.filter(avid=avid).values()
+                    return JsonResponse(list(comments), encoder=DateTimeEncoder, safe=False)
+                if format_ == 'txt':
+                    comments = BiliComment.objects.filter(avid=avid).values()
+                    comments = [d['uname'] + "," + str(d['current_level']) + "," + str(d['like']) + ',' + d[
+                        'sex'] + "," + str(d['ctime']) + "," + d['message'] for d in comments]
+                    return HttpResponse('\n'.join(comments))
+        except Exception as e:
+            logger.error(e)
     return render(request, 'danmaku.html')
