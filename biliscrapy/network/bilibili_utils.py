@@ -1,4 +1,3 @@
-import datetime
 import time
 
 import requests
@@ -39,7 +38,6 @@ class bili_utils:
         else:
             self.logger.info(f"请输入正确的链接地址或BV号！,{bvorurl}")
             return "BV1111111111"
- 
     '''
         av 就是 oid 评论里面的参数
     '''
@@ -119,7 +117,7 @@ class bili_utils:
             # 写入当前文件
             f.write(json.dumps(cookies))
         # 写入成功
-        self.logger.info('写入成功{}'.format(cookies) )
+        self.logger.info('写入成功{}'.format(cookies))
         driver.quit()
         return
 
