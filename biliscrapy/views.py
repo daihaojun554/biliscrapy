@@ -27,14 +27,16 @@ def danmaku(request):
         }
         if bv.startswith("https://www.bilibili.com/video/BV") or bv.startswith("BV") or bv.startswith("bv"):
             danmu = Danmu()
-            cid = danmu.bv2cid(bv)
+            vv = BiliVideo.objects.filter(bvid=bvid).values()
+            cid = vv[0]['oid'] if vv else danmu.bv2cid(bv)
             bvid_exists = BiliDanmu.objects.filter(cid=cid).exists()
             if not bvid_exists:
                 dates = danmu.get_available_dates(cid)  # 获取视频的所有日期列表
                 danmu.down_so_files(cid, dates)  # 下载所有弹ci幕文件
                 unique_danmakus = danmu.parse_so_to_json(cid, dates)  # 解析并保存为 JSON 文件
                 if unique_danmakus is None:
-                    return render(request, 'danmaku.html', context.update({'message': '解析弹幕失败，请检查BV号是否正确！'}))
+                    return render(request, 'danmaku.html',
+                                  context.update({'message': '解析弹幕失败，请检查BV号是否正确！'}))
                 danmu_objects = [
                     BiliDanmu(
                         id=danmaku['id'],
@@ -107,13 +109,16 @@ def comment(request):
         context = {
             'result': 'error',
             'data': [],
-            'message': '请输入正确的链接地址或BV号！'
+            'message': '请输入正确的链接地址或BV号！',
+            'cid': ''
         }
         c = Comments()
         bv_ = utils.bv_get(bv) if bv.startswith("https://www.bilibili.com/video/BV") or bv.startswith(
             "BV") or bv.startswith("bv") else bv
-        print(bv_, "bv_")
-        avid = utils.bv2av(bv_)
+        print(f'bv_====>{bv_}')
+        vv = BiliVideo.objects.filter(bvid=bv_).values()
+        # print(vv[0]['avid'], 'sadjkaskjadssajasjdsjkaaashhakads')
+        avid = vv[0]['avid'] if vv else utils.bv2av(bv_)
         print(avid, "avid")
         if avid is None:
             context = {
