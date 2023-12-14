@@ -38,22 +38,7 @@ class Comments:
             self.cookies_data = json.load(file)
         self.cookies = {cookie['name']: cookie['value'] for cookie in self.cookies_data}
         self.utils = bili_utils()
-        self.logger = logging.getLogger(__name__)
-        self.logger.setLevel(logging.DEBUG)
-        formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-        # 添加文件处理程序
-        file_handler = logging.FileHandler('bilibilicomment.log',encoding='utf-8')
-        file_handler.setLevel(logging.DEBUG)
-        file_handler.setFormatter(formatter)
-        self.logger.addHandler(file_handler)
-
-        # 添加控制台处理程序
-        console_handler = logging.StreamHandler()
-        console_handler.setLevel(logging.INFO)
-        console_handler.setFormatter(formatter)
-        self.logger.addHandler(console_handler)
-
-       
+        self.logger = logging.getLogger('log')
 
     def extract_comments(self, replies):
         extracted_comments = []
@@ -102,13 +87,13 @@ class Comments:
             comments.extend(new_comments)  # 将新的评论添加到列表中
             self.logger.info(f"提取到了{len(new_comments)}条评论，从第 {page_num} 页")
             if len(new_comments) == 0:
-                self.logger.info("提取完毕所有评论，共提取到{}条评论！=====>avid{}".format(len(comments),avid))
+                self.logger.info("提取完毕所有评论，共提取到{}条评论！=====>avid{}".format(len(comments), avid))
                 break
             # 判断是否有下一页
             total_count = data['data']['page']['count']
             total_pages = (total_count + page_size - 1) // page_size  # 计算总页数
             if page_num >= total_pages:
-                self.logger.info("提取完毕所有评论，共提取到{}条评论！=====>avid{}".format(len(comments),avid))
+                self.logger.info("提取完毕所有评论，共提取到{}条评论！=====>avid{}".format(len(comments), avid))
                 break
 
             # 构建下一页的URL

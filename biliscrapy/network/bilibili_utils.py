@@ -16,14 +16,9 @@ import logging
 
 class bili_utils:
     def __init__(self):
-        self.logger = logging.getLogger(__name__)
-        self.logger.setLevel(logging.INFO)
-        console_handler = logging.StreamHandler()
-        console_handler.setLevel(logging.INFO)
-        formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-        console_handler.setFormatter(formatter)
-        self.logger.addHandler(console_handler)
-        self.logger.info("初始化完成")
+        self.logger = logging.getLogger('log')
+
+
     def bv_get(self, bvorurl):
         # https://api.bilibili.com/x/web-interface/view?bvid=BV1uG41197Tf
         # 将bv提取出来
@@ -45,6 +40,7 @@ class bili_utils:
         else:
             self.logger.info(f"请输入正确的链接地址或BV号！,{bvorurl}")
             return "BV1111111111"
+
     '''
         av 就是 oid 评论里面的参数
     '''

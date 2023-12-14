@@ -39,20 +39,8 @@ class Danmu:
             self.cookies_data = json.load(file)
         self.cookies = {cookie['name']: cookie['value'] for cookie in self.cookies_data}
         self.headers = headers
-        self.logger = logging.getLogger(__name__)
-        self.logger.setLevel(logging.DEBUG)
-        formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-        # 添加文件处理程序
-        file_handler = logging.FileHandler('bilibilidanmu.log',encoding='utf-8')
-        file_handler.setLevel(logging.DEBUG)
-        file_handler.setFormatter(formatter)
-        self.logger.addHandler(file_handler)
+        self.logger = logging.getLogger('log')
         
-        # 添加控制台处理程序
-        console_handler = logging.StreamHandler()
-        console_handler.setLevel(logging.INFO)
-        console_handler.setFormatter(formatter)
-        self.logger.addHandler(console_handler)
        
 
     def bv2cid(self, bvorurl):
