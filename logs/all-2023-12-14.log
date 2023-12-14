@@ -1,0 +1,32 @@
+[2023-12-14 16:40:31,063] [autoreload.py:677] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2023-12-14 16:41:29,906] [autoreload.py:266] [autoreload:trigger_reload] [INFO]- D:\python_code\django_site\biliscrapy\network\bilibili_comment.py changed, reloading.
+[2023-12-14 16:41:30,639] [autoreload.py:677] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2023-12-14 16:41:43,376] [autoreload.py:266] [autoreload:trigger_reload] [INFO]- D:\python_code\django_site\biliscrapy\network\bilibili_comment.py changed, reloading.
+[2023-12-14 16:41:44,263] [autoreload.py:677] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2023-12-14 16:42:09,023] [autoreload.py:266] [autoreload:trigger_reload] [INFO]- D:\python_code\django_site\biliscrapy\network\bilibili_danmu.py changed, reloading.
+[2023-12-14 16:42:09,967] [autoreload.py:677] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2023-12-14 16:42:27,785] [autoreload.py:266] [autoreload:trigger_reload] [INFO]- D:\python_code\django_site\biliscrapy\network\bilibili_utils.py changed, reloading.
+[2023-12-14 16:42:29,759] [autoreload.py:677] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2023-12-14 16:42:37,510] [autoreload.py:266] [autoreload:trigger_reload] [INFO]- D:\python_code\django_site\biliscrapy\network\bilibili_utils.py changed, reloading.
+[2023-12-14 16:42:39,555] [autoreload.py:677] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2023-12-14 16:43:43,458] [autoreload.py:266] [autoreload:trigger_reload] [INFO]- D:\python_code\django_site\biliscrapy\views.py changed, reloading.
+[2023-12-14 16:43:44,825] [autoreload.py:677] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2023-12-14 16:43:54,704] [bilibili_utils.py:27] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 16:43:54,706] [bilibili_utils.py:31] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1QN4y1U7u2
+[2023-12-14 16:43:54,707] [views.py:120] [views:comment] [INFO]- bv_====>BV1QN4y1U7u2
+[2023-12-14 16:43:54,946] [basehttp.py:187] [basehttp:log_message] [INFO]- "POST /bilibili/comment.html HTTP/1.1" 200 24464
+[2023-12-14 16:43:56,596] [bilibili_utils.py:27] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 16:43:56,598] [bilibili_utils.py:31] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1QN4y1U7u2
+[2023-12-14 16:43:56,598] [views.py:120] [views:comment] [INFO]- bv_====>BV1QN4y1U7u2
+[2023-12-14 16:43:56,774] [basehttp.py:187] [basehttp:log_message] [INFO]- "POST /bilibili/comment.html HTTP/1.1" 200 26239
+[2023-12-14 16:44:19,071] [autoreload.py:266] [autoreload:trigger_reload] [INFO]- D:\python_code\django_site\biliscrapy\views.py changed, reloading.
+[2023-12-14 16:44:20,099] [autoreload.py:677] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2023-12-14 16:45:25,999] [autoreload.py:266] [autoreload:trigger_reload] [INFO]- D:\python_code\django_site\biliscrapy\views.py changed, reloading.
+[2023-12-14 16:45:26,857] [autoreload.py:677] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2023-12-14 16:45:49,784] [autoreload.py:266] [autoreload:trigger_reload] [INFO]- D:\python_code\django_site\biliscrapy\views.py changed, reloading.
+[2023-12-14 16:45:50,614] [autoreload.py:677] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2023-12-14 16:46:03,000] [bilibili_utils.py:27] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 16:46:03,000] [bilibili_utils.py:31] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1QN4y1U7u2
+[2023-12-14 16:46:03,001] [views.py:120] [views:comment] [INFO]- bv_====>BV1QN4y1U7u2
+[2023-12-14 16:46:03,020] [views.py:124] [views:comment] [INFO]- avid=====>875923868
+[2023-12-14 16:46:03,200] [basehttp.py:187] [basehttp:log_message] [INFO]- "POST /bilibili/comment.html HTTP/1.1" 200 27766
