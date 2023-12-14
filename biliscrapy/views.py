@@ -14,6 +14,8 @@ from django.http import JsonResponse, HttpResponse
 # Create your views here.
 utils = bili_utils()
 
+logger = logging.getLogger('log')
+
 
 def danmaku(request):
     if request.method == 'POST':
@@ -56,7 +58,7 @@ def danmaku(request):
             danmaku_count = BiliDanmu.objects.filter(cid=cid).count()
             try:
                 # 尝试更新视频的抓取弹幕的状态
-                print(bvid)
+                logger.info(bvid)
                 video = BiliVideo.objects.get(bvid=bvid)
                 video.danmu_fetched = True
                 video.danmaku_count = danmaku_count
@@ -67,7 +69,7 @@ def danmaku(request):
                 if info is None:
                     return render(request, 'danmaku.html', context)
                 cid = utils.bv2cid(bvid)
-                print(cid, 'cid')
+                logger.info(f'{cid}, cid')
                 video = BiliVideo(bvid=bvid,
                                   avid=info['aid'],
                                   oid=cid,
@@ -81,7 +83,7 @@ def danmaku(request):
                                   danmaku_count=danmaku_count
                                   )  # 设置弹幕抓取状态
                 video.save()
-                print("新视频信息已添加")
+                logger.info("新视频信息已添加")
             # 查询数据库并返回结果
             # 查询数据库并返回结果
             danmakus = BiliDanmu.objects.filter(cid=cid).values().order_by('ctime')
@@ -115,11 +117,11 @@ def comment(request):
         c = Comments()
         bv_ = utils.bv_get(bv) if bv.startswith("https://www.bilibili.com/video/BV") or bv.startswith(
             "BV") or bv.startswith("bv") else bv
-        print(f'bv_====>{bv_}')
+        logger.info(f'bv_====>{bv_}')
         vv = BiliVideo.objects.filter(bvid=bv_).values()
-        # print(vv[0]['avid'], 'sadjkaskjadssajasjdsjkaaashhakads')
+        # logger.info(vv[0]['avid'], 'sadjkaskjadssajasjdsjkaaashhakads')
         avid = vv[0]['avid'] if vv else utils.bv2av(bv_)
-        print(avid, "avid")
+        logger.info(f"avid=====>{avid}")
         if avid is None:
             context = {
                 'result': 'error',
@@ -278,12 +280,12 @@ class DateTimeEncoder(json.JSONEncoder):
 
 
 def export_data(request):
-    print(request.method)
+    logger.info(request.method)
     if request.method == 'POST':
         data = json.loads(request.body.decode('utf-8'))
         format_ = data.get('format')
         cid = data.get('cid')
-        print(format_, cid)
+        logger.info(f"{format_}======>{cid}")
         if format_ == 'json':
             #         从数据库中查询弹幕的信息，并且返回给前端，前端去下载一个cid—danmaku.json文件
             danmakus = BiliDanmu.objects.filter(cid=cid).values()
