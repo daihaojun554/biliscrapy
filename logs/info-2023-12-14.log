@@ -8,3 +8,44 @@
 [2023-12-14 16:46:03,000] [bilibili_utils.py:31] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1QN4y1U7u2
 [2023-12-14 16:46:03,001] [views.py:120] [views:comment] [INFO]- bv_====>BV1QN4y1U7u2
 [2023-12-14 16:46:03,020] [views.py:124] [views:comment] [INFO]- avid=====>875923868
+[2023-12-14 17:14:07,788] [bilibili_utils.py:27] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 17:14:07,790] [bilibili_utils.py:31] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1QN4y1U7u2
+[2023-12-14 17:14:07,791] [views.py:120] [views:comment] [INFO]- bv_====>BV1QN4y1U7u2
+[2023-12-14 17:14:07,809] [views.py:124] [views:comment] [INFO]- avid=====>875923868
+[2023-12-14 17:16:01,917] [bilibili_utils.py:27] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 17:16:01,918] [bilibili_utils.py:31] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1QN4y1U7u2
+[2023-12-14 17:16:01,919] [views.py:120] [views:comment] [INFO]- bv_====>BV1QN4y1U7u2
+[2023-12-14 17:16:01,939] [views.py:124] [views:comment] [INFO]- avid=====>875923868
+[2023-12-14 17:16:05,913] [bilibili_utils.py:27] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 17:16:05,914] [bilibili_utils.py:31] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1QN4y1U7u2
+[2023-12-14 17:16:05,915] [views.py:120] [views:comment] [INFO]- bv_====>BV1QN4y1U7u2
+[2023-12-14 17:16:05,935] [views.py:124] [views:comment] [INFO]- avid=====>875923868
+[2023-12-14 17:16:07,265] [bilibili_utils.py:27] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 17:16:07,266] [bilibili_utils.py:31] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1QN4y1U7u2
+[2023-12-14 17:16:07,266] [views.py:120] [views:comment] [INFO]- bv_====>BV1QN4y1U7u2
+[2023-12-14 17:16:07,283] [views.py:124] [views:comment] [INFO]- avid=====>875923868
+[2023-12-14 17:17:29,265] [bilibili_utils.py:27] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 17:17:29,266] [bilibili_utils.py:31] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1QN4y1U7u2
+[2023-12-14 17:17:29,267] [views.py:120] [views:comment] [INFO]- bv_====>BV1QN4y1U7u2
+[2023-12-14 17:17:29,283] [views.py:124] [views:comment] [INFO]- avid=====>875923868
+[2023-12-14 17:19:01,552] [bilibili_utils.py:27] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 17:19:01,553] [bilibili_utils.py:31] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1QN4y1U7u2
+[2023-12-14 17:19:01,553] [views.py:120] [views:comment] [INFO]- bv_====>BV1QN4y1U7u2
+[2023-12-14 17:19:01,566] [views.py:124] [views:comment] [INFO]- avid=====>875923868
+[2023-12-14 17:22:09,119] [bilibili_utils.py:27] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 17:22:09,120] [bilibili_utils.py:31] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1QN4y1U7u2
+[2023-12-14 17:22:09,168] [views.py:61] [views:danmaku] [INFO]- BV1QN4y1U7u2
+[2023-12-14 17:22:23,168] [views.py:283] [views:export_data] [INFO]- POST
+[2023-12-14 17:22:23,169] [views.py:291] [views:export_data] [INFO]- json======>1332107518
+[2023-12-14 17:33:45,850] [bilibili_utils.py:27] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 17:33:45,851] [bilibili_utils.py:31] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1QN4y1U7u2
+[2023-12-14 17:33:45,852] [views.py:120] [views:comment] [INFO]- bv_====>BV1QN4y1U7u2
+[2023-12-14 17:33:45,868] [views.py:124] [views:comment] [INFO]- avid=====>875923868
+[2023-12-14 17:33:49,152] [views.py:283] [views:export_data] [INFO]- POST
+[2023-12-14 17:33:49,153] [views.py:303] [views:export_data] [INFO]- 开始导出数据,数据类型为，comment，avid875923868
+[2023-12-14 17:35:01,489] [views.py:283] [views:export_data] [INFO]- POST
+[2023-12-14 17:35:01,490] [views.py:303] [views:export_data] [INFO]- 开始导出数据,数据类型为，comment，avid875923868
+[2023-12-14 17:36:03,837] [views.py:283] [views:export_data] [INFO]- POST
+[2023-12-14 17:36:03,839] [views.py:303] [views:export_data] [INFO]- 开始导出数据,数据类型为，comment，avid875923868
+[2023-12-14 17:36:29,537] [views.py:283] [views:export_data] [INFO]- POST
+[2023-12-14 17:36:29,538] [views.py:303] [views:export_data] [INFO]- 开始导出数据,数据类型为，comment，avid875923868
