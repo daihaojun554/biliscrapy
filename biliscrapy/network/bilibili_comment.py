@@ -120,7 +120,7 @@ class Comments:
         # 写入JSON文件
         os.makedirs("./data/comment/", exist_ok=True)  # 创建多层目录
         file_path = f'./data/comment/{avid}_{page_num}-{page_size}_{len(comments)}.json'
-        if len(comments) < 1000:
+        if len(comments) < 2000:
             with open(file_path, 'w', encoding='utf-8') as f:
                 json.dump(comments, f, indent=4, ensure_ascii=False)
         return comments
