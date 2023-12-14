@@ -34,7 +34,7 @@ class bili_utils:
                 self.logger.info("你输入的链接地址有误！")
                 return
         elif bv_identifier in bvorurl:  # 如果输入的是BV号
-            self.logger.info("你输入的是BV号{bvorurl}，正在解析...")
+            self.logger.info(f"你输入的是BV号{bvorurl}，正在解析...")
             bv = bvorurl
             return bv
         else:

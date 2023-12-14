@@ -1,3 +1,5 @@
+import time
+
 from django.core.paginator import Paginator
 from django.shortcuts import render, redirect
 from django.utils.timezone import make_aware
@@ -120,7 +122,13 @@ def comment(request):
         logger.info(f'bv_====>{bv_}')
         vv = BiliVideo.objects.filter(bvid=bv_).values()
         # logger.info(vv[0]['avid'], 'sadjkaskjadssajasjdsjkaaashhakads')
-        avid = vv[0]['avid'] if vv else utils.bv2av(bv_)
+        av = utils.bv2av(bv_)
+        av_count = 1
+        while av is None:
+            logger.info(f"av is None, retrying...{av_count}")
+            av_count += 1
+            av = utils.bv2av(bv_)
+        avid = vv[0]['avid'] if vv else av
         logger.info(f"avid=====>{avid}")
         if avid is None:
             context = {
@@ -129,58 +137,64 @@ def comment(request):
                 'message': 'b站服务器返回错误，请重新尝试'
             }
             return render(request, 'comment.html', context)
-        if avid:
-            comments_exist = BiliComment.objects.filter(avid=avid).exists()
-            if not comments_exist:
-                comments = c.get_comments(bv)
-                comment_obj = [BiliComment(
-                    avid=avid,
-                    uname=cmt['uname'],
-                    current_level=cmt['current_level'],
-                    like=cmt['like'],
-                    sex=cmt['sex'],
-                    ctime=make_aware(datetime.fromtimestamp(cmt['ctime'])),
-                    message=cmt['message']
-                ) for cmt in comments]
-                BiliComment.objects.bulk_create(comment_obj)
-            bili_comment_count = BiliComment.objects.filter(avid=avid).count()
-            try:
-                # 尝试更新视频的抓取弹幕的状态
-                video = BiliVideo.objects.get(avid=avid)
-                video.comment_fetched = True
-                video.comment_count = bili_comment_count
-                video.save()
-            except BiliVideo.DoesNotExist:
-                # 如果视频记录不存在，则创建新的视频记录
-                info = utils.get_info_by_bv(bv_)
-                if info is None:
-                    return render(request, 'comment.html', context)
+        comments_exist = BiliComment.objects.filter(avid=avid).exists()
+        if not comments_exist:
+            comments = c.get_comments(bv)
+            comment_obj = [BiliComment(
+                avid=avid,
+                uname=cmt['uname'],
+                current_level=cmt['current_level'],
+                like=cmt['like'],
+                sex=cmt['sex'],
+                ctime=make_aware(datetime.fromtimestamp(cmt['ctime'])),
+                message=cmt['message']
+            ) for cmt in comments]
+            BiliComment.objects.bulk_create(comment_obj)
+        bili_comment_count = BiliComment.objects.filter(avid=avid).count()
+        try:
+            # 尝试更新视频的抓取弹幕的状态
+            video = BiliVideo.objects.get(avid=avid)
+            video.comment_fetched = True
+            video.comment_count = bili_comment_count
+            video.save()
+        except BiliVideo.DoesNotExist:
+            # 如果视频记录不存在，则创建新的视频记录
+            info = utils.get_info_by_bv(bv_)
+            if info is None:
+                return render(request, 'comment.html', context)
+            cid = utils.bv2cid(bv_)
+            # 如果cid 为空的话就一直重新尝试获取cid
+            cid_count = 1
+            while cid is None:
                 cid = utils.bv2cid(bv_)
-                video = BiliVideo(avid=avid,
-                                  bvid=bv_,
-                                  oid=cid,
-                                  title=info['title'],
-                                  author=info['owner']['name'],
-                                  tag=info['tname'],
-                                  pubdate=make_aware(datetime.fromtimestamp(info['pubdate'])),
-                                  pic=info['pic'],
-                                  desc=info['desc'],
-                                  comment_fetched=True,
-                                  comment_count=bili_comment_count
-                                  )  # 设置弹幕抓取状态
-                video.save()
-            comments = BiliComment.objects.filter(avid=avid).values().order_by('ctime')
-            paginator = Paginator(comments, 15)
-            page_number = request.POST.get('page', 1)
-            page_obj = paginator.get_page(page_number)
-            context = {
-                "url": url,
-                'result': 'success',
-                'bvid': bv,
-                'total': paginator.count,
-                'data': page_obj,
-                "new_request": not comments_exist,
-            }
+                logger.info(f'{cid}, cid,尝试了{cid_count}次')
+                cid_count += 1
+                time.sleep(3)
+            video = BiliVideo(avid=avid,
+                              bvid=bv_,
+                              oid=cid,
+                              title=info['title'],
+                              author=info['owner']['name'],
+                              tag=info['tname'],
+                              pubdate=make_aware(datetime.fromtimestamp(info['pubdate'])),
+                              pic=info['pic'],
+                              desc=info['desc'],
+                              comment_fetched=True,
+                              comment_count=bili_comment_count
+                              )  # 设置弹幕抓取状态
+            video.save()
+        comments = BiliComment.objects.filter(avid=avid).values().order_by('ctime')
+        paginator = Paginator(comments, 15)
+        page_number = request.POST.get('page', 1)
+        page_obj = paginator.get_page(page_number)
+        context = {
+            "url": url,
+            'result': 'success',
+            'bvid': bv,
+            'total': paginator.count,
+            'data': page_obj,
+            "new_request": not comments_exist,
+        }
         return render(request, 'comment.html', context)
     return render(request, 'comment.html')
 

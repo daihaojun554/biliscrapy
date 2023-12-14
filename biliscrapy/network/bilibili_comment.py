@@ -65,6 +65,12 @@ class Comments:
         self.logger.info("Getting comments for bvorurl:{}".format(bvorurl))
         bv = self.utils.bv_get(bvorurl)
         avid = self.utils.bv2av(bv)
+        count = 1
+        while avid is None:
+            avid = self.utils.bv2av(bv)
+            count += 1
+            self.logger.info(f"avid is None, retrying...count is {count}")
+            time.sleep(3)
         self.logger.info(f"avid===>{avid}")
         comments = []  # 使用列表存储评论
 

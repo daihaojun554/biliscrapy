@@ -49,3 +49,802 @@
 [2023-12-14 17:36:03,839] [views.py:303] [views:export_data] [INFO]- 开始导出数据,数据类型为，comment，avid875923868
 [2023-12-14 17:36:29,537] [views.py:283] [views:export_data] [INFO]- POST
 [2023-12-14 17:36:29,538] [views.py:303] [views:export_data] [INFO]- 开始导出数据,数据类型为，comment，avid875923868
+[2023-12-14 17:39:43,474] [bilibili_utils.py:27] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 17:39:43,474] [bilibili_utils.py:31] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1DQ4y1G7ij
+[2023-12-14 17:39:43,475] [views.py:120] [views:comment] [INFO]- bv_====>BV1DQ4y1G7ij
+[2023-12-14 17:39:43,740] [bilibili_utils.py:55] [bilibili_utils:bv2av] [INFO]- 服务器返回错误！请稍后再试！{'code': -412, 'message': 'request was banned', 'ttl': 1}
+[2023-12-14 17:39:43,741] [views.py:124] [views:comment] [INFO]- avid=====>None
+[2023-12-14 17:39:46,129] [bilibili_utils.py:27] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 17:39:46,130] [bilibili_utils.py:31] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1DQ4y1G7ij
+[2023-12-14 17:39:46,131] [views.py:120] [views:comment] [INFO]- bv_====>BV1DQ4y1G7ij
+[2023-12-14 17:39:46,311] [bilibili_utils.py:59] [bilibili_utils:bv2av] [INFO]- 找到的avid707246745
+[2023-12-14 17:39:46,313] [views.py:124] [views:comment] [INFO]- avid=====>707246745
+[2023-12-14 17:39:46,343] [bilibili_comment.py:65] [bilibili_comment:get_comments] [INFO]- Getting comments for bvorurl:https://www.bilibili.com/video/BV1DQ4y1G7ij?spm_id_from=333.1007.tianma.2-3-6.click
+[2023-12-14 17:39:46,344] [bilibili_utils.py:27] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 17:39:46,345] [bilibili_utils.py:31] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1DQ4y1G7ij
+[2023-12-14 17:39:46,530] [bilibili_utils.py:59] [bilibili_utils:bv2av] [INFO]- 找到的avid707246745
+[2023-12-14 17:39:46,531] [bilibili_comment.py:68] [bilibili_comment:get_comments] [INFO]- avid===>707246745
+[2023-12-14 17:39:46,726] [bilibili_comment.py:88] [bilibili_comment:get_comments] [INFO]- 提取到了45条评论，从第 1 页
+[2023-12-14 17:39:46,727] [bilibili_comment.py:101] [bilibili_comment:get_comments] [INFO]- 开始提取第2页评论
+[2023-12-14 17:39:47,946] [bilibili_comment.py:88] [bilibili_comment:get_comments] [INFO]- 提取到了30条评论，从第 2 页
+[2023-12-14 17:39:47,947] [bilibili_comment.py:101] [bilibili_comment:get_comments] [INFO]- 开始提取第3页评论
+[2023-12-14 17:39:48,798] [bilibili_comment.py:88] [bilibili_comment:get_comments] [INFO]- 提取到了29条评论，从第 3 页
+[2023-12-14 17:39:48,799] [bilibili_comment.py:101] [bilibili_comment:get_comments] [INFO]- 开始提取第4页评论
+[2023-12-14 17:39:49,940] [bilibili_comment.py:88] [bilibili_comment:get_comments] [INFO]- 提取到了26条评论，从第 4 页
+[2023-12-14 17:39:49,942] [bilibili_comment.py:101] [bilibili_comment:get_comments] [INFO]- 开始提取第5页评论
+[2023-12-14 17:39:50,973] [bilibili_comment.py:88] [bilibili_comment:get_comments] [INFO]- 提取到了23条评论，从第 5 页
+[2023-12-14 17:39:50,974] [bilibili_comment.py:101] [bilibili_comment:get_comments] [INFO]- 开始提取第6页评论
+[2023-12-14 17:39:52,358] [bilibili_comment.py:88] [bilibili_comment:get_comments] [INFO]- 提取到了14条评论，从第 6 页
+[2023-12-14 17:39:52,359] [bilibili_comment.py:101] [bilibili_comment:get_comments] [INFO]- 开始提取第7页评论
+[2023-12-14 17:39:53,738] [bilibili_comment.py:88] [bilibili_comment:get_comments] [INFO]- 提取到了0条评论，从第 7 页
+[2023-12-14 17:39:53,739] [bilibili_comment.py:90] [bilibili_comment:get_comments] [INFO]- 提取完毕所有评论，共提取到167条评论！=====>avid707246745
+[2023-12-14 17:39:53,740] [bilibili_comment.py:103] [bilibili_comment:get_comments] [INFO]- 总共167条评论！
+[2023-12-14 17:39:54,244] [bilibili_utils.py:78] [bilibili_utils:bv2cid] [ERROR]- 服务器返回错误！请稍后再试！
+[2023-12-14 17:39:54,481] [bilibili_utils.py:78] [bilibili_utils:bv2cid] [ERROR]- 服务器返回错误！请稍后再试！
+[2023-12-14 17:39:54,696] [bilibili_utils.py:75] [bilibili_utils:bv2cid] [INFO]- 提取出来的cid是：1364397732
+[2023-12-14 17:40:05,197] [bilibili_utils.py:27] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 17:40:05,198] [bilibili_utils.py:31] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1DQ4y1G7ij
+[2023-12-14 17:40:05,199] [views.py:120] [views:comment] [INFO]- bv_====>BV1DQ4y1G7ij
+[2023-12-14 17:40:05,377] [bilibili_utils.py:59] [bilibili_utils:bv2av] [INFO]- 找到的avid707246745
+[2023-12-14 17:40:05,378] [views.py:124] [views:comment] [INFO]- avid=====>707246745
+[2023-12-14 17:40:06,731] [bilibili_utils.py:27] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 17:40:06,732] [bilibili_utils.py:31] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1DQ4y1G7ij
+[2023-12-14 17:40:06,733] [views.py:120] [views:comment] [INFO]- bv_====>BV1DQ4y1G7ij
+[2023-12-14 17:40:06,932] [bilibili_utils.py:59] [bilibili_utils:bv2av] [INFO]- 找到的avid707246745
+[2023-12-14 17:40:06,933] [views.py:124] [views:comment] [INFO]- avid=====>707246745
+[2023-12-14 17:40:18,556] [bilibili_utils.py:27] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 17:40:18,556] [bilibili_utils.py:31] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1DQ4y1G7ij
+[2023-12-14 17:40:18,557] [views.py:120] [views:comment] [INFO]- bv_====>BV1DQ4y1G7ij
+[2023-12-14 17:40:18,739] [bilibili_utils.py:59] [bilibili_utils:bv2av] [INFO]- 找到的avid707246745
+[2023-12-14 17:40:18,740] [views.py:124] [views:comment] [INFO]- avid=====>707246745
+[2023-12-14 17:40:20,942] [bilibili_utils.py:27] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 17:40:20,943] [bilibili_utils.py:31] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1DQ4y1G7ij
+[2023-12-14 17:40:20,945] [views.py:120] [views:comment] [INFO]- bv_====>BV1DQ4y1G7ij
+[2023-12-14 17:40:21,157] [bilibili_utils.py:59] [bilibili_utils:bv2av] [INFO]- 找到的avid707246745
+[2023-12-14 17:40:21,159] [views.py:124] [views:comment] [INFO]- avid=====>707246745
+[2023-12-14 17:46:50,340] [bilibili_utils.py:27] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 17:46:50,341] [bilibili_utils.py:31] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1QN4y1U7u2
+[2023-12-14 17:46:50,342] [views.py:120] [views:comment] [INFO]- bv_====>BV1QN4y1U7u2
+[2023-12-14 17:46:50,363] [views.py:124] [views:comment] [INFO]- avid=====>875923868
+[2023-12-14 17:46:59,664] [bilibili_utils.py:27] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 17:46:59,665] [bilibili_utils.py:31] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1DQ4y1G7ij
+[2023-12-14 17:46:59,665] [views.py:120] [views:comment] [INFO]- bv_====>BV1DQ4y1G7ij
+[2023-12-14 17:46:59,839] [bilibili_utils.py:59] [bilibili_utils:bv2av] [INFO]- 找到的avid707246745
+[2023-12-14 17:46:59,840] [views.py:124] [views:comment] [INFO]- avid=====>707246745
+[2023-12-14 17:47:00,361] [bilibili_utils.py:78] [bilibili_utils:bv2cid] [ERROR]- 服务器返回错误！请稍后再试！
+[2023-12-14 17:47:00,578] [bilibili_utils.py:75] [bilibili_utils:bv2cid] [INFO]- 提取出来的cid是：1364397732
+[2023-12-14 17:47:00,783] [bilibili_utils.py:78] [bilibili_utils:bv2cid] [ERROR]- 服务器返回错误！请稍后再试！
+[2023-12-14 17:47:01,004] [bilibili_utils.py:75] [bilibili_utils:bv2cid] [INFO]- 提取出来的cid是：1364397732
+[2023-12-14 17:47:01,005] [views.py:162] [views:comment] [INFO]- None, cid,尝试了1次
+[2023-12-14 17:47:01,221] [bilibili_utils.py:78] [bilibili_utils:bv2cid] [ERROR]- 服务器返回错误！请稍后再试！
+[2023-12-14 17:47:01,425] [bilibili_utils.py:75] [bilibili_utils:bv2cid] [INFO]- 提取出来的cid是：1364397732
+[2023-12-14 17:47:01,426] [views.py:162] [views:comment] [INFO]- None, cid,尝试了1次
+[2023-12-14 17:47:01,627] [bilibili_utils.py:78] [bilibili_utils:bv2cid] [ERROR]- 服务器返回错误！请稍后再试！
+[2023-12-14 17:47:01,824] [bilibili_utils.py:78] [bilibili_utils:bv2cid] [ERROR]- 服务器返回错误！请稍后再试！
+[2023-12-14 17:47:02,033] [bilibili_utils.py:78] [bilibili_utils:bv2cid] [ERROR]- 服务器返回错误！请稍后再试！
+[2023-12-14 17:47:02,255] [bilibili_utils.py:75] [bilibili_utils:bv2cid] [INFO]- 提取出来的cid是：1364397732
+[2023-12-14 17:47:02,256] [views.py:162] [views:comment] [INFO]- None, cid,尝试了1次
+[2023-12-14 17:47:02,472] [bilibili_utils.py:75] [bilibili_utils:bv2cid] [INFO]- 提取出来的cid是：1364397732
+[2023-12-14 17:47:02,473] [views.py:162] [views:comment] [INFO]- 1364397732, cid,尝试了1次
+[2023-12-14 17:47:18,607] [bilibili_utils.py:27] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 17:47:18,608] [bilibili_utils.py:31] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1eG411e79z
+[2023-12-14 17:47:18,609] [views.py:120] [views:comment] [INFO]- bv_====>BV1eG411e79z
+[2023-12-14 17:47:18,828] [bilibili_utils.py:55] [bilibili_utils:bv2av] [INFO]- 服务器返回错误！请稍后再试！{'code': -412, 'message': 'request was banned', 'ttl': 1}
+[2023-12-14 17:47:18,829] [views.py:124] [views:comment] [INFO]- avid=====>None
+[2023-12-14 17:47:27,008] [bilibili_utils.py:27] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 17:47:27,009] [bilibili_utils.py:31] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1eG411e79z
+[2023-12-14 17:47:27,009] [views.py:120] [views:comment] [INFO]- bv_====>BV1eG411e79z
+[2023-12-14 17:47:27,181] [bilibili_utils.py:59] [bilibili_utils:bv2av] [INFO]- 找到的avid409697953
+[2023-12-14 17:47:27,182] [views.py:124] [views:comment] [INFO]- avid=====>409697953
+[2023-12-14 17:47:27,208] [bilibili_comment.py:65] [bilibili_comment:get_comments] [INFO]- Getting comments for bvorurl:https://www.bilibili.com/video/BV1eG411e79z?spm_id_from=333.1007.tianma.1-1-1.click
+[2023-12-14 17:47:27,209] [bilibili_utils.py:27] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 17:47:27,210] [bilibili_utils.py:31] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1eG411e79z
+[2023-12-14 17:47:27,383] [bilibili_utils.py:59] [bilibili_utils:bv2av] [INFO]- 找到的avid409697953
+[2023-12-14 17:47:27,384] [bilibili_comment.py:68] [bilibili_comment:get_comments] [INFO]- avid===>409697953
+[2023-12-14 17:47:27,569] [bilibili_comment.py:88] [bilibili_comment:get_comments] [INFO]- 提取到了16条评论，从第 1 页
+[2023-12-14 17:47:27,570] [bilibili_comment.py:96] [bilibili_comment:get_comments] [INFO]- 提取完毕所有评论，共提取到16条评论！=====>avid409697953
+[2023-12-14 17:47:27,571] [bilibili_comment.py:103] [bilibili_comment:get_comments] [INFO]- 总共16条评论！
+[2023-12-14 17:47:37,038] [bilibili_utils.py:27] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 17:47:37,039] [bilibili_utils.py:31] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1eG411e79z
+[2023-12-14 17:47:37,040] [views.py:120] [views:comment] [INFO]- bv_====>BV1eG411e79z
+[2023-12-14 17:47:37,227] [bilibili_utils.py:59] [bilibili_utils:bv2av] [INFO]- 找到的avid409697953
+[2023-12-14 17:47:37,228] [views.py:124] [views:comment] [INFO]- avid=====>409697953
+[2023-12-14 17:47:37,704] [bilibili_utils.py:78] [bilibili_utils:bv2cid] [ERROR]- 服务器返回错误！请稍后再试！
+[2023-12-14 17:47:37,919] [bilibili_utils.py:75] [bilibili_utils:bv2cid] [INFO]- 提取出来的cid是：1365758679
+[2023-12-14 17:47:38,100] [bilibili_utils.py:78] [bilibili_utils:bv2cid] [ERROR]- 服务器返回错误！请稍后再试！
+[2023-12-14 17:47:38,312] [bilibili_utils.py:75] [bilibili_utils:bv2cid] [INFO]- 提取出来的cid是：1365758679
+[2023-12-14 17:47:38,313] [views.py:162] [views:comment] [INFO]- None, cid,尝试了1次
+[2023-12-14 17:47:38,490] [bilibili_utils.py:75] [bilibili_utils:bv2cid] [INFO]- 提取出来的cid是：1365758679
+[2023-12-14 17:47:38,491] [views.py:162] [views:comment] [INFO]- 1365758679, cid,尝试了1次
+[2023-12-14 17:47:41,188] [bilibili_utils.py:27] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 17:47:41,189] [bilibili_utils.py:31] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1eG411e79z
+[2023-12-14 17:47:41,190] [views.py:120] [views:comment] [INFO]- bv_====>BV1eG411e79z
+[2023-12-14 17:47:41,206] [views.py:124] [views:comment] [INFO]- avid=====>409697953
+[2023-12-14 17:47:43,082] [bilibili_utils.py:27] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 17:47:43,083] [bilibili_utils.py:31] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1eG411e79z
+[2023-12-14 17:47:43,084] [views.py:120] [views:comment] [INFO]- bv_====>BV1eG411e79z
+[2023-12-14 17:47:43,099] [views.py:124] [views:comment] [INFO]- avid=====>409697953
+[2023-12-14 17:48:22,971] [bilibili_utils.py:27] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 17:48:22,972] [bilibili_utils.py:31] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1gj411a7zn
+[2023-12-14 17:48:22,973] [views.py:122] [views:comment] [INFO]- bv_====>BV1gj411a7zn
+[2023-12-14 17:48:23,204] [bilibili_utils.py:55] [bilibili_utils:bv2av] [INFO]- 服务器返回错误！请稍后再试！{'code': -412, 'message': 'request was banned', 'ttl': 1}
+[2023-12-14 17:48:23,205] [views.py:126] [views:comment] [INFO]- avid=====>None
+[2023-12-14 17:48:30,000] [bilibili_utils.py:27] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 17:48:30,001] [bilibili_utils.py:31] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1gj411a7zn
+[2023-12-14 17:48:30,003] [views.py:122] [views:comment] [INFO]- bv_====>BV1gj411a7zn
+[2023-12-14 17:48:30,211] [bilibili_utils.py:59] [bilibili_utils:bv2av] [INFO]- 找到的avid450792491
+[2023-12-14 17:48:30,212] [views.py:126] [views:comment] [INFO]- avid=====>450792491
+[2023-12-14 17:48:30,241] [bilibili_comment.py:65] [bilibili_comment:get_comments] [INFO]- Getting comments for bvorurl:https://www.bilibili.com/video/BV1gj411a7zn?spm_id_from=333.1007.tianma.1-1-1.click
+[2023-12-14 17:48:30,242] [bilibili_utils.py:27] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 17:48:30,242] [bilibili_utils.py:31] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1gj411a7zn
+[2023-12-14 17:48:30,453] [bilibili_utils.py:55] [bilibili_utils:bv2av] [INFO]- 服务器返回错误！请稍后再试！{'code': -412, 'message': 'request was banned', 'ttl': 1}
+[2023-12-14 17:48:30,454] [bilibili_comment.py:68] [bilibili_comment:get_comments] [INFO]- avid===>None
+[2023-12-14 17:48:30,687] [bilibili_comment.py:103] [bilibili_comment:get_comments] [INFO]- 总共0条评论！
+[2023-12-14 17:49:09,609] [bilibili_utils.py:27] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 17:49:09,610] [bilibili_utils.py:31] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1gj411a7zn
+[2023-12-14 17:49:09,612] [views.py:122] [views:comment] [INFO]- bv_====>BV1gj411a7zn
+[2023-12-14 17:49:09,838] [bilibili_utils.py:55] [bilibili_utils:bv2av] [INFO]- 服务器返回错误！请稍后再试！{'code': -412, 'message': 'request was banned', 'ttl': 1}
+[2023-12-14 17:49:09,840] [views.py:126] [views:comment] [INFO]- avid=====>None
+[2023-12-14 17:49:11,476] [bilibili_utils.py:27] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 17:49:11,477] [bilibili_utils.py:31] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1gj411a7zn
+[2023-12-14 17:49:11,478] [views.py:122] [views:comment] [INFO]- bv_====>BV1gj411a7zn
+[2023-12-14 17:49:11,676] [bilibili_utils.py:59] [bilibili_utils:bv2av] [INFO]- 找到的avid450792491
+[2023-12-14 17:49:11,677] [views.py:126] [views:comment] [INFO]- avid=====>450792491
+[2023-12-14 17:49:11,716] [bilibili_comment.py:65] [bilibili_comment:get_comments] [INFO]- Getting comments for bvorurl:https://www.bilibili.com/video/BV1gj411a7zn?spm_id_from=333.1007.tianma.1-1-1.click
+[2023-12-14 17:49:11,717] [bilibili_utils.py:27] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 17:49:11,718] [bilibili_utils.py:31] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1gj411a7zn
+[2023-12-14 17:49:11,871] [bilibili_utils.py:59] [bilibili_utils:bv2av] [INFO]- 找到的avid450792491
+[2023-12-14 17:49:11,872] [bilibili_comment.py:68] [bilibili_comment:get_comments] [INFO]- avid===>450792491
+[2023-12-14 17:49:12,083] [bilibili_comment.py:88] [bilibili_comment:get_comments] [INFO]- 提取到了46条评论，从第 1 页
+[2023-12-14 17:49:12,084] [bilibili_comment.py:101] [bilibili_comment:get_comments] [INFO]- 开始提取第2页评论
+[2023-12-14 17:49:13,325] [bilibili_comment.py:88] [bilibili_comment:get_comments] [INFO]- 提取到了29条评论，从第 2 页
+[2023-12-14 17:49:13,326] [bilibili_comment.py:101] [bilibili_comment:get_comments] [INFO]- 开始提取第3页评论
+[2023-12-14 17:49:14,235] [bilibili_comment.py:88] [bilibili_comment:get_comments] [INFO]- 提取到了23条评论，从第 3 页
+[2023-12-14 17:49:14,236] [bilibili_comment.py:101] [bilibili_comment:get_comments] [INFO]- 开始提取第4页评论
+[2023-12-14 17:49:15,284] [bilibili_comment.py:88] [bilibili_comment:get_comments] [INFO]- 提取到了20条评论，从第 4 页
+[2023-12-14 17:49:15,285] [bilibili_comment.py:101] [bilibili_comment:get_comments] [INFO]- 开始提取第5页评论
+[2023-12-14 17:49:16,489] [bilibili_comment.py:88] [bilibili_comment:get_comments] [INFO]- 提取到了22条评论，从第 5 页
+[2023-12-14 17:49:16,491] [bilibili_comment.py:101] [bilibili_comment:get_comments] [INFO]- 开始提取第6页评论
+[2023-12-14 17:49:18,189] [bilibili_comment.py:88] [bilibili_comment:get_comments] [INFO]- 提取到了21条评论，从第 6 页
+[2023-12-14 17:49:18,190] [bilibili_comment.py:101] [bilibili_comment:get_comments] [INFO]- 开始提取第7页评论
+[2023-12-14 17:49:18,999] [bilibili_comment.py:88] [bilibili_comment:get_comments] [INFO]- 提取到了20条评论，从第 7 页
+[2023-12-14 17:49:19,000] [bilibili_comment.py:101] [bilibili_comment:get_comments] [INFO]- 开始提取第8页评论
+[2023-12-14 17:49:20,048] [bilibili_comment.py:88] [bilibili_comment:get_comments] [INFO]- 提取到了20条评论，从第 8 页
+[2023-12-14 17:49:20,049] [bilibili_comment.py:101] [bilibili_comment:get_comments] [INFO]- 开始提取第9页评论
+[2023-12-14 17:49:21,078] [bilibili_comment.py:88] [bilibili_comment:get_comments] [INFO]- 提取到了20条评论，从第 9 页
+[2023-12-14 17:49:21,079] [bilibili_comment.py:101] [bilibili_comment:get_comments] [INFO]- 开始提取第10页评论
+[2023-12-14 17:49:22,363] [bilibili_comment.py:88] [bilibili_comment:get_comments] [INFO]- 提取到了20条评论，从第 10 页
+[2023-12-14 17:49:22,364] [bilibili_comment.py:101] [bilibili_comment:get_comments] [INFO]- 开始提取第11页评论
+[2023-12-14 17:49:23,515] [bilibili_comment.py:88] [bilibili_comment:get_comments] [INFO]- 提取到了21条评论，从第 11 页
+[2023-12-14 17:49:23,517] [bilibili_comment.py:101] [bilibili_comment:get_comments] [INFO]- 开始提取第12页评论
+[2023-12-14 17:49:24,677] [bilibili_comment.py:88] [bilibili_comment:get_comments] [INFO]- 提取到了23条评论，从第 12 页
+[2023-12-14 17:49:24,679] [bilibili_comment.py:101] [bilibili_comment:get_comments] [INFO]- 开始提取第13页评论
+[2023-12-14 17:49:25,829] [bilibili_comment.py:88] [bilibili_comment:get_comments] [INFO]- 提取到了20条评论，从第 13 页
+[2023-12-14 17:49:25,829] [bilibili_comment.py:101] [bilibili_comment:get_comments] [INFO]- 开始提取第14页评论
+[2023-12-14 17:49:26,502] [bilibili_comment.py:88] [bilibili_comment:get_comments] [INFO]- 提取到了20条评论，从第 14 页
+[2023-12-14 17:49:26,503] [bilibili_comment.py:101] [bilibili_comment:get_comments] [INFO]- 开始提取第15页评论
+[2023-12-14 17:49:28,141] [bilibili_comment.py:88] [bilibili_comment:get_comments] [INFO]- 提取到了13条评论，从第 15 页
+[2023-12-14 17:49:28,142] [bilibili_comment.py:101] [bilibili_comment:get_comments] [INFO]- 开始提取第16页评论
+[2023-12-14 17:49:28,956] [bilibili_comment.py:88] [bilibili_comment:get_comments] [INFO]- 提取到了0条评论，从第 16 页
+[2023-12-14 17:49:28,957] [bilibili_comment.py:90] [bilibili_comment:get_comments] [INFO]- 提取完毕所有评论，共提取到338条评论！=====>avid450792491
+[2023-12-14 17:49:28,958] [bilibili_comment.py:103] [bilibili_comment:get_comments] [INFO]- 总共338条评论！
+[2023-12-14 17:49:40,196] [bilibili_utils.py:27] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 17:49:40,197] [bilibili_utils.py:31] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1gj411a7zn
+[2023-12-14 17:49:40,198] [views.py:122] [views:comment] [INFO]- bv_====>BV1gj411a7zn
+[2023-12-14 17:49:40,400] [bilibili_utils.py:55] [bilibili_utils:bv2av] [INFO]- 服务器返回错误！请稍后再试！{'code': -412, 'message': 'request was banned', 'ttl': 1}
+[2023-12-14 17:49:40,401] [views.py:126] [views:comment] [INFO]- avid=====>None
+[2023-12-14 17:49:42,133] [bilibili_utils.py:27] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 17:49:42,136] [bilibili_utils.py:31] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1gj411a7zn
+[2023-12-14 17:49:42,138] [views.py:122] [views:comment] [INFO]- bv_====>BV1gj411a7zn
+[2023-12-14 17:49:42,384] [bilibili_utils.py:55] [bilibili_utils:bv2av] [INFO]- 服务器返回错误！请稍后再试！{'code': -412, 'message': 'request was banned', 'ttl': 1}
+[2023-12-14 17:49:42,387] [views.py:126] [views:comment] [INFO]- avid=====>None
+[2023-12-14 17:49:44,068] [bilibili_utils.py:27] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 17:49:44,070] [bilibili_utils.py:31] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1gj411a7zn
+[2023-12-14 17:49:44,071] [views.py:122] [views:comment] [INFO]- bv_====>BV1gj411a7zn
+[2023-12-14 17:49:44,310] [bilibili_utils.py:55] [bilibili_utils:bv2av] [INFO]- 服务器返回错误！请稍后再试！{'code': -412, 'message': 'request was banned', 'ttl': 1}
+[2023-12-14 17:49:44,312] [views.py:126] [views:comment] [INFO]- avid=====>None
+[2023-12-14 17:49:51,179] [bilibili_utils.py:27] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 17:49:51,179] [bilibili_utils.py:31] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1gj411a7zn
+[2023-12-14 17:49:51,180] [views.py:122] [views:comment] [INFO]- bv_====>BV1gj411a7zn
+[2023-12-14 17:49:51,398] [bilibili_utils.py:55] [bilibili_utils:bv2av] [INFO]- 服务器返回错误！请稍后再试！{'code': -412, 'message': 'request was banned', 'ttl': 1}
+[2023-12-14 17:49:51,399] [views.py:126] [views:comment] [INFO]- avid=====>None
+[2023-12-14 17:49:52,796] [bilibili_utils.py:27] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 17:49:52,797] [bilibili_utils.py:31] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1gj411a7zn
+[2023-12-14 17:49:52,797] [views.py:122] [views:comment] [INFO]- bv_====>BV1gj411a7zn
+[2023-12-14 17:49:53,008] [bilibili_utils.py:55] [bilibili_utils:bv2av] [INFO]- 服务器返回错误！请稍后再试！{'code': -412, 'message': 'request was banned', 'ttl': 1}
+[2023-12-14 17:49:53,009] [views.py:126] [views:comment] [INFO]- avid=====>None
+[2023-12-14 17:49:54,442] [bilibili_utils.py:27] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 17:49:54,443] [bilibili_utils.py:31] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1gj411a7zn
+[2023-12-14 17:49:54,444] [views.py:122] [views:comment] [INFO]- bv_====>BV1gj411a7zn
+[2023-12-14 17:49:54,682] [bilibili_utils.py:55] [bilibili_utils:bv2av] [INFO]- 服务器返回错误！请稍后再试！{'code': -412, 'message': 'request was banned', 'ttl': 1}
+[2023-12-14 17:49:54,683] [views.py:126] [views:comment] [INFO]- avid=====>None
+[2023-12-14 17:49:56,179] [bilibili_utils.py:27] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 17:49:56,180] [bilibili_utils.py:31] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1gj411a7zn
+[2023-12-14 17:49:56,181] [views.py:122] [views:comment] [INFO]- bv_====>BV1gj411a7zn
+[2023-12-14 17:49:56,377] [bilibili_utils.py:59] [bilibili_utils:bv2av] [INFO]- 找到的avid450792491
+[2023-12-14 17:49:56,378] [views.py:126] [views:comment] [INFO]- avid=====>450792491
+[2023-12-14 17:49:56,843] [bilibili_utils.py:75] [bilibili_utils:bv2cid] [INFO]- 提取出来的cid是：1329596119
+[2023-12-14 17:49:59,715] [bilibili_utils.py:27] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 17:49:59,715] [bilibili_utils.py:31] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1gj411a7zn
+[2023-12-14 17:49:59,716] [views.py:122] [views:comment] [INFO]- bv_====>BV1gj411a7zn
+[2023-12-14 17:49:59,735] [views.py:126] [views:comment] [INFO]- avid=====>450792491
+[2023-12-14 17:50:01,088] [bilibili_utils.py:27] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 17:50:01,088] [bilibili_utils.py:31] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1gj411a7zn
+[2023-12-14 17:50:01,089] [views.py:122] [views:comment] [INFO]- bv_====>BV1gj411a7zn
+[2023-12-14 17:50:01,107] [views.py:126] [views:comment] [INFO]- avid=====>450792491
+[2023-12-14 17:50:02,714] [bilibili_utils.py:27] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 17:50:02,716] [bilibili_utils.py:31] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1gj411a7zn
+[2023-12-14 17:50:02,718] [views.py:122] [views:comment] [INFO]- bv_====>BV1gj411a7zn
+[2023-12-14 17:50:02,760] [views.py:126] [views:comment] [INFO]- avid=====>450792491
+[2023-12-14 17:50:16,809] [bilibili_utils.py:27] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 17:50:16,810] [bilibili_utils.py:31] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1gj411a7zn
+[2023-12-14 17:50:17,140] [bilibili_danmu.py:87] [bilibili_danmu:down_so_files] [INFO]- 正在下载 1329596119-2023-12-01.so 文件，请稍后...
+[2023-12-14 17:50:17,536] [bilibili_danmu.py:87] [bilibili_danmu:down_so_files] [INFO]- 正在下载 1329596119-2023-12-02.so 文件，请稍后...
+[2023-12-14 17:50:17,911] [bilibili_danmu.py:87] [bilibili_danmu:down_so_files] [INFO]- 正在下载 1329596119-2023-12-03.so 文件，请稍后...
+[2023-12-14 17:50:18,238] [bilibili_danmu.py:87] [bilibili_danmu:down_so_files] [INFO]- 正在下载 1329596119-2023-12-04.so 文件，请稍后...
+[2023-12-14 17:50:18,565] [bilibili_danmu.py:87] [bilibili_danmu:down_so_files] [INFO]- 正在下载 1329596119-2023-12-05.so 文件，请稍后...
+[2023-12-14 17:50:18,897] [bilibili_danmu.py:87] [bilibili_danmu:down_so_files] [INFO]- 正在下载 1329596119-2023-12-07.so 文件，请稍后...
+[2023-12-14 17:50:19,199] [bilibili_danmu.py:87] [bilibili_danmu:down_so_files] [INFO]- 正在下载 1329596119-2023-12-08.so 文件，请稍后...
+[2023-12-14 17:50:19,617] [bilibili_danmu.py:87] [bilibili_danmu:down_so_files] [INFO]- 正在下载 1329596119-2023-12-09.so 文件，请稍后...
+[2023-12-14 17:50:19,977] [bilibili_danmu.py:87] [bilibili_danmu:down_so_files] [INFO]- 正在下载 1329596119-2023-12-11.so 文件，请稍后...
+[2023-12-14 17:50:20,324] [bilibili_danmu.py:87] [bilibili_danmu:down_so_files] [INFO]- 正在下载 1329596119-2023-12-13.so 文件，请稍后...
+[2023-12-14 17:50:20,697] [bilibili_danmu.py:87] [bilibili_danmu:down_so_files] [INFO]- 正在下载 1329596119-2023-12-14.so 文件，请稍后...
+[2023-12-14 17:50:21,030] [bilibili_danmu.py:96] [bilibili_danmu:down_so_files] [INFO]- 下载完成！
+[2023-12-14 17:50:21,070] [bilibili_danmu.py:133] [bilibili_danmu:parse_so_to_json] [INFO]- 找到了 887 个唯一的 弹幕 在 1329596119这个视频
+[2023-12-14 17:50:21,087] [bilibili_danmu.py:141] [bilibili_danmu:parse_so_to_json] [INFO]- Done!..........
+[2023-12-14 17:50:21,088] [bilibili_danmu.py:145] [bilibili_danmu:parse_so_to_json] [INFO]- 1329596119-2023-12-01.so 文件已删除
+[2023-12-14 17:50:21,089] [bilibili_danmu.py:145] [bilibili_danmu:parse_so_to_json] [INFO]- 1329596119-2023-12-02.so 文件已删除
+[2023-12-14 17:50:21,090] [bilibili_danmu.py:145] [bilibili_danmu:parse_so_to_json] [INFO]- 1329596119-2023-12-03.so 文件已删除
+[2023-12-14 17:50:21,091] [bilibili_danmu.py:145] [bilibili_danmu:parse_so_to_json] [INFO]- 1329596119-2023-12-04.so 文件已删除
+[2023-12-14 17:50:21,091] [bilibili_danmu.py:145] [bilibili_danmu:parse_so_to_json] [INFO]- 1329596119-2023-12-05.so 文件已删除
+[2023-12-14 17:50:21,093] [bilibili_danmu.py:145] [bilibili_danmu:parse_so_to_json] [INFO]- 1329596119-2023-12-07.so 文件已删除
+[2023-12-14 17:50:21,094] [bilibili_danmu.py:145] [bilibili_danmu:parse_so_to_json] [INFO]- 1329596119-2023-12-08.so 文件已删除
+[2023-12-14 17:50:21,095] [bilibili_danmu.py:145] [bilibili_danmu:parse_so_to_json] [INFO]- 1329596119-2023-12-09.so 文件已删除
+[2023-12-14 17:50:21,096] [bilibili_danmu.py:145] [bilibili_danmu:parse_so_to_json] [INFO]- 1329596119-2023-12-11.so 文件已删除
+[2023-12-14 17:50:21,097] [bilibili_danmu.py:145] [bilibili_danmu:parse_so_to_json] [INFO]- 1329596119-2023-12-13.so 文件已删除
+[2023-12-14 17:50:21,099] [bilibili_danmu.py:145] [bilibili_danmu:parse_so_to_json] [INFO]- 1329596119-2023-12-14.so 文件已删除
+[2023-12-14 17:50:21,323] [views.py:63] [views:danmaku] [INFO]- BV1gj411a7zn
+[2023-12-14 17:50:27,659] [bilibili_utils.py:27] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 17:50:27,660] [bilibili_utils.py:31] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1gj411a7zn
+[2023-12-14 17:50:27,715] [views.py:63] [views:danmaku] [INFO]- BV1gj411a7zn
+[2023-12-14 17:50:29,908] [bilibili_utils.py:27] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 17:50:29,909] [bilibili_utils.py:31] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1gj411a7zn
+[2023-12-14 17:50:29,951] [views.py:63] [views:danmaku] [INFO]- BV1gj411a7zn
+[2023-12-14 17:50:31,223] [bilibili_utils.py:27] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 17:50:31,224] [bilibili_utils.py:31] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1gj411a7zn
+[2023-12-14 17:50:31,269] [views.py:63] [views:danmaku] [INFO]- BV1gj411a7zn
+[2023-12-14 17:50:32,585] [bilibili_utils.py:27] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 17:50:32,585] [bilibili_utils.py:31] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1gj411a7zn
+[2023-12-14 17:50:32,630] [views.py:63] [views:danmaku] [INFO]- BV1gj411a7zn
+[2023-12-14 17:51:08,361] [bilibili_utils.py:37] [bilibili_utils:bv_get] [INFO]- 你输入的是BV号{bvorurl}，正在解析...
+[2023-12-14 17:51:08,647] [bilibili_danmu.py:87] [bilibili_danmu:down_so_files] [INFO]- 正在下载 1312461374-2023-12-05.so 文件，请稍后...
+[2023-12-14 17:51:09,172] [bilibili_danmu.py:87] [bilibili_danmu:down_so_files] [INFO]- 正在下载 1312461374-2023-12-12.so 文件，请稍后...
+[2023-12-14 17:51:09,523] [bilibili_danmu.py:87] [bilibili_danmu:down_so_files] [INFO]- 正在下载 1312461374-2023-12-13.so 文件，请稍后...
+[2023-12-14 17:51:09,989] [bilibili_danmu.py:87] [bilibili_danmu:down_so_files] [INFO]- 正在下载 1312461374-2023-12-14.so 文件，请稍后...
+[2023-12-14 17:51:10,391] [bilibili_danmu.py:96] [bilibili_danmu:down_so_files] [INFO]- 下载完成！
+[2023-12-14 17:51:10,437] [bilibili_danmu.py:133] [bilibili_danmu:parse_so_to_json] [INFO]- 找到了 1006 个唯一的 弹幕 在 1312461374这个视频
+[2023-12-14 17:51:10,486] [bilibili_danmu.py:141] [bilibili_danmu:parse_so_to_json] [INFO]- Done!..........
+[2023-12-14 17:51:10,488] [bilibili_danmu.py:145] [bilibili_danmu:parse_so_to_json] [INFO]- 1312461374-2023-12-05.so 文件已删除
+[2023-12-14 17:51:10,491] [bilibili_danmu.py:145] [bilibili_danmu:parse_so_to_json] [INFO]- 1312461374-2023-12-12.so 文件已删除
+[2023-12-14 17:51:10,493] [bilibili_danmu.py:145] [bilibili_danmu:parse_so_to_json] [INFO]- 1312461374-2023-12-13.so 文件已删除
+[2023-12-14 17:51:10,496] [bilibili_danmu.py:145] [bilibili_danmu:parse_so_to_json] [INFO]- 1312461374-2023-12-14.so 文件已删除
+[2023-12-14 17:51:11,060] [views.py:63] [views:danmaku] [INFO]- BV1nN411s7rW
+[2023-12-14 17:51:16,752] [views.py:291] [views:export_data] [INFO]- POST
+[2023-12-14 17:51:16,753] [views.py:301] [views:export_data] [INFO]- 开始导出,数据,数据类型为，danmaku，cid为1312461374
+[2023-12-14 17:52:07,691] [bilibili_utils.py:37] [bilibili_utils:bv_get] [INFO]- 你输入的是BV号{bvorurl}，正在解析...
+[2023-12-14 17:52:07,740] [views.py:63] [views:danmaku] [INFO]- BV1nN411s7rW
+[2023-12-14 17:52:29,688] [bilibili_utils.py:37] [bilibili_utils:bv_get] [INFO]- 你输入的是BV号{bvorurl}，正在解析...
+[2023-12-14 17:52:29,689] [views.py:122] [views:comment] [INFO]- bv_====>BV1i64y1571M
+[2023-12-14 17:52:29,705] [views.py:126] [views:comment] [INFO]- avid=====>579438647
+[2023-12-14 17:52:29,734] [bilibili_comment.py:65] [bilibili_comment:get_comments] [INFO]- Getting comments for bvorurl:BV1i64y1571M
+[2023-12-14 17:52:29,735] [bilibili_utils.py:37] [bilibili_utils:bv_get] [INFO]- 你输入的是BV号{bvorurl}，正在解析...
+[2023-12-14 17:52:29,903] [bilibili_utils.py:59] [bilibili_utils:bv2av] [INFO]- 找到的avid579438647
+[2023-12-14 17:52:29,904] [bilibili_comment.py:68] [bilibili_comment:get_comments] [INFO]- avid===>579438647
+[2023-12-14 17:52:30,162] [bilibili_comment.py:88] [bilibili_comment:get_comments] [INFO]- 提取到了68条评论，从第 1 页
+[2023-12-14 17:52:30,163] [bilibili_comment.py:101] [bilibili_comment:get_comments] [INFO]- 开始提取第2页评论
+[2023-12-14 17:52:31,073] [bilibili_comment.py:88] [bilibili_comment:get_comments] [INFO]- 提取到了49条评论，从第 2 页
+[2023-12-14 17:52:31,074] [bilibili_comment.py:101] [bilibili_comment:get_comments] [INFO]- 开始提取第3页评论
+[2023-12-14 17:52:32,483] [bilibili_comment.py:88] [bilibili_comment:get_comments] [INFO]- 提取到了48条评论，从第 3 页
+[2023-12-14 17:52:32,484] [bilibili_comment.py:101] [bilibili_comment:get_comments] [INFO]- 开始提取第4页评论
+[2023-12-14 17:52:34,134] [bilibili_comment.py:88] [bilibili_comment:get_comments] [INFO]- 提取到了40条评论，从第 4 页
+[2023-12-14 17:52:34,136] [bilibili_comment.py:101] [bilibili_comment:get_comments] [INFO]- 开始提取第5页评论
+[2023-12-14 17:52:34,989] [bilibili_comment.py:88] [bilibili_comment:get_comments] [INFO]- 提取到了31条评论，从第 5 页
+[2023-12-14 17:52:34,990] [bilibili_comment.py:101] [bilibili_comment:get_comments] [INFO]- 开始提取第6页评论
+[2023-12-14 17:52:36,131] [bilibili_comment.py:88] [bilibili_comment:get_comments] [INFO]- 提取到了33条评论，从第 6 页
+[2023-12-14 17:52:36,131] [bilibili_comment.py:101] [bilibili_comment:get_comments] [INFO]- 开始提取第7页评论
+[2023-12-14 17:52:37,774] [bilibili_comment.py:88] [bilibili_comment:get_comments] [INFO]- 提取到了21条评论，从第 7 页
+[2023-12-14 17:52:37,775] [bilibili_comment.py:101] [bilibili_comment:get_comments] [INFO]- 开始提取第8页评论
+[2023-12-14 17:52:39,288] [bilibili_comment.py:88] [bilibili_comment:get_comments] [INFO]- 提取到了20条评论，从第 8 页
+[2023-12-14 17:52:39,289] [bilibili_comment.py:101] [bilibili_comment:get_comments] [INFO]- 开始提取第9页评论
+[2023-12-14 17:52:40,993] [bilibili_comment.py:88] [bilibili_comment:get_comments] [INFO]- 提取到了32条评论，从第 9 页
+[2023-12-14 17:52:40,994] [bilibili_comment.py:101] [bilibili_comment:get_comments] [INFO]- 开始提取第10页评论
+[2023-12-14 17:52:42,016] [bilibili_comment.py:88] [bilibili_comment:get_comments] [INFO]- 提取到了25条评论，从第 10 页
+[2023-12-14 17:52:42,018] [bilibili_comment.py:101] [bilibili_comment:get_comments] [INFO]- 开始提取第11页评论
+[2023-12-14 17:52:43,024] [bilibili_comment.py:88] [bilibili_comment:get_comments] [INFO]- 提取到了22条评论，从第 11 页
+[2023-12-14 17:52:43,026] [bilibili_comment.py:101] [bilibili_comment:get_comments] [INFO]- 开始提取第12页评论
+[2023-12-14 17:52:44,691] [bilibili_comment.py:88] [bilibili_comment:get_comments] [INFO]- 提取到了20条评论，从第 12 页
+[2023-12-14 17:52:44,692] [bilibili_comment.py:101] [bilibili_comment:get_comments] [INFO]- 开始提取第13页评论
+[2023-12-14 17:52:45,712] [bilibili_comment.py:88] [bilibili_comment:get_comments] [INFO]- 提取到了21条评论，从第 13 页
+[2023-12-14 17:52:45,713] [bilibili_comment.py:101] [bilibili_comment:get_comments] [INFO]- 开始提取第14页评论
+[2023-12-14 17:52:46,975] [bilibili_comment.py:88] [bilibili_comment:get_comments] [INFO]- 提取到了20条评论，从第 14 页
+[2023-12-14 17:52:46,976] [bilibili_comment.py:101] [bilibili_comment:get_comments] [INFO]- 开始提取第15页评论
+[2023-12-14 17:52:48,648] [bilibili_comment.py:88] [bilibili_comment:get_comments] [INFO]- 提取到了20条评论，从第 15 页
+[2023-12-14 17:52:48,649] [bilibili_comment.py:101] [bilibili_comment:get_comments] [INFO]- 开始提取第16页评论
+[2023-12-14 17:52:50,098] [bilibili_comment.py:88] [bilibili_comment:get_comments] [INFO]- 提取到了25条评论，从第 16 页
+[2023-12-14 17:52:50,099] [bilibili_comment.py:101] [bilibili_comment:get_comments] [INFO]- 开始提取第17页评论
+[2023-12-14 17:52:50,872] [bilibili_comment.py:88] [bilibili_comment:get_comments] [INFO]- 提取到了21条评论，从第 17 页
+[2023-12-14 17:52:50,874] [bilibili_comment.py:101] [bilibili_comment:get_comments] [INFO]- 开始提取第18页评论
+[2023-12-14 17:52:52,374] [bilibili_comment.py:88] [bilibili_comment:get_comments] [INFO]- 提取到了21条评论，从第 18 页
+[2023-12-14 17:52:52,375] [bilibili_comment.py:101] [bilibili_comment:get_comments] [INFO]- 开始提取第19页评论
+[2023-12-14 17:52:53,286] [bilibili_comment.py:88] [bilibili_comment:get_comments] [INFO]- 提取到了20条评论，从第 19 页
+[2023-12-14 17:52:53,287] [bilibili_comment.py:101] [bilibili_comment:get_comments] [INFO]- 开始提取第20页评论
+[2023-12-14 17:52:54,813] [bilibili_comment.py:88] [bilibili_comment:get_comments] [INFO]- 提取到了15条评论，从第 20 页
+[2023-12-14 17:52:54,814] [bilibili_comment.py:101] [bilibili_comment:get_comments] [INFO]- 开始提取第21页评论
+[2023-12-14 17:52:56,356] [bilibili_comment.py:88] [bilibili_comment:get_comments] [INFO]- 提取到了0条评论，从第 21 页
+[2023-12-14 17:52:56,357] [bilibili_comment.py:90] [bilibili_comment:get_comments] [INFO]- 提取完毕所有评论，共提取到572条评论！=====>avid579438647
+[2023-12-14 17:52:56,357] [bilibili_comment.py:103] [bilibili_comment:get_comments] [INFO]- 总共572条评论！
+[2023-12-14 17:52:59,849] [bilibili_utils.py:37] [bilibili_utils:bv_get] [INFO]- 你输入的是BV号{bvorurl}，正在解析...
+[2023-12-14 17:52:59,851] [views.py:122] [views:comment] [INFO]- bv_====>BV1i64y1571M
+[2023-12-14 17:52:59,871] [views.py:126] [views:comment] [INFO]- avid=====>579438647
+[2023-12-14 17:53:04,315] [bilibili_utils.py:37] [bilibili_utils:bv_get] [INFO]- 你输入的是BV号{bvorurl}，正在解析...
+[2023-12-14 17:53:04,371] [views.py:63] [views:danmaku] [INFO]- BV1i64y1571M
+[2023-12-14 17:53:29,141] [bilibili_utils.py:37] [bilibili_utils:bv_get] [INFO]- 你输入的是BV号{bvorurl}，正在解析...
+[2023-12-14 17:53:29,441] [bilibili_danmu.py:87] [bilibili_danmu:down_so_files] [INFO]- 正在下载 1364397732-2023-12-12.so 文件，请稍后...
+[2023-12-14 17:53:29,667] [bilibili_danmu.py:87] [bilibili_danmu:down_so_files] [INFO]- 正在下载 1364397732-2023-12-13.so 文件，请稍后...
+[2023-12-14 17:53:29,962] [bilibili_danmu.py:87] [bilibili_danmu:down_so_files] [INFO]- 正在下载 1364397732-2023-12-14.so 文件，请稍后...
+[2023-12-14 17:53:30,202] [bilibili_danmu.py:96] [bilibili_danmu:down_so_files] [INFO]- 下载完成！
+[2023-12-14 17:53:30,209] [bilibili_danmu.py:133] [bilibili_danmu:parse_so_to_json] [INFO]- 找到了 41 个唯一的 弹幕 在 1364397732这个视频
+[2023-12-14 17:53:30,213] [bilibili_danmu.py:141] [bilibili_danmu:parse_so_to_json] [INFO]- Done!..........
+[2023-12-14 17:53:30,215] [bilibili_danmu.py:145] [bilibili_danmu:parse_so_to_json] [INFO]- 1364397732-2023-12-12.so 文件已删除
+[2023-12-14 17:53:30,217] [bilibili_danmu.py:145] [bilibili_danmu:parse_so_to_json] [INFO]- 1364397732-2023-12-13.so 文件已删除
+[2023-12-14 17:53:30,219] [bilibili_danmu.py:145] [bilibili_danmu:parse_so_to_json] [INFO]- 1364397732-2023-12-14.so 文件已删除
+[2023-12-14 17:53:30,309] [views.py:63] [views:danmaku] [INFO]- BV1DQ4y1G7ij
+[2023-12-14 17:53:52,872] [bilibili_utils.py:37] [bilibili_utils:bv_get] [INFO]- 你输入的是BV号{bvorurl}，正在解析...
+[2023-12-14 17:53:52,930] [views.py:63] [views:danmaku] [INFO]- BV1DQ4y1G7ij
+[2023-12-14 17:53:55,581] [bilibili_utils.py:37] [bilibili_utils:bv_get] [INFO]- 你输入的是BV号{bvorurl}，正在解析...
+[2023-12-14 17:53:55,642] [views.py:63] [views:danmaku] [INFO]- BV1DQ4y1G7ij
+[2023-12-14 17:53:57,616] [bilibili_utils.py:37] [bilibili_utils:bv_get] [INFO]- 你输入的是BV号{bvorurl}，正在解析...
+[2023-12-14 17:53:57,672] [views.py:63] [views:danmaku] [INFO]- BV1DQ4y1G7ij
+[2023-12-14 17:53:59,620] [bilibili_utils.py:37] [bilibili_utils:bv_get] [INFO]- 你输入的是BV号{bvorurl}，正在解析...
+[2023-12-14 17:53:59,677] [views.py:63] [views:danmaku] [INFO]- BV1DQ4y1G7ij
+[2023-12-14 17:54:01,464] [bilibili_utils.py:37] [bilibili_utils:bv_get] [INFO]- 你输入的是BV号{bvorurl}，正在解析...
+[2023-12-14 17:54:01,523] [views.py:63] [views:danmaku] [INFO]- BV1DQ4y1G7ij
+[2023-12-14 17:54:03,182] [bilibili_utils.py:37] [bilibili_utils:bv_get] [INFO]- 你输入的是BV号{bvorurl}，正在解析...
+[2023-12-14 17:54:03,241] [views.py:63] [views:danmaku] [INFO]- BV1DQ4y1G7ij
+[2023-12-14 17:54:04,702] [bilibili_utils.py:37] [bilibili_utils:bv_get] [INFO]- 你输入的是BV号{bvorurl}，正在解析...
+[2023-12-14 17:54:04,767] [views.py:63] [views:danmaku] [INFO]- BV1DQ4y1G7ij
+[2023-12-14 17:54:06,321] [bilibili_utils.py:37] [bilibili_utils:bv_get] [INFO]- 你输入的是BV号{bvorurl}，正在解析...
+[2023-12-14 17:54:06,385] [views.py:63] [views:danmaku] [INFO]- BV1DQ4y1G7ij
+[2023-12-14 17:54:08,565] [bilibili_utils.py:37] [bilibili_utils:bv_get] [INFO]- 你输入的是BV号{bvorurl}，正在解析...
+[2023-12-14 17:54:08,623] [views.py:63] [views:danmaku] [INFO]- BV1DQ4y1G7ij
+[2023-12-14 17:54:10,453] [bilibili_utils.py:37] [bilibili_utils:bv_get] [INFO]- 你输入的是BV号{bvorurl}，正在解析...
+[2023-12-14 17:54:10,515] [views.py:63] [views:danmaku] [INFO]- BV1DQ4y1G7ij
+[2023-12-14 17:55:25,449] [bilibili_utils.py:37] [bilibili_utils:bv_get] [INFO]- 你输入的是BV号{bvorurl}，正在解析...
+[2023-12-14 17:55:25,523] [views.py:63] [views:danmaku] [INFO]- BV1DQ4y1G7ij
+[2023-12-14 17:56:06,064] [bilibili_utils.py:37] [bilibili_utils:bv_get] [INFO]- 你输入的是BV号{bvorurl}，正在解析...
+[2023-12-14 17:56:06,400] [bilibili_danmu.py:87] [bilibili_danmu:down_so_files] [INFO]- 正在下载 1365758679-2023-12-14.so 文件，请稍后...
+[2023-12-14 17:56:06,551] [bilibili_danmu.py:96] [bilibili_danmu:down_so_files] [INFO]- 下载完成！
+[2023-12-14 17:56:06,554] [bilibili_danmu.py:133] [bilibili_danmu:parse_so_to_json] [INFO]- 找到了 1 个唯一的 弹幕 在 1365758679这个视频
+[2023-12-14 17:56:06,555] [bilibili_danmu.py:141] [bilibili_danmu:parse_so_to_json] [INFO]- Done!..........
+[2023-12-14 17:56:06,556] [bilibili_danmu.py:145] [bilibili_danmu:parse_so_to_json] [INFO]- 1365758679-2023-12-14.so 文件已删除
+[2023-12-14 17:56:06,635] [views.py:63] [views:danmaku] [INFO]- BV1eG411e79z
+[2023-12-14 17:56:11,445] [bilibili_utils.py:37] [bilibili_utils:bv_get] [INFO]- 你输入的是BV号{bvorurl}，正在解析...
+[2023-12-14 17:56:11,446] [views.py:122] [views:comment] [INFO]- bv_====>BV1eG411e79z
+[2023-12-14 17:56:11,463] [views.py:126] [views:comment] [INFO]- avid=====>409697953
+[2023-12-14 17:56:14,140] [bilibili_utils.py:37] [bilibili_utils:bv_get] [INFO]- 你输入的是BV号{bvorurl}，正在解析...
+[2023-12-14 17:56:14,141] [views.py:122] [views:comment] [INFO]- bv_====>BV1eG411e79z
+[2023-12-14 17:56:14,165] [views.py:126] [views:comment] [INFO]- avid=====>409697953
+[2023-12-14 17:56:24,725] [bilibili_utils.py:37] [bilibili_utils:bv_get] [INFO]- 你输入的是BV号{bvorurl}，正在解析...
+[2023-12-14 17:56:24,727] [views.py:122] [views:comment] [INFO]- bv_====>BV1Va4y1t7eN
+[2023-12-14 17:56:24,745] [views.py:126] [views:comment] [INFO]- avid=====>667525120
+[2023-12-14 17:56:24,777] [bilibili_comment.py:65] [bilibili_comment:get_comments] [INFO]- Getting comments for bvorurl:BV1Va4y1t7eN
+[2023-12-14 17:56:24,778] [bilibili_utils.py:37] [bilibili_utils:bv_get] [INFO]- 你输入的是BV号{bvorurl}，正在解析...
+[2023-12-14 17:56:24,991] [bilibili_utils.py:55] [bilibili_utils:bv2av] [INFO]- 服务器返回错误！请稍后再试！{'code': -412, 'message': 'request was banned', 'ttl': 1}
+[2023-12-14 17:56:24,994] [bilibili_comment.py:68] [bilibili_comment:get_comments] [INFO]- avid===>None
+[2023-12-14 17:56:25,207] [bilibili_comment.py:103] [bilibili_comment:get_comments] [INFO]- 总共0条评论！
+[2023-12-14 17:56:51,713] [bilibili_utils.py:37] [bilibili_utils:bv_get] [INFO]- 你输入的是BV号{bvorurl}，正在解析...
+[2023-12-14 17:56:51,713] [views.py:122] [views:comment] [INFO]- bv_====>BV1Va4y1t7eN
+[2023-12-14 17:56:51,733] [views.py:126] [views:comment] [INFO]- avid=====>667525120
+[2023-12-14 17:56:51,768] [bilibili_comment.py:65] [bilibili_comment:get_comments] [INFO]- Getting comments for bvorurl:BV1Va4y1t7eN
+[2023-12-14 17:56:51,769] [bilibili_utils.py:37] [bilibili_utils:bv_get] [INFO]- 你输入的是BV号{bvorurl}，正在解析...
+[2023-12-14 17:56:51,981] [bilibili_utils.py:55] [bilibili_utils:bv2av] [INFO]- 服务器返回错误！请稍后再试！{'code': -412, 'message': 'request was banned', 'ttl': 1}
+[2023-12-14 17:56:51,983] [bilibili_comment.py:68] [bilibili_comment:get_comments] [INFO]- avid===>None
+[2023-12-14 17:56:52,214] [bilibili_comment.py:103] [bilibili_comment:get_comments] [INFO]- 总共0条评论！
+[2023-12-14 17:57:31,423] [bilibili_utils.py:36] [bilibili_utils:bv_get] [INFO]- 你输入的是BV号BV1Va4y1t7eN，正在解析...
+[2023-12-14 17:57:31,424] [views.py:122] [views:comment] [INFO]- bv_====>BV1Va4y1t7eN
+[2023-12-14 17:57:31,439] [views.py:126] [views:comment] [INFO]- avid=====>667525120
+[2023-12-14 17:57:31,469] [bilibili_comment.py:65] [bilibili_comment:get_comments] [INFO]- Getting comments for bvorurl:BV1Va4y1t7eN
+[2023-12-14 17:57:31,470] [bilibili_utils.py:36] [bilibili_utils:bv_get] [INFO]- 你输入的是BV号BV1Va4y1t7eN，正在解析...
+[2023-12-14 17:57:31,688] [bilibili_utils.py:54] [bilibili_utils:bv2av] [INFO]- 服务器返回错误！请稍后再试！{'code': -412, 'message': 'request was banned', 'ttl': 1}
+[2023-12-14 17:57:31,690] [bilibili_comment.py:68] [bilibili_comment:get_comments] [INFO]- avid===>None
+[2023-12-14 17:57:31,926] [bilibili_comment.py:103] [bilibili_comment:get_comments] [INFO]- 总共0条评论！
+[2023-12-14 17:59:18,637] [bilibili_utils.py:26] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 17:59:18,637] [bilibili_utils.py:30] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1QN4y1U7u2
+[2023-12-14 17:59:18,638] [views.py:122] [views:comment] [INFO]- bv_====>BV1QN4y1U7u2
+[2023-12-14 17:59:18,651] [views.py:126] [views:comment] [INFO]- avid=====>875923868
+[2023-12-14 17:59:47,108] [bilibili_utils.py:26] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 17:59:47,109] [bilibili_utils.py:30] [bilibili_utils:bv_get] [INFO]- BV号为......: BV11g4y1Z7Y1
+[2023-12-14 17:59:47,110] [views.py:122] [views:comment] [INFO]- bv_====>BV11g4y1Z7Y1
+[2023-12-14 17:59:47,238] [bilibili_utils.py:58] [bilibili_utils:bv2av] [INFO]- 找到的avid834659463
+[2023-12-14 17:59:47,239] [views.py:126] [views:comment] [INFO]- avid=====>834659463
+[2023-12-14 17:59:47,268] [bilibili_comment.py:65] [bilibili_comment:get_comments] [INFO]- Getting comments for bvorurl:https://www.bilibili.com/video/BV11g4y1Z7Y1?spm_id_from=333.1007.tianma.1-3-3.click
+[2023-12-14 17:59:47,270] [bilibili_utils.py:26] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 17:59:47,270] [bilibili_utils.py:30] [bilibili_utils:bv_get] [INFO]- BV号为......: BV11g4y1Z7Y1
+[2023-12-14 17:59:47,377] [bilibili_utils.py:58] [bilibili_utils:bv2av] [INFO]- 找到的avid834659463
+[2023-12-14 17:59:47,378] [bilibili_comment.py:74] [bilibili_comment:get_comments] [INFO]- avid===>834659463
+[2023-12-14 17:59:47,526] [bilibili_comment.py:94] [bilibili_comment:get_comments] [INFO]- 提取到了45条评论，从第 1 页
+[2023-12-14 17:59:47,527] [bilibili_comment.py:107] [bilibili_comment:get_comments] [INFO]- 开始提取第2页评论
+[2023-12-14 17:59:48,804] [bilibili_comment.py:94] [bilibili_comment:get_comments] [INFO]- 提取到了28条评论，从第 2 页
+[2023-12-14 17:59:48,805] [bilibili_comment.py:107] [bilibili_comment:get_comments] [INFO]- 开始提取第3页评论
+[2023-12-14 17:59:49,602] [bilibili_comment.py:94] [bilibili_comment:get_comments] [INFO]- 提取到了24条评论，从第 3 页
+[2023-12-14 17:59:49,603] [bilibili_comment.py:107] [bilibili_comment:get_comments] [INFO]- 开始提取第4页评论
+[2023-12-14 17:59:50,541] [bilibili_comment.py:94] [bilibili_comment:get_comments] [INFO]- 提取到了21条评论，从第 4 页
+[2023-12-14 17:59:50,542] [bilibili_comment.py:107] [bilibili_comment:get_comments] [INFO]- 开始提取第5页评论
+[2023-12-14 17:59:51,708] [bilibili_comment.py:94] [bilibili_comment:get_comments] [INFO]- 提取到了23条评论，从第 5 页
+[2023-12-14 17:59:51,709] [bilibili_comment.py:107] [bilibili_comment:get_comments] [INFO]- 开始提取第6页评论
+[2023-12-14 17:59:53,132] [bilibili_comment.py:94] [bilibili_comment:get_comments] [INFO]- 提取到了20条评论，从第 6 页
+[2023-12-14 17:59:53,133] [bilibili_comment.py:107] [bilibili_comment:get_comments] [INFO]- 开始提取第7页评论
+[2023-12-14 17:59:54,435] [bilibili_comment.py:94] [bilibili_comment:get_comments] [INFO]- 提取到了20条评论，从第 7 页
+[2023-12-14 17:59:54,436] [bilibili_comment.py:107] [bilibili_comment:get_comments] [INFO]- 开始提取第8页评论
+[2023-12-14 17:59:55,098] [bilibili_comment.py:94] [bilibili_comment:get_comments] [INFO]- 提取到了21条评论，从第 8 页
+[2023-12-14 17:59:55,099] [bilibili_comment.py:107] [bilibili_comment:get_comments] [INFO]- 开始提取第9页评论
+[2023-12-14 17:59:56,733] [bilibili_comment.py:94] [bilibili_comment:get_comments] [INFO]- 提取到了24条评论，从第 9 页
+[2023-12-14 17:59:56,734] [bilibili_comment.py:107] [bilibili_comment:get_comments] [INFO]- 开始提取第10页评论
+[2023-12-14 17:59:58,273] [bilibili_comment.py:94] [bilibili_comment:get_comments] [INFO]- 提取到了21条评论，从第 10 页
+[2023-12-14 17:59:58,274] [bilibili_comment.py:107] [bilibili_comment:get_comments] [INFO]- 开始提取第11页评论
+[2023-12-14 17:59:59,163] [bilibili_comment.py:94] [bilibili_comment:get_comments] [INFO]- 提取到了20条评论，从第 11 页
+[2023-12-14 17:59:59,164] [bilibili_comment.py:107] [bilibili_comment:get_comments] [INFO]- 开始提取第12页评论
+[2023-12-14 17:59:59,956] [bilibili_comment.py:94] [bilibili_comment:get_comments] [INFO]- 提取到了0条评论，从第 12 页
+[2023-12-14 17:59:59,957] [bilibili_comment.py:96] [bilibili_comment:get_comments] [INFO]- 提取完毕所有评论，共提取到267条评论！=====>avid834659463
+[2023-12-14 17:59:59,957] [bilibili_comment.py:109] [bilibili_comment:get_comments] [INFO]- 总共267条评论！
+[2023-12-14 18:00:00,353] [bilibili_utils.py:74] [bilibili_utils:bv2cid] [INFO]- 提取出来的cid是：1364379961
+[2023-12-14 18:00:03,225] [bilibili_utils.py:26] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 18:00:03,226] [bilibili_utils.py:30] [bilibili_utils:bv_get] [INFO]- BV号为......: BV11g4y1Z7Y1
+[2023-12-14 18:00:03,227] [views.py:122] [views:comment] [INFO]- bv_====>BV11g4y1Z7Y1
+[2023-12-14 18:00:03,243] [views.py:126] [views:comment] [INFO]- avid=====>834659463
+[2023-12-14 18:00:04,731] [bilibili_utils.py:26] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 18:00:04,732] [bilibili_utils.py:30] [bilibili_utils:bv_get] [INFO]- BV号为......: BV11g4y1Z7Y1
+[2023-12-14 18:00:04,732] [views.py:122] [views:comment] [INFO]- bv_====>BV11g4y1Z7Y1
+[2023-12-14 18:00:04,747] [views.py:126] [views:comment] [INFO]- avid=====>834659463
+[2023-12-14 18:00:06,073] [bilibili_utils.py:26] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 18:00:06,074] [bilibili_utils.py:30] [bilibili_utils:bv_get] [INFO]- BV号为......: BV11g4y1Z7Y1
+[2023-12-14 18:00:06,075] [views.py:122] [views:comment] [INFO]- bv_====>BV11g4y1Z7Y1
+[2023-12-14 18:00:06,088] [views.py:126] [views:comment] [INFO]- avid=====>834659463
+[2023-12-14 18:00:07,407] [bilibili_utils.py:26] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 18:00:07,408] [bilibili_utils.py:30] [bilibili_utils:bv_get] [INFO]- BV号为......: BV11g4y1Z7Y1
+[2023-12-14 18:00:07,408] [views.py:122] [views:comment] [INFO]- bv_====>BV11g4y1Z7Y1
+[2023-12-14 18:00:07,424] [views.py:126] [views:comment] [INFO]- avid=====>834659463
+[2023-12-14 18:00:08,878] [bilibili_utils.py:26] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 18:00:08,879] [bilibili_utils.py:30] [bilibili_utils:bv_get] [INFO]- BV号为......: BV11g4y1Z7Y1
+[2023-12-14 18:00:08,879] [views.py:122] [views:comment] [INFO]- bv_====>BV11g4y1Z7Y1
+[2023-12-14 18:00:08,895] [views.py:126] [views:comment] [INFO]- avid=====>834659463
+[2023-12-14 18:00:13,309] [bilibili_utils.py:26] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 18:00:13,311] [bilibili_utils.py:30] [bilibili_utils:bv_get] [INFO]- BV号为......: BV11g4y1Z7Y1
+[2023-12-14 18:00:13,533] [bilibili_danmu.py:87] [bilibili_danmu:down_so_files] [INFO]- 正在下载 1364379961-2023-12-12.so 文件，请稍后...
+[2023-12-14 18:00:13,801] [bilibili_danmu.py:87] [bilibili_danmu:down_so_files] [INFO]- 正在下载 1364379961-2023-12-13.so 文件，请稍后...
+[2023-12-14 18:00:14,103] [bilibili_danmu.py:87] [bilibili_danmu:down_so_files] [INFO]- 正在下载 1364379961-2023-12-14.so 文件，请稍后...
+[2023-12-14 18:00:14,330] [bilibili_danmu.py:96] [bilibili_danmu:down_so_files] [INFO]- 下载完成！
+[2023-12-14 18:00:14,342] [bilibili_danmu.py:133] [bilibili_danmu:parse_so_to_json] [INFO]- 找到了 803 个唯一的 弹幕 在 1364379961这个视频
+[2023-12-14 18:00:14,357] [bilibili_danmu.py:141] [bilibili_danmu:parse_so_to_json] [INFO]- Done!..........
+[2023-12-14 18:00:14,358] [bilibili_danmu.py:145] [bilibili_danmu:parse_so_to_json] [INFO]- 1364379961-2023-12-12.so 文件已删除
+[2023-12-14 18:00:14,359] [bilibili_danmu.py:145] [bilibili_danmu:parse_so_to_json] [INFO]- 1364379961-2023-12-13.so 文件已删除
+[2023-12-14 18:00:14,360] [bilibili_danmu.py:145] [bilibili_danmu:parse_so_to_json] [INFO]- 1364379961-2023-12-14.so 文件已删除
+[2023-12-14 18:00:14,545] [views.py:63] [views:danmaku] [INFO]- BV11g4y1Z7Y1
+[2023-12-14 18:00:39,158] [bilibili_utils.py:26] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 18:00:39,159] [bilibili_utils.py:30] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1Yi4y1Y7zD
+[2023-12-14 18:00:39,159] [views.py:122] [views:comment] [INFO]- bv_====>BV1Yi4y1Y7zD
+[2023-12-14 18:00:39,280] [bilibili_utils.py:58] [bilibili_utils:bv2av] [INFO]- 找到的avid537145862
+[2023-12-14 18:00:39,281] [views.py:126] [views:comment] [INFO]- avid=====>537145862
+[2023-12-14 18:00:39,311] [bilibili_comment.py:65] [bilibili_comment:get_comments] [INFO]- Getting comments for bvorurl:https://www.bilibili.com/video/BV1Yi4y1Y7zD?spm_id_from=333.1007.tianma.2-2-5.click
+[2023-12-14 18:00:39,312] [bilibili_utils.py:26] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 18:00:39,313] [bilibili_utils.py:30] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1Yi4y1Y7zD
+[2023-12-14 18:00:39,453] [bilibili_utils.py:54] [bilibili_utils:bv2av] [INFO]- 服务器返回错误！请稍后再试！{'code': -412, 'message': 'request was banned', 'ttl': 1}
+[2023-12-14 18:00:39,579] [bilibili_utils.py:54] [bilibili_utils:bv2av] [INFO]- 服务器返回错误！请稍后再试！{'code': -412, 'message': 'request was banned', 'ttl': 1}
+[2023-12-14 18:00:39,580] [bilibili_comment.py:72] [bilibili_comment:get_comments] [INFO]- avid is None, retrying...count is 2
+[2023-12-14 18:00:39,721] [bilibili_utils.py:54] [bilibili_utils:bv2av] [INFO]- 服务器返回错误！请稍后再试！{'code': -412, 'message': 'request was banned', 'ttl': 1}
+[2023-12-14 18:00:39,722] [bilibili_comment.py:72] [bilibili_comment:get_comments] [INFO]- avid is None, retrying...count is 2
+[2023-12-14 18:00:39,863] [bilibili_utils.py:54] [bilibili_utils:bv2av] [INFO]- 服务器返回错误！请稍后再试！{'code': -412, 'message': 'request was banned', 'ttl': 1}
+[2023-12-14 18:00:39,864] [bilibili_comment.py:72] [bilibili_comment:get_comments] [INFO]- avid is None, retrying...count is 2
+[2023-12-14 18:00:40,004] [bilibili_utils.py:54] [bilibili_utils:bv2av] [INFO]- 服务器返回错误！请稍后再试！{'code': -412, 'message': 'request was banned', 'ttl': 1}
+[2023-12-14 18:00:40,005] [bilibili_comment.py:72] [bilibili_comment:get_comments] [INFO]- avid is None, retrying...count is 2
+[2023-12-14 18:00:40,114] [bilibili_utils.py:58] [bilibili_utils:bv2av] [INFO]- 找到的avid537145862
+[2023-12-14 18:00:40,115] [bilibili_comment.py:72] [bilibili_comment:get_comments] [INFO]- avid is None, retrying...count is 2
+[2023-12-14 18:00:40,116] [bilibili_comment.py:74] [bilibili_comment:get_comments] [INFO]- avid===>537145862
+[2023-12-14 18:00:40,280] [bilibili_comment.py:94] [bilibili_comment:get_comments] [INFO]- 提取到了47条评论，从第 1 页
+[2023-12-14 18:00:40,281] [bilibili_comment.py:107] [bilibili_comment:get_comments] [INFO]- 开始提取第2页评论
+[2023-12-14 18:00:41,426] [bilibili_comment.py:94] [bilibili_comment:get_comments] [INFO]- 提取到了34条评论，从第 2 页
+[2023-12-14 18:00:41,428] [bilibili_comment.py:107] [bilibili_comment:get_comments] [INFO]- 开始提取第3页评论
+[2023-12-14 18:00:42,864] [bilibili_comment.py:94] [bilibili_comment:get_comments] [INFO]- 提取到了25条评论，从第 3 页
+[2023-12-14 18:00:42,865] [bilibili_comment.py:107] [bilibili_comment:get_comments] [INFO]- 开始提取第4页评论
+[2023-12-14 18:00:44,474] [bilibili_comment.py:94] [bilibili_comment:get_comments] [INFO]- 提取到了21条评论，从第 4 页
+[2023-12-14 18:00:44,475] [bilibili_comment.py:107] [bilibili_comment:get_comments] [INFO]- 开始提取第5页评论
+[2023-12-14 18:00:45,932] [bilibili_comment.py:94] [bilibili_comment:get_comments] [INFO]- 提取到了20条评论，从第 5 页
+[2023-12-14 18:00:45,933] [bilibili_comment.py:107] [bilibili_comment:get_comments] [INFO]- 开始提取第6页评论
+[2023-12-14 18:00:47,572] [bilibili_comment.py:94] [bilibili_comment:get_comments] [INFO]- 提取到了21条评论，从第 6 页
+[2023-12-14 18:00:47,573] [bilibili_comment.py:107] [bilibili_comment:get_comments] [INFO]- 开始提取第7页评论
+[2023-12-14 18:00:48,880] [bilibili_comment.py:94] [bilibili_comment:get_comments] [INFO]- 提取到了24条评论，从第 7 页
+[2023-12-14 18:00:48,881] [bilibili_comment.py:107] [bilibili_comment:get_comments] [INFO]- 开始提取第8页评论
+[2023-12-14 18:00:49,569] [bilibili_comment.py:94] [bilibili_comment:get_comments] [INFO]- 提取到了21条评论，从第 8 页
+[2023-12-14 18:00:49,570] [bilibili_comment.py:107] [bilibili_comment:get_comments] [INFO]- 开始提取第9页评论
+[2023-12-14 18:00:51,087] [bilibili_comment.py:94] [bilibili_comment:get_comments] [INFO]- 提取到了21条评论，从第 9 页
+[2023-12-14 18:00:51,105] [bilibili_comment.py:107] [bilibili_comment:get_comments] [INFO]- 开始提取第10页评论
+[2023-12-14 18:00:52,195] [bilibili_comment.py:94] [bilibili_comment:get_comments] [INFO]- 提取到了22条评论，从第 10 页
+[2023-12-14 18:00:52,196] [bilibili_comment.py:107] [bilibili_comment:get_comments] [INFO]- 开始提取第11页评论
+[2023-12-14 18:01:04,981] [bilibili_utils.py:26] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 18:01:04,983] [bilibili_utils.py:30] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1Yi4y1Y7zD
+[2023-12-14 18:01:04,984] [views.py:122] [views:comment] [INFO]- bv_====>BV1Yi4y1Y7zD
+[2023-12-14 18:01:05,125] [bilibili_utils.py:58] [bilibili_utils:bv2av] [INFO]- 找到的avid537145862
+[2023-12-14 18:01:05,126] [views.py:126] [views:comment] [INFO]- avid=====>537145862
+[2023-12-14 18:01:05,161] [bilibili_comment.py:65] [bilibili_comment:get_comments] [INFO]- Getting comments for bvorurl:https://www.bilibili.com/video/BV1Yi4y1Y7zD?spm_id_from=333.1007.tianma.2-2-5.click
+[2023-12-14 18:01:05,163] [bilibili_utils.py:26] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 18:01:05,165] [bilibili_utils.py:30] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1Yi4y1Y7zD
+[2023-12-14 18:01:05,309] [bilibili_utils.py:54] [bilibili_utils:bv2av] [INFO]- 服务器返回错误！请稍后再试！{'code': -412, 'message': 'request was banned', 'ttl': 1}
+[2023-12-14 18:01:05,438] [bilibili_utils.py:58] [bilibili_utils:bv2av] [INFO]- 找到的avid537145862
+[2023-12-14 18:01:05,439] [bilibili_comment.py:72] [bilibili_comment:get_comments] [INFO]- avid is None, retrying...count is 2
+[2023-12-14 18:01:08,456] [bilibili_comment.py:75] [bilibili_comment:get_comments] [INFO]- avid===>537145862
+[2023-12-14 18:01:08,614] [bilibili_comment.py:95] [bilibili_comment:get_comments] [INFO]- 提取到了47条评论，从第 1 页
+[2023-12-14 18:01:08,615] [bilibili_comment.py:108] [bilibili_comment:get_comments] [INFO]- 开始提取第2页评论
+[2023-12-14 18:01:10,071] [bilibili_comment.py:95] [bilibili_comment:get_comments] [INFO]- 提取到了34条评论，从第 2 页
+[2023-12-14 18:01:10,072] [bilibili_comment.py:108] [bilibili_comment:get_comments] [INFO]- 开始提取第3页评论
+[2023-12-14 18:01:11,243] [bilibili_comment.py:95] [bilibili_comment:get_comments] [INFO]- 提取到了25条评论，从第 3 页
+[2023-12-14 18:01:11,244] [bilibili_comment.py:108] [bilibili_comment:get_comments] [INFO]- 开始提取第4页评论
+[2023-12-14 18:01:12,794] [bilibili_comment.py:95] [bilibili_comment:get_comments] [INFO]- 提取到了21条评论，从第 4 页
+[2023-12-14 18:01:12,795] [bilibili_comment.py:108] [bilibili_comment:get_comments] [INFO]- 开始提取第5页评论
+[2023-12-14 18:01:13,836] [bilibili_comment.py:95] [bilibili_comment:get_comments] [INFO]- 提取到了20条评论，从第 5 页
+[2023-12-14 18:01:13,837] [bilibili_comment.py:108] [bilibili_comment:get_comments] [INFO]- 开始提取第6页评论
+[2023-12-14 18:01:15,458] [bilibili_comment.py:95] [bilibili_comment:get_comments] [INFO]- 提取到了21条评论，从第 6 页
+[2023-12-14 18:01:15,459] [bilibili_comment.py:108] [bilibili_comment:get_comments] [INFO]- 开始提取第7页评论
+[2023-12-14 18:01:16,196] [bilibili_comment.py:95] [bilibili_comment:get_comments] [INFO]- 提取到了24条评论，从第 7 页
+[2023-12-14 18:01:16,197] [bilibili_comment.py:108] [bilibili_comment:get_comments] [INFO]- 开始提取第8页评论
+[2023-12-14 18:01:17,208] [bilibili_comment.py:95] [bilibili_comment:get_comments] [INFO]- 提取到了21条评论，从第 8 页
+[2023-12-14 18:01:17,209] [bilibili_comment.py:108] [bilibili_comment:get_comments] [INFO]- 开始提取第9页评论
+[2023-12-14 18:01:18,227] [bilibili_comment.py:95] [bilibili_comment:get_comments] [INFO]- 提取到了21条评论，从第 9 页
+[2023-12-14 18:01:18,228] [bilibili_comment.py:108] [bilibili_comment:get_comments] [INFO]- 开始提取第10页评论
+[2023-12-14 18:01:19,642] [bilibili_comment.py:95] [bilibili_comment:get_comments] [INFO]- 提取到了22条评论，从第 10 页
+[2023-12-14 18:01:19,643] [bilibili_comment.py:108] [bilibili_comment:get_comments] [INFO]- 开始提取第11页评论
+[2023-12-14 18:01:21,115] [bilibili_comment.py:95] [bilibili_comment:get_comments] [INFO]- 提取到了21条评论，从第 11 页
+[2023-12-14 18:01:21,116] [bilibili_comment.py:108] [bilibili_comment:get_comments] [INFO]- 开始提取第12页评论
+[2023-12-14 18:01:22,676] [bilibili_comment.py:95] [bilibili_comment:get_comments] [INFO]- 提取到了29条评论，从第 12 页
+[2023-12-14 18:01:22,677] [bilibili_comment.py:108] [bilibili_comment:get_comments] [INFO]- 开始提取第13页评论
+[2023-12-14 18:01:24,252] [bilibili_comment.py:95] [bilibili_comment:get_comments] [INFO]- 提取到了7条评论，从第 13 页
+[2023-12-14 18:01:24,253] [bilibili_comment.py:108] [bilibili_comment:get_comments] [INFO]- 开始提取第14页评论
+[2023-12-14 18:01:25,701] [bilibili_comment.py:95] [bilibili_comment:get_comments] [INFO]- 提取到了0条评论，从第 14 页
+[2023-12-14 18:01:25,702] [bilibili_comment.py:97] [bilibili_comment:get_comments] [INFO]- 提取完毕所有评论，共提取到313条评论！=====>avid537145862
+[2023-12-14 18:01:25,702] [bilibili_comment.py:110] [bilibili_comment:get_comments] [INFO]- 总共313条评论！
+[2023-12-14 18:01:40,782] [bilibili_utils.py:26] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 18:01:40,783] [bilibili_utils.py:30] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1Yi4y1Y7zD
+[2023-12-14 18:01:40,785] [views.py:122] [views:comment] [INFO]- bv_====>BV1Yi4y1Y7zD
+[2023-12-14 18:01:40,963] [bilibili_utils.py:54] [bilibili_utils:bv2av] [INFO]- 服务器返回错误！请稍后再试！{'code': -412, 'message': 'request was banned', 'ttl': 1}
+[2023-12-14 18:01:40,964] [views.py:126] [views:comment] [INFO]- avid=====>None
+[2023-12-14 18:02:09,026] [bilibili_utils.py:26] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 18:02:09,027] [bilibili_utils.py:30] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1Yi4y1Y7zD
+[2023-12-14 18:02:09,028] [views.py:122] [views:comment] [INFO]- bv_====>BV1Yi4y1Y7zD
+[2023-12-14 18:02:09,197] [bilibili_utils.py:54] [bilibili_utils:bv2av] [INFO]- 服务器返回错误！请稍后再试！{'code': -412, 'message': 'request was banned', 'ttl': 1}
+[2023-12-14 18:02:09,198] [views.py:126] [views:comment] [INFO]- avid=====>None
+[2023-12-14 18:04:33,692] [bilibili_utils.py:26] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 18:04:33,693] [bilibili_utils.py:30] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1Yi4y1Y7zD
+[2023-12-14 18:04:33,694] [views.py:122] [views:comment] [INFO]- bv_====>BV1Yi4y1Y7zD
+[2023-12-14 18:04:33,809] [bilibili_utils.py:58] [bilibili_utils:bv2av] [INFO]- 找到的avid537145862
+[2023-12-14 18:04:33,833] [views.py:132] [views:comment] [INFO]- avid=====>537145862
+[2023-12-14 18:04:34,183] [bilibili_utils.py:77] [bilibili_utils:bv2cid] [ERROR]- 服务器返回错误！请稍后再试！
+[2023-12-14 18:04:34,335] [bilibili_utils.py:74] [bilibili_utils:bv2cid] [INFO]- 提取出来的cid是：1365564272
+[2023-12-14 18:04:34,490] [bilibili_utils.py:74] [bilibili_utils:bv2cid] [INFO]- 提取出来的cid是：1365564272
+[2023-12-14 18:04:34,491] [views.py:170] [views:comment] [INFO]- 1365564272, cid,尝试了1次
+[2023-12-14 18:04:44,379] [bilibili_utils.py:26] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 18:04:44,380] [bilibili_utils.py:30] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1YC4y1y7m7
+[2023-12-14 18:04:44,381] [views.py:122] [views:comment] [INFO]- bv_====>BV1YC4y1y7m7
+[2023-12-14 18:04:44,499] [bilibili_utils.py:58] [bilibili_utils:bv2av] [INFO]- 找到的avid791525230
+[2023-12-14 18:04:44,514] [views.py:132] [views:comment] [INFO]- avid=====>791525230
+[2023-12-14 18:04:44,545] [bilibili_comment.py:65] [bilibili_comment:get_comments] [INFO]- Getting comments for bvorurl:https://www.bilibili.com/video/BV1YC4y1y7m7?spm_id_from=333.1007.tianma.2-1-4.click
+[2023-12-14 18:04:44,546] [bilibili_utils.py:26] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 18:04:44,547] [bilibili_utils.py:30] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1YC4y1y7m7
+[2023-12-14 18:04:44,660] [bilibili_utils.py:58] [bilibili_utils:bv2av] [INFO]- 找到的avid791525230
+[2023-12-14 18:04:44,661] [bilibili_comment.py:74] [bilibili_comment:get_comments] [INFO]- avid===>791525230
+[2023-12-14 18:04:44,843] [bilibili_comment.py:94] [bilibili_comment:get_comments] [INFO]- 提取到了56条评论，从第 1 页
+[2023-12-14 18:04:44,844] [bilibili_comment.py:107] [bilibili_comment:get_comments] [INFO]- 开始提取第2页评论
+[2023-12-14 18:04:46,270] [bilibili_comment.py:94] [bilibili_comment:get_comments] [INFO]- 提取到了32条评论，从第 2 页
+[2023-12-14 18:04:46,271] [bilibili_comment.py:107] [bilibili_comment:get_comments] [INFO]- 开始提取第3页评论
+[2023-12-14 18:04:47,619] [bilibili_comment.py:94] [bilibili_comment:get_comments] [INFO]- 提取到了20条评论，从第 3 页
+[2023-12-14 18:04:47,620] [bilibili_comment.py:107] [bilibili_comment:get_comments] [INFO]- 开始提取第4页评论
+[2023-12-14 18:04:48,436] [bilibili_comment.py:94] [bilibili_comment:get_comments] [INFO]- 提取到了32条评论，从第 4 页
+[2023-12-14 18:04:48,437] [bilibili_comment.py:107] [bilibili_comment:get_comments] [INFO]- 开始提取第5页评论
+[2023-12-14 18:04:49,203] [bilibili_comment.py:94] [bilibili_comment:get_comments] [INFO]- 提取到了30条评论，从第 5 页
+[2023-12-14 18:04:49,204] [bilibili_comment.py:107] [bilibili_comment:get_comments] [INFO]- 开始提取第6页评论
+[2023-12-14 18:04:49,954] [bilibili_comment.py:94] [bilibili_comment:get_comments] [INFO]- 提取到了24条评论，从第 6 页
+[2023-12-14 18:04:49,955] [bilibili_comment.py:107] [bilibili_comment:get_comments] [INFO]- 开始提取第7页评论
+[2023-12-14 18:04:51,043] [bilibili_comment.py:94] [bilibili_comment:get_comments] [INFO]- 提取到了21条评论，从第 7 页
+[2023-12-14 18:04:51,044] [bilibili_comment.py:107] [bilibili_comment:get_comments] [INFO]- 开始提取第8页评论
+[2023-12-14 18:04:52,081] [bilibili_comment.py:94] [bilibili_comment:get_comments] [INFO]- 提取到了20条评论，从第 8 页
+[2023-12-14 18:04:52,082] [bilibili_comment.py:107] [bilibili_comment:get_comments] [INFO]- 开始提取第9页评论
+[2023-12-14 18:04:53,645] [bilibili_comment.py:94] [bilibili_comment:get_comments] [INFO]- 提取到了21条评论，从第 9 页
+[2023-12-14 18:04:53,646] [bilibili_comment.py:107] [bilibili_comment:get_comments] [INFO]- 开始提取第10页评论
+[2023-12-14 18:04:54,411] [bilibili_comment.py:94] [bilibili_comment:get_comments] [INFO]- 提取到了20条评论，从第 10 页
+[2023-12-14 18:04:54,412] [bilibili_comment.py:107] [bilibili_comment:get_comments] [INFO]- 开始提取第11页评论
+[2023-12-14 18:04:55,584] [bilibili_comment.py:94] [bilibili_comment:get_comments] [INFO]- 提取到了25条评论，从第 11 页
+[2023-12-14 18:04:55,585] [bilibili_comment.py:107] [bilibili_comment:get_comments] [INFO]- 开始提取第12页评论
+[2023-12-14 18:04:57,085] [bilibili_comment.py:94] [bilibili_comment:get_comments] [INFO]- 提取到了24条评论，从第 12 页
+[2023-12-14 18:04:57,086] [bilibili_comment.py:107] [bilibili_comment:get_comments] [INFO]- 开始提取第13页评论
+[2023-12-14 18:04:58,700] [bilibili_comment.py:94] [bilibili_comment:get_comments] [INFO]- 提取到了22条评论，从第 13 页
+[2023-12-14 18:04:58,701] [bilibili_comment.py:107] [bilibili_comment:get_comments] [INFO]- 开始提取第14页评论
+[2023-12-14 18:05:00,123] [bilibili_comment.py:94] [bilibili_comment:get_comments] [INFO]- 提取到了21条评论，从第 14 页
+[2023-12-14 18:05:00,125] [bilibili_comment.py:107] [bilibili_comment:get_comments] [INFO]- 开始提取第15页评论
+[2023-12-14 18:05:01,004] [bilibili_comment.py:94] [bilibili_comment:get_comments] [INFO]- 提取到了20条评论，从第 15 页
+[2023-12-14 18:05:01,005] [bilibili_comment.py:107] [bilibili_comment:get_comments] [INFO]- 开始提取第16页评论
+[2023-12-14 18:05:02,665] [bilibili_comment.py:94] [bilibili_comment:get_comments] [INFO]- 提取到了22条评论，从第 16 页
+[2023-12-14 18:05:02,666] [bilibili_comment.py:107] [bilibili_comment:get_comments] [INFO]- 开始提取第17页评论
+[2023-12-14 18:05:03,862] [bilibili_comment.py:94] [bilibili_comment:get_comments] [INFO]- 提取到了27条评论，从第 17 页
+[2023-12-14 18:05:03,863] [bilibili_comment.py:107] [bilibili_comment:get_comments] [INFO]- 开始提取第18页评论
+[2023-12-14 18:05:04,885] [bilibili_comment.py:94] [bilibili_comment:get_comments] [INFO]- 提取到了21条评论，从第 18 页
+[2023-12-14 18:05:04,886] [bilibili_comment.py:107] [bilibili_comment:get_comments] [INFO]- 开始提取第19页评论
+[2023-12-14 18:05:06,033] [bilibili_comment.py:94] [bilibili_comment:get_comments] [INFO]- 提取到了26条评论，从第 19 页
+[2023-12-14 18:05:06,035] [bilibili_comment.py:107] [bilibili_comment:get_comments] [INFO]- 开始提取第20页评论
+[2023-12-14 18:05:07,628] [bilibili_comment.py:94] [bilibili_comment:get_comments] [INFO]- 提取到了21条评论，从第 20 页
+[2023-12-14 18:05:07,629] [bilibili_comment.py:107] [bilibili_comment:get_comments] [INFO]- 开始提取第21页评论
+[2023-12-14 18:05:09,075] [bilibili_comment.py:94] [bilibili_comment:get_comments] [INFO]- 提取到了24条评论，从第 21 页
+[2023-12-14 18:05:09,076] [bilibili_comment.py:107] [bilibili_comment:get_comments] [INFO]- 开始提取第22页评论
+[2023-12-14 18:05:10,501] [bilibili_comment.py:94] [bilibili_comment:get_comments] [INFO]- 提取到了23条评论，从第 22 页
+[2023-12-14 18:05:10,502] [bilibili_comment.py:107] [bilibili_comment:get_comments] [INFO]- 开始提取第23页评论
+[2023-12-14 18:05:11,753] [bilibili_comment.py:94] [bilibili_comment:get_comments] [INFO]- 提取到了22条评论，从第 23 页
+[2023-12-14 18:05:11,754] [bilibili_comment.py:107] [bilibili_comment:get_comments] [INFO]- 开始提取第24页评论
+[2023-12-14 18:05:13,373] [bilibili_comment.py:94] [bilibili_comment:get_comments] [INFO]- 提取到了14条评论，从第 24 页
+[2023-12-14 18:05:13,374] [bilibili_comment.py:107] [bilibili_comment:get_comments] [INFO]- 开始提取第25页评论
+[2023-12-14 18:05:14,927] [bilibili_comment.py:94] [bilibili_comment:get_comments] [INFO]- 提取到了0条评论，从第 25 页
+[2023-12-14 18:05:14,928] [bilibili_comment.py:96] [bilibili_comment:get_comments] [INFO]- 提取完毕所有评论，共提取到588条评论！=====>avid791525230
+[2023-12-14 18:05:14,929] [bilibili_comment.py:109] [bilibili_comment:get_comments] [INFO]- 总共588条评论！
+[2023-12-14 18:06:40,224] [bilibili_utils.py:26] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 18:06:40,226] [bilibili_utils.py:30] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1YC4y1y7m7
+[2023-12-14 18:06:40,227] [views.py:122] [views:comment] [INFO]- bv_====>BV1YC4y1y7m7
+[2023-12-14 18:06:40,402] [bilibili_utils.py:54] [bilibili_utils:bv2av] [INFO]- 服务器返回错误！请稍后再试！{'code': -412, 'message': 'request was banned', 'ttl': 1}
+[2023-12-14 18:06:40,404] [views.py:128] [views:comment] [INFO]- av is None, retrying...1
+[2023-12-14 18:06:40,558] [bilibili_utils.py:54] [bilibili_utils:bv2av] [INFO]- 服务器返回错误！请稍后再试！{'code': -412, 'message': 'request was banned', 'ttl': 1}
+[2023-12-14 18:06:40,560] [views.py:128] [views:comment] [INFO]- av is None, retrying...2
+[2023-12-14 18:06:40,716] [bilibili_utils.py:54] [bilibili_utils:bv2av] [INFO]- 服务器返回错误！请稍后再试！{'code': -412, 'message': 'request was banned', 'ttl': 1}
+[2023-12-14 18:06:40,718] [views.py:128] [views:comment] [INFO]- av is None, retrying...3
+[2023-12-14 18:06:40,905] [bilibili_utils.py:54] [bilibili_utils:bv2av] [INFO]- 服务器返回错误！请稍后再试！{'code': -412, 'message': 'request was banned', 'ttl': 1}
+[2023-12-14 18:06:40,906] [views.py:128] [views:comment] [INFO]- av is None, retrying...4
+[2023-12-14 18:06:41,057] [bilibili_utils.py:54] [bilibili_utils:bv2av] [INFO]- 服务器返回错误！请稍后再试！{'code': -412, 'message': 'request was banned', 'ttl': 1}
+[2023-12-14 18:06:41,060] [views.py:128] [views:comment] [INFO]- av is None, retrying...5
+[2023-12-14 18:06:41,194] [bilibili_utils.py:58] [bilibili_utils:bv2av] [INFO]- 找到的avid791525230
+[2023-12-14 18:06:41,211] [views.py:132] [views:comment] [INFO]- avid=====>791525230
+[2023-12-14 18:07:36,762] [bilibili_utils.py:26] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 18:07:36,764] [bilibili_utils.py:30] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1YC4y1y7m7
+[2023-12-14 18:07:36,765] [views.py:122] [views:comment] [INFO]- bv_====>BV1YC4y1y7m7
+[2023-12-14 18:07:36,871] [bilibili_utils.py:58] [bilibili_utils:bv2av] [INFO]- 找到的avid791525230
+[2023-12-14 18:07:36,885] [views.py:132] [views:comment] [INFO]- avid=====>791525230
+[2023-12-14 18:07:54,936] [bilibili_utils.py:26] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 18:07:54,937] [bilibili_utils.py:30] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1YC4y1y7m7
+[2023-12-14 18:07:54,939] [views.py:122] [views:comment] [INFO]- bv_====>BV1YC4y1y7m7
+[2023-12-14 18:07:55,087] [bilibili_utils.py:54] [bilibili_utils:bv2av] [INFO]- 服务器返回错误！请稍后再试！{'code': -412, 'message': 'request was banned', 'ttl': 1}
+[2023-12-14 18:07:55,089] [views.py:128] [views:comment] [INFO]- av is None, retrying...1
+[2023-12-14 18:07:55,232] [bilibili_utils.py:54] [bilibili_utils:bv2av] [INFO]- 服务器返回错误！请稍后再试！{'code': -412, 'message': 'request was banned', 'ttl': 1}
+[2023-12-14 18:07:55,233] [views.py:128] [views:comment] [INFO]- av is None, retrying...2
+[2023-12-14 18:07:55,341] [bilibili_utils.py:58] [bilibili_utils:bv2av] [INFO]- 找到的avid791525230
+[2023-12-14 18:07:55,358] [views.py:132] [views:comment] [INFO]- avid=====>791525230
+[2023-12-14 18:08:08,118] [bilibili_utils.py:26] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 18:08:08,120] [bilibili_utils.py:30] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1YC4y1y7m7
+[2023-12-14 18:08:08,122] [views.py:122] [views:comment] [INFO]- bv_====>BV1YC4y1y7m7
+[2023-12-14 18:08:08,257] [bilibili_utils.py:58] [bilibili_utils:bv2av] [INFO]- 找到的avid791525230
+[2023-12-14 18:08:08,274] [views.py:132] [views:comment] [INFO]- avid=====>791525230
+[2023-12-14 18:08:08,629] [bilibili_utils.py:77] [bilibili_utils:bv2cid] [ERROR]- 服务器返回错误！请稍后再试！
+[2023-12-14 18:08:08,769] [bilibili_utils.py:77] [bilibili_utils:bv2cid] [ERROR]- 服务器返回错误！请稍后再试！
+[2023-12-14 18:08:08,926] [bilibili_utils.py:74] [bilibili_utils:bv2cid] [INFO]- 提取出来的cid是：1350353746
+[2023-12-14 18:08:09,082] [bilibili_utils.py:77] [bilibili_utils:bv2cid] [ERROR]- 服务器返回错误！请稍后再试！
+[2023-12-14 18:08:09,239] [bilibili_utils.py:74] [bilibili_utils:bv2cid] [INFO]- 提取出来的cid是：1350353746
+[2023-12-14 18:08:09,240] [views.py:170] [views:comment] [INFO]- None, cid,尝试了1次
+[2023-12-14 18:08:12,395] [bilibili_utils.py:74] [bilibili_utils:bv2cid] [INFO]- 提取出来的cid是：1350353746
+[2023-12-14 18:08:12,397] [views.py:170] [views:comment] [INFO]- 1350353746, cid,尝试了2次
+[2023-12-14 18:09:20,056] [views.py:297] [views:export_data] [INFO]- POST
+[2023-12-14 18:09:20,057] [views.py:319] [views:export_data] [INFO]- 开始导出数据,数据类型为，comment，avid791525230
+[2023-12-14 18:09:41,285] [bilibili_utils.py:26] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 18:09:41,286] [bilibili_utils.py:30] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1YC4y1y7m7
+[2023-12-14 18:09:41,638] [bilibili_danmu.py:87] [bilibili_danmu:down_so_files] [INFO]- 正在下载 1350353746-2023-12-01.so 文件，请稍后...
+[2023-12-14 18:09:42,134] [bilibili_danmu.py:87] [bilibili_danmu:down_so_files] [INFO]- 正在下载 1350353746-2023-12-02.so 文件，请稍后...
+[2023-12-14 18:09:42,587] [bilibili_danmu.py:87] [bilibili_danmu:down_so_files] [INFO]- 正在下载 1350353746-2023-12-03.so 文件，请稍后...
+[2023-12-14 18:09:43,010] [bilibili_danmu.py:87] [bilibili_danmu:down_so_files] [INFO]- 正在下载 1350353746-2023-12-04.so 文件，请稍后...
+[2023-12-14 18:09:43,438] [bilibili_danmu.py:87] [bilibili_danmu:down_so_files] [INFO]- 正在下载 1350353746-2023-12-05.so 文件，请稍后...
+[2023-12-14 18:09:43,838] [bilibili_danmu.py:87] [bilibili_danmu:down_so_files] [INFO]- 正在下载 1350353746-2023-12-06.so 文件，请稍后...
+[2023-12-14 18:09:44,236] [bilibili_danmu.py:87] [bilibili_danmu:down_so_files] [INFO]- 正在下载 1350353746-2023-12-07.so 文件，请稍后...
+[2023-12-14 18:09:44,683] [bilibili_danmu.py:87] [bilibili_danmu:down_so_files] [INFO]- 正在下载 1350353746-2023-12-08.so 文件，请稍后...
+[2023-12-14 18:09:45,141] [bilibili_danmu.py:87] [bilibili_danmu:down_so_files] [INFO]- 正在下载 1350353746-2023-12-09.so 文件，请稍后...
+[2023-12-14 18:09:45,590] [bilibili_danmu.py:87] [bilibili_danmu:down_so_files] [INFO]- 正在下载 1350353746-2023-12-10.so 文件，请稍后...
+[2023-12-14 18:09:46,005] [bilibili_danmu.py:87] [bilibili_danmu:down_so_files] [INFO]- 正在下载 1350353746-2023-12-11.so 文件，请稍后...
+[2023-12-14 18:09:46,429] [bilibili_danmu.py:87] [bilibili_danmu:down_so_files] [INFO]- 正在下载 1350353746-2023-12-12.so 文件，请稍后...
+[2023-12-14 18:09:46,880] [bilibili_danmu.py:87] [bilibili_danmu:down_so_files] [INFO]- 正在下载 1350353746-2023-12-13.so 文件，请稍后...
+[2023-12-14 18:09:47,346] [bilibili_danmu.py:87] [bilibili_danmu:down_so_files] [INFO]- 正在下载 1350353746-2023-12-14.so 文件，请稍后...
+[2023-12-14 18:09:47,770] [bilibili_danmu.py:96] [bilibili_danmu:down_so_files] [INFO]- 下载完成！
+[2023-12-14 18:09:47,824] [bilibili_danmu.py:133] [bilibili_danmu:parse_so_to_json] [INFO]- 找到了 2249 个唯一的 弹幕 在 1350353746这个视频
+[2023-12-14 18:09:47,864] [bilibili_danmu.py:141] [bilibili_danmu:parse_so_to_json] [INFO]- Done!..........
+[2023-12-14 18:09:47,865] [bilibili_danmu.py:145] [bilibili_danmu:parse_so_to_json] [INFO]- 1350353746-2023-12-01.so 文件已删除
+[2023-12-14 18:09:47,866] [bilibili_danmu.py:145] [bilibili_danmu:parse_so_to_json] [INFO]- 1350353746-2023-12-02.so 文件已删除
+[2023-12-14 18:09:47,867] [bilibili_danmu.py:145] [bilibili_danmu:parse_so_to_json] [INFO]- 1350353746-2023-12-03.so 文件已删除
+[2023-12-14 18:09:47,868] [bilibili_danmu.py:145] [bilibili_danmu:parse_so_to_json] [INFO]- 1350353746-2023-12-04.so 文件已删除
+[2023-12-14 18:09:47,869] [bilibili_danmu.py:145] [bilibili_danmu:parse_so_to_json] [INFO]- 1350353746-2023-12-05.so 文件已删除
+[2023-12-14 18:09:47,870] [bilibili_danmu.py:145] [bilibili_danmu:parse_so_to_json] [INFO]- 1350353746-2023-12-06.so 文件已删除
+[2023-12-14 18:09:47,871] [bilibili_danmu.py:145] [bilibili_danmu:parse_so_to_json] [INFO]- 1350353746-2023-12-07.so 文件已删除
+[2023-12-14 18:09:47,872] [bilibili_danmu.py:145] [bilibili_danmu:parse_so_to_json] [INFO]- 1350353746-2023-12-08.so 文件已删除
+[2023-12-14 18:09:47,873] [bilibili_danmu.py:145] [bilibili_danmu:parse_so_to_json] [INFO]- 1350353746-2023-12-09.so 文件已删除
+[2023-12-14 18:09:47,874] [bilibili_danmu.py:145] [bilibili_danmu:parse_so_to_json] [INFO]- 1350353746-2023-12-10.so 文件已删除
+[2023-12-14 18:09:47,875] [bilibili_danmu.py:145] [bilibili_danmu:parse_so_to_json] [INFO]- 1350353746-2023-12-11.so 文件已删除
+[2023-12-14 18:09:47,877] [bilibili_danmu.py:145] [bilibili_danmu:parse_so_to_json] [INFO]- 1350353746-2023-12-12.so 文件已删除
+[2023-12-14 18:09:47,878] [bilibili_danmu.py:145] [bilibili_danmu:parse_so_to_json] [INFO]- 1350353746-2023-12-13.so 文件已删除
+[2023-12-14 18:09:47,879] [bilibili_danmu.py:145] [bilibili_danmu:parse_so_to_json] [INFO]- 1350353746-2023-12-14.so 文件已删除
+[2023-12-14 18:09:48,823] [views.py:63] [views:danmaku] [INFO]- BV1YC4y1y7m7
+[2023-12-14 18:09:53,816] [bilibili_utils.py:26] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 18:09:53,817] [bilibili_utils.py:30] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1YC4y1y7m7
+[2023-12-14 18:09:53,866] [views.py:63] [views:danmaku] [INFO]- BV1YC4y1y7m7
+[2023-12-14 18:09:55,295] [bilibili_utils.py:26] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 18:09:55,296] [bilibili_utils.py:30] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1YC4y1y7m7
+[2023-12-14 18:09:55,346] [views.py:63] [views:danmaku] [INFO]- BV1YC4y1y7m7
+[2023-12-14 18:09:56,399] [bilibili_utils.py:26] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 18:09:56,400] [bilibili_utils.py:30] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1YC4y1y7m7
+[2023-12-14 18:09:56,447] [views.py:63] [views:danmaku] [INFO]- BV1YC4y1y7m7
+[2023-12-14 18:09:57,770] [bilibili_utils.py:26] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 18:09:57,771] [bilibili_utils.py:30] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1YC4y1y7m7
+[2023-12-14 18:09:57,837] [views.py:63] [views:danmaku] [INFO]- BV1YC4y1y7m7
+[2023-12-14 18:09:58,984] [bilibili_utils.py:26] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 18:09:58,985] [bilibili_utils.py:30] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1YC4y1y7m7
+[2023-12-14 18:09:59,035] [views.py:63] [views:danmaku] [INFO]- BV1YC4y1y7m7
+[2023-12-14 18:10:00,219] [bilibili_utils.py:26] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 18:10:00,220] [bilibili_utils.py:30] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1YC4y1y7m7
+[2023-12-14 18:10:00,275] [views.py:63] [views:danmaku] [INFO]- BV1YC4y1y7m7
+[2023-12-14 18:10:01,458] [bilibili_utils.py:26] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 18:10:01,459] [bilibili_utils.py:30] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1YC4y1y7m7
+[2023-12-14 18:10:01,524] [views.py:63] [views:danmaku] [INFO]- BV1YC4y1y7m7
+[2023-12-14 18:10:02,674] [bilibili_utils.py:26] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 18:10:02,675] [bilibili_utils.py:30] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1YC4y1y7m7
+[2023-12-14 18:10:02,742] [views.py:63] [views:danmaku] [INFO]- BV1YC4y1y7m7
+[2023-12-14 18:10:03,825] [bilibili_utils.py:26] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 18:10:03,826] [bilibili_utils.py:30] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1YC4y1y7m7
+[2023-12-14 18:10:03,876] [views.py:63] [views:danmaku] [INFO]- BV1YC4y1y7m7
+[2023-12-14 18:10:05,397] [bilibili_utils.py:26] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 18:10:05,398] [bilibili_utils.py:30] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1YC4y1y7m7
+[2023-12-14 18:10:05,446] [views.py:63] [views:danmaku] [INFO]- BV1YC4y1y7m7
+[2023-12-14 18:10:07,923] [bilibili_utils.py:26] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 18:10:07,924] [bilibili_utils.py:30] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1YC4y1y7m7
+[2023-12-14 18:10:07,980] [views.py:63] [views:danmaku] [INFO]- BV1YC4y1y7m7
+[2023-12-14 18:10:09,503] [bilibili_utils.py:26] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 18:10:09,505] [bilibili_utils.py:30] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1YC4y1y7m7
+[2023-12-14 18:10:09,569] [views.py:63] [views:danmaku] [INFO]- BV1YC4y1y7m7
+[2023-12-14 18:10:11,649] [bilibili_utils.py:26] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 18:10:11,650] [bilibili_utils.py:30] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1YC4y1y7m7
+[2023-12-14 18:10:11,717] [views.py:63] [views:danmaku] [INFO]- BV1YC4y1y7m7
+[2023-12-14 18:10:13,683] [bilibili_utils.py:26] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 18:10:13,684] [bilibili_utils.py:30] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1YC4y1y7m7
+[2023-12-14 18:10:13,736] [views.py:63] [views:danmaku] [INFO]- BV1YC4y1y7m7
+[2023-12-14 18:10:18,876] [bilibili_utils.py:26] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 18:10:18,877] [bilibili_utils.py:30] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1YC4y1y7m7
+[2023-12-14 18:10:18,933] [views.py:63] [views:danmaku] [INFO]- BV1YC4y1y7m7
+[2023-12-14 18:10:23,267] [bilibili_utils.py:26] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-14 18:10:23,268] [bilibili_utils.py:30] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1YC4y1y7m7
+[2023-12-14 18:10:23,316] [views.py:63] [views:danmaku] [INFO]- BV1YC4y1y7m7
+[2023-12-14 18:10:41,724] [bilibili_utils.py:36] [bilibili_utils:bv_get] [INFO]- 你输入的是BV号BV1Yi4y1Y7zD，正在解析...
+[2023-12-14 18:10:42,042] [bilibili_danmu.py:87] [bilibili_danmu:down_so_files] [INFO]- 正在下载 1365564272-2023-12-13.so 文件，请稍后...
+[2023-12-14 18:10:42,399] [bilibili_danmu.py:87] [bilibili_danmu:down_so_files] [INFO]- 正在下载 1365564272-2023-12-14.so 文件，请稍后...
+[2023-12-14 18:10:42,782] [bilibili_danmu.py:96] [bilibili_danmu:down_so_files] [INFO]- 下载完成！
+[2023-12-14 18:10:42,790] [bilibili_danmu.py:133] [bilibili_danmu:parse_so_to_json] [INFO]- 找到了 659 个唯一的 弹幕 在 1365564272这个视频
+[2023-12-14 18:10:42,803] [bilibili_danmu.py:141] [bilibili_danmu:parse_so_to_json] [INFO]- Done!..........
+[2023-12-14 18:10:42,804] [bilibili_danmu.py:145] [bilibili_danmu:parse_so_to_json] [INFO]- 1365564272-2023-12-13.so 文件已删除
+[2023-12-14 18:10:42,805] [bilibili_danmu.py:145] [bilibili_danmu:parse_so_to_json] [INFO]- 1365564272-2023-12-14.so 文件已删除
+[2023-12-14 18:10:42,951] [views.py:63] [views:danmaku] [INFO]- BV1Yi4y1Y7zD
+[2023-12-14 18:10:45,772] [bilibili_utils.py:36] [bilibili_utils:bv_get] [INFO]- 你输入的是BV号BV1Yi4y1Y7zD，正在解析...
+[2023-12-14 18:10:45,828] [views.py:63] [views:danmaku] [INFO]- BV1Yi4y1Y7zD
+[2023-12-14 18:10:47,256] [bilibili_utils.py:36] [bilibili_utils:bv_get] [INFO]- 你输入的是BV号BV1Yi4y1Y7zD，正在解析...
+[2023-12-14 18:10:47,312] [views.py:63] [views:danmaku] [INFO]- BV1Yi4y1Y7zD
+[2023-12-14 18:10:48,557] [bilibili_utils.py:36] [bilibili_utils:bv_get] [INFO]- 你输入的是BV号BV1Yi4y1Y7zD，正在解析...
+[2023-12-14 18:10:48,616] [views.py:63] [views:danmaku] [INFO]- BV1Yi4y1Y7zD
+[2023-12-14 18:10:50,015] [bilibili_utils.py:36] [bilibili_utils:bv_get] [INFO]- 你输入的是BV号BV1Yi4y1Y7zD，正在解析...
+[2023-12-14 18:10:50,075] [views.py:63] [views:danmaku] [INFO]- BV1Yi4y1Y7zD
+[2023-12-14 18:10:53,658] [bilibili_utils.py:36] [bilibili_utils:bv_get] [INFO]- 你输入的是BV号BV1Yi4y1Y7zD，正在解析...
+[2023-12-14 18:10:53,724] [views.py:63] [views:danmaku] [INFO]- BV1Yi4y1Y7zD
+[2023-12-14 18:10:54,783] [bilibili_utils.py:36] [bilibili_utils:bv_get] [INFO]- 你输入的是BV号BV1Yi4y1Y7zD，正在解析...
+[2023-12-14 18:10:54,839] [views.py:63] [views:danmaku] [INFO]- BV1Yi4y1Y7zD
+[2023-12-14 18:10:55,686] [bilibili_utils.py:36] [bilibili_utils:bv_get] [INFO]- 你输入的是BV号BV1Yi4y1Y7zD，正在解析...
+[2023-12-14 18:10:55,746] [views.py:63] [views:danmaku] [INFO]- BV1Yi4y1Y7zD
+[2023-12-14 18:10:56,634] [bilibili_utils.py:36] [bilibili_utils:bv_get] [INFO]- 你输入的是BV号BV1Yi4y1Y7zD，正在解析...
+[2023-12-14 18:10:56,691] [views.py:63] [views:danmaku] [INFO]- BV1Yi4y1Y7zD
+[2023-12-14 18:10:58,732] [bilibili_utils.py:36] [bilibili_utils:bv_get] [INFO]- 你输入的是BV号BV1Yi4y1Y7zD，正在解析...
+[2023-12-14 18:10:58,797] [views.py:63] [views:danmaku] [INFO]- BV1Yi4y1Y7zD
+[2023-12-14 18:11:01,918] [bilibili_utils.py:36] [bilibili_utils:bv_get] [INFO]- 你输入的是BV号BV1Yi4y1Y7zD，正在解析...
+[2023-12-14 18:11:01,985] [views.py:63] [views:danmaku] [INFO]- BV1Yi4y1Y7zD
+[2023-12-14 18:11:02,999] [bilibili_utils.py:36] [bilibili_utils:bv_get] [INFO]- 你输入的是BV号BV1Yi4y1Y7zD，正在解析...
+[2023-12-14 18:11:03,063] [views.py:63] [views:danmaku] [INFO]- BV1Yi4y1Y7zD

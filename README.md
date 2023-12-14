@@ -15,6 +15,7 @@ python3.10
 pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 ```
 
+## 启动项目
 ```bash
 py ./manage.py runserver
 ```
