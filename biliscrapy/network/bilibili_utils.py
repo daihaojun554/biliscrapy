@@ -18,7 +18,6 @@ class bili_utils:
     def __init__(self):
         self.logger = logging.getLogger('log')
 
-
     def bv_get(self, bvorurl):
         # https://api.bilibili.com/x/web-interface/view?bvid=BV1uG41197Tf
         # 将bv提取出来
@@ -48,20 +47,31 @@ class bili_utils:
     def bv2av(self, bv):
         bv2av_url = 'https://api.bilibili.com/x/web-interface/view?bvid='
         if bv.startswith("BV"):
-            uurrll = bv2av_url + str(bv)
-            js_str = requests.get(uurrll).json()
+            url = bv2av_url + str(bv)
+            retry_count = 0
+            max_retries = 10
+            retry_delay = 1  # seconds
+            while retry_count < max_retries:
+                try:
+                    response = requests.get(url)
+                    response.raise_for_status()  # 检查请求是否成功
+                    data = response.json()
+                    if 'data' in data and 'aid' in data['data']:
+                        avid = data['data']['aid']
+                        self.logger.info(f"找到的avid{avid}")
+                        return avid
+                    else:
+                        self.logger.info("未找到有效的aid值，正在重新尝试获取...")
+                        retry_count += 1
+                        time.sleep(retry_delay)
+                except (requests.RequestException, ValueError) as e:
+                    self.logger.info(f"请求发生错误：{e}")
+                    retry_count += 1
+                    self.logger.info("服务器返回错误！请稍后再试！")
+                    self.logger.info(f"正在重新尝试获取aid，尝试次数==>{retry_count}")
+                    time.sleep(retry_delay)
 
-            if js_str['code'] != 0:
-                self.logger.info("服务器返回错误！请稍后再试！{}".format(js_str))
-                return None
-            if js_str['data']['aid']:
-                avid = js_str['data']['aid']
-                self.logger.info(f"找到的avid{avid}")
-                return avid
-            else:
-                return None
-        else:
-            return None
+        return None
 
     '''
     cid 是弹幕用的参数
@@ -76,8 +86,7 @@ class bili_utils:
             return cid
         else:
             self.logger.error("服务器返回错误！请稍后再试！")
-            self.bv2cid(bv)
-            return None
+            return self.bv2cid(bv)
 
     def get_bilibili_cookies(self):
         options = webdriver.ChromeOptions()
