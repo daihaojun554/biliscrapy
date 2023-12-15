@@ -1,0 +1,425 @@
+[2023-12-15 15:24:56,669] [autoreload.py:677] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2023-12-15 15:24:59,658] [log.py:241] [log:log_response] [WARNING]- Not Found: /
+[2023-12-15 15:24:59,660] [basehttp.py:187] [basehttp:log_message] [WARNING]- "GET / HTTP/1.1" 404 2173
+[2023-12-15 15:24:59,988] [log.py:241] [log:log_response] [WARNING]- Not Found: /favicon.ico
+[2023-12-15 15:24:59,990] [basehttp.py:187] [basehttp:log_message] [WARNING]- "GET /favicon.ico HTTP/1.1" 404 2224
+[2023-12-15 15:25:02,782] [basehttp.py:187] [basehttp:log_message] [INFO]- "GET /bilibili/comment.html HTTP/1.1" 200 9270
+[2023-12-15 15:25:04,560] [basehttp.py:187] [basehttp:log_message] [INFO]- "GET /bilibili/danmaku.html HTTP/1.1" 200 9258
+[2023-12-15 15:25:12,665] [bilibili_utils.py:41] [bilibili_utils:bv_get] [INFO]- 请输入正确的链接地址或BV号！,adsasdsaddsa
+[2023-12-15 15:25:12,668] [basehttp.py:187] [basehttp:log_message] [INFO]- "POST /bilibili/danmaku.html HTTP/1.1" 200 9369
+[2023-12-15 15:25:23,174] [bilibili_utils.py:27] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-15 15:25:23,175] [bilibili_utils.py:31] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1wC4y1c77S
+[2023-12-15 15:25:23,209] [bilibili_utils.py:27] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-15 15:25:23,212] [bilibili_utils.py:31] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1wC4y1c77S
+[2023-12-15 15:25:23,416] [bilibili_utils.py:78] [bilibili_utils:bv2cid] [ERROR]- 服务器返回错误！请稍后再试！
+[2023-12-15 15:25:23,569] [bilibili_utils.py:75] [bilibili_utils:bv2cid] [INFO]- 提取出来的cid是：1366382835
+[2023-12-15 15:25:23,743] [bilibili_danmu.py:79] [bilibili_danmu:down_so_files] [INFO]- 请输入正确的 oid 号码!!
+[2023-12-15 15:25:23,745] [bilibili_danmu.py:133] [bilibili_danmu:parse_so_to_json] [INFO]- 找到了 0 个唯一的 弹幕 在 None这个视频
+[2023-12-15 15:25:23,748] [bilibili_danmu.py:141] [bilibili_danmu:parse_so_to_json] [INFO]- Done!..........
+[2023-12-15 15:25:23,765] [views.py:63] [views:danmaku] [INFO]- BV1wC4y1c77S
+[2023-12-15 15:25:24,041] [bilibili_utils.py:75] [bilibili_utils:bv2cid] [INFO]- 提取出来的cid是：1366382835
+[2023-12-15 15:25:24,043] [views.py:74] [views:danmaku] [INFO]- 1366382835, cid
+[2023-12-15 15:25:24,087] [views.py:88] [views:danmaku] [INFO]- 新视频信息已添加
+[2023-12-15 15:25:24,150] [basehttp.py:187] [basehttp:log_message] [INFO]- "POST /bilibili/danmaku.html HTTP/1.1" 200 9292
+[2023-12-15 15:27:08,455] [autoreload.py:266] [autoreload:trigger_reload] [INFO]- D:\python_code\django_site\biliscrapy\network\bilibili_utils.py changed, reloading.
+[2023-12-15 15:27:10,700] [autoreload.py:677] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2023-12-15 15:27:31,763] [autoreload.py:266] [autoreload:trigger_reload] [INFO]- D:\python_code\django_site\biliscrapy\network\bilibili_utils.py changed, reloading.
+[2023-12-15 15:27:33,588] [autoreload.py:677] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2023-12-15 15:31:14,355] [autoreload.py:266] [autoreload:trigger_reload] [INFO]- D:\python_code\django_site\biliscrapy\network\bilibili_utils.py changed, reloading.
+[2023-12-15 15:31:16,028] [autoreload.py:677] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2023-12-15 15:31:39,019] [bilibili_utils.py:27] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-15 15:31:39,020] [bilibili_utils.py:31] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1wC4y1c77S
+[2023-12-15 15:31:39,348] [bilibili_danmu.py:87] [bilibili_danmu:down_so_files] [INFO]- 正在下载 1366382835-2023-12-14.so 文件，请稍后...
+[2023-12-15 15:31:39,661] [bilibili_danmu.py:87] [bilibili_danmu:down_so_files] [INFO]- 正在下载 1366382835-2023-12-15.so 文件，请稍后...
+[2023-12-15 15:31:39,976] [bilibili_danmu.py:96] [bilibili_danmu:down_so_files] [INFO]- 下载完成！
+[2023-12-15 15:31:40,004] [bilibili_danmu.py:133] [bilibili_danmu:parse_so_to_json] [INFO]- 找到了 1150 个唯一的 弹幕 在 1366382835这个视频
+[2023-12-15 15:31:40,039] [bilibili_danmu.py:141] [bilibili_danmu:parse_so_to_json] [INFO]- Done!..........
+[2023-12-15 15:31:40,041] [bilibili_danmu.py:145] [bilibili_danmu:parse_so_to_json] [INFO]- 1366382835-2023-12-14.so 文件已删除
+[2023-12-15 15:31:40,044] [bilibili_danmu.py:145] [bilibili_danmu:parse_so_to_json] [INFO]- 1366382835-2023-12-15.so 文件已删除
+[2023-12-15 15:31:40,320] [views.py:63] [views:danmaku] [INFO]- BV1wC4y1c77S
+[2023-12-15 15:31:40,562] [basehttp.py:187] [basehttp:log_message] [INFO]- "POST /bilibili/danmaku.html HTTP/1.1" 200 22445
+[2023-12-15 15:32:00,944] [bilibili_utils.py:27] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-15 15:32:00,945] [bilibili_utils.py:31] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1wC4y1c77S
+[2023-12-15 15:32:01,004] [views.py:63] [views:danmaku] [INFO]- BV1wC4y1c77S
+[2023-12-15 15:32:01,166] [basehttp.py:187] [basehttp:log_message] [INFO]- "POST /bilibili/danmaku.html HTTP/1.1" 200 26492
+[2023-12-15 15:32:02,516] [bilibili_utils.py:27] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-15 15:32:02,517] [bilibili_utils.py:31] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1wC4y1c77S
+[2023-12-15 15:32:02,584] [views.py:63] [views:danmaku] [INFO]- BV1wC4y1c77S
+[2023-12-15 15:32:02,797] [basehttp.py:187] [basehttp:log_message] [INFO]- "POST /bilibili/danmaku.html HTTP/1.1" 200 26422
+[2023-12-15 15:32:03,824] [bilibili_utils.py:27] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-15 15:32:03,825] [bilibili_utils.py:31] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1wC4y1c77S
+[2023-12-15 15:32:03,908] [views.py:63] [views:danmaku] [INFO]- BV1wC4y1c77S
+[2023-12-15 15:32:04,094] [basehttp.py:187] [basehttp:log_message] [INFO]- "POST /bilibili/danmaku.html HTTP/1.1" 200 26468
+[2023-12-15 15:32:04,930] [bilibili_utils.py:27] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-15 15:32:04,931] [bilibili_utils.py:31] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1wC4y1c77S
+[2023-12-15 15:32:04,985] [views.py:63] [views:danmaku] [INFO]- BV1wC4y1c77S
+[2023-12-15 15:32:05,138] [basehttp.py:187] [basehttp:log_message] [INFO]- "POST /bilibili/danmaku.html HTTP/1.1" 200 26363
+[2023-12-15 15:32:08,219] [views.py:297] [views:export_data] [INFO]- POST
+[2023-12-15 15:32:08,221] [views.py:307] [views:export_data] [INFO]- 开始导出,数据,数据类型为，danmaku，cid为1366382835
+[2023-12-15 15:32:08,316] [basehttp.py:187] [basehttp:log_message] [INFO]- "POST /bilibili/export_data/ HTTP/1.1" 200 82720
+[2023-12-15 15:33:01,445] [bilibili_utils.py:27] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-15 15:33:01,446] [bilibili_utils.py:31] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1T94y1N7d6
+[2023-12-15 15:33:01,463] [bilibili_utils.py:27] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-15 15:33:01,464] [bilibili_utils.py:31] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1T94y1N7d6
+[2023-12-15 15:33:01,643] [bilibili_utils.py:84] [bilibili_utils:bv2cid] [ERROR]- 服务器返回错误！请稍后再试！
+[2023-12-15 15:33:01,832] [bilibili_utils.py:81] [bilibili_utils:bv2cid] [INFO]- 提取出来的cid是：1365212794
+[2023-12-15 15:33:02,013] [bilibili_danmu.py:79] [bilibili_danmu:down_so_files] [INFO]- 请输入正确的 oid 号码!!
+[2023-12-15 15:33:02,015] [bilibili_danmu.py:133] [bilibili_danmu:parse_so_to_json] [INFO]- 找到了 0 个唯一的 弹幕 在 None这个视频
+[2023-12-15 15:33:02,018] [bilibili_danmu.py:141] [bilibili_danmu:parse_so_to_json] [INFO]- Done!..........
+[2023-12-15 15:33:02,037] [views.py:63] [views:danmaku] [INFO]- BV1T94y1N7d6
+[2023-12-15 15:33:02,222] [basehttp.py:187] [basehttp:log_message] [INFO]- "POST /bilibili/danmaku.html HTTP/1.1" 200 9369
+[2023-12-15 15:34:19,507] [autoreload.py:266] [autoreload:trigger_reload] [INFO]- D:\python_code\django_site\biliscrapy\network\bilibili_utils.py changed, reloading.
+[2023-12-15 15:34:20,730] [autoreload.py:677] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2023-12-15 15:34:40,565] [bilibili_utils.py:27] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-15 15:34:40,567] [bilibili_utils.py:31] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1T94y1N7d6
+[2023-12-15 15:34:40,588] [bilibili_utils.py:27] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-15 15:34:40,591] [bilibili_utils.py:31] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1T94y1N7d6
+[2023-12-15 15:34:40,822] [bilibili_utils.py:84] [bilibili_utils:bv2cid] [ERROR]- 服务器返回错误！请稍后再试！
+[2023-12-15 15:34:41,009] [bilibili_utils.py:84] [bilibili_utils:bv2cid] [ERROR]- 服务器返回错误！请稍后再试！
+[2023-12-15 15:34:41,243] [bilibili_utils.py:81] [bilibili_utils:bv2cid] [INFO]- 提取出来的cid是：1365212794
+[2023-12-15 15:34:41,498] [bilibili_danmu.py:87] [bilibili_danmu:down_so_files] [INFO]- 正在下载 1365212794-2023-12-13.so 文件，请稍后...
+[2023-12-15 15:34:41,773] [bilibili_danmu.py:87] [bilibili_danmu:down_so_files] [INFO]- 正在下载 1365212794-2023-12-14.so 文件，请稍后...
+[2023-12-15 15:34:42,056] [bilibili_danmu.py:87] [bilibili_danmu:down_so_files] [INFO]- 正在下载 1365212794-2023-12-15.so 文件，请稍后...
+[2023-12-15 15:34:42,329] [bilibili_danmu.py:96] [bilibili_danmu:down_so_files] [INFO]- 下载完成！
+[2023-12-15 15:34:42,407] [bilibili_danmu.py:133] [bilibili_danmu:parse_so_to_json] [INFO]- 找到了 755 个唯一的 弹幕 在 1365212794这个视频
+[2023-12-15 15:34:42,463] [bilibili_danmu.py:141] [bilibili_danmu:parse_so_to_json] [INFO]- Done!..........
+[2023-12-15 15:34:42,469] [bilibili_danmu.py:145] [bilibili_danmu:parse_so_to_json] [INFO]- 1365212794-2023-12-13.so 文件已删除
+[2023-12-15 15:34:42,476] [bilibili_danmu.py:145] [bilibili_danmu:parse_so_to_json] [INFO]- 1365212794-2023-12-14.so 文件已删除
+[2023-12-15 15:34:42,480] [bilibili_danmu.py:145] [bilibili_danmu:parse_so_to_json] [INFO]- 1365212794-2023-12-15.so 文件已删除
+[2023-12-15 15:34:42,807] [views.py:63] [views:danmaku] [INFO]- BV1T94y1N7d6
+[2023-12-15 15:34:43,175] [bilibili_utils.py:81] [bilibili_utils:bv2cid] [INFO]- 提取出来的cid是：1365212794
+[2023-12-15 15:34:43,201] [views.py:74] [views:danmaku] [INFO]- 1365212794, cid
+[2023-12-15 15:34:43,326] [views.py:88] [views:danmaku] [INFO]- 新视频信息已添加
+[2023-12-15 15:34:43,592] [basehttp.py:187] [basehttp:log_message] [INFO]- "POST /bilibili/danmaku.html HTTP/1.1" 200 21632
+[2023-12-15 15:34:47,167] [bilibili_utils.py:27] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-15 15:34:47,168] [bilibili_utils.py:31] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1T94y1N7d6
+[2023-12-15 15:34:47,235] [views.py:63] [views:danmaku] [INFO]- BV1T94y1N7d6
+[2023-12-15 15:34:47,406] [basehttp.py:187] [basehttp:log_message] [INFO]- "POST /bilibili/danmaku.html HTTP/1.1" 200 25732
+[2023-12-15 15:34:49,288] [bilibili_utils.py:27] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-15 15:34:49,289] [bilibili_utils.py:31] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1T94y1N7d6
+[2023-12-15 15:34:49,358] [views.py:63] [views:danmaku] [INFO]- BV1T94y1N7d6
+[2023-12-15 15:34:49,552] [basehttp.py:187] [basehttp:log_message] [INFO]- "POST /bilibili/danmaku.html HTTP/1.1" 200 25761
+[2023-12-15 15:35:06,672] [bilibili_utils.py:27] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-15 15:35:06,673] [bilibili_utils.py:31] [bilibili_utils:bv_get] [INFO]- BV号为......: BV13N4y1y7QQ
+[2023-12-15 15:35:06,691] [bilibili_utils.py:27] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-15 15:35:06,692] [bilibili_utils.py:31] [bilibili_utils:bv_get] [INFO]- BV号为......: BV13N4y1y7QQ
+[2023-12-15 15:35:06,878] [bilibili_utils.py:84] [bilibili_utils:bv2cid] [ERROR]- 服务器返回错误！请稍后再试！
+[2023-12-15 15:35:07,051] [bilibili_utils.py:84] [bilibili_utils:bv2cid] [ERROR]- 服务器返回错误！请稍后再试！
+[2023-12-15 15:35:07,256] [bilibili_utils.py:81] [bilibili_utils:bv2cid] [INFO]- 提取出来的cid是：1310133943
+[2023-12-15 15:35:07,537] [bilibili_danmu.py:87] [bilibili_danmu:down_so_files] [INFO]- 正在下载 1310133943-2023-12-01.so 文件，请稍后...
+[2023-12-15 15:35:07,902] [bilibili_danmu.py:87] [bilibili_danmu:down_so_files] [INFO]- 正在下载 1310133943-2023-12-03.so 文件，请稍后...
+[2023-12-15 15:35:08,204] [bilibili_danmu.py:87] [bilibili_danmu:down_so_files] [INFO]- 正在下载 1310133943-2023-12-04.so 文件，请稍后...
+[2023-12-15 15:35:08,511] [bilibili_danmu.py:87] [bilibili_danmu:down_so_files] [INFO]- 正在下载 1310133943-2023-12-05.so 文件，请稍后...
+[2023-12-15 15:35:08,796] [bilibili_danmu.py:87] [bilibili_danmu:down_so_files] [INFO]- 正在下载 1310133943-2023-12-06.so 文件，请稍后...
+[2023-12-15 15:35:09,093] [bilibili_danmu.py:87] [bilibili_danmu:down_so_files] [INFO]- 正在下载 1310133943-2023-12-07.so 文件，请稍后...
+[2023-12-15 15:35:09,395] [bilibili_danmu.py:87] [bilibili_danmu:down_so_files] [INFO]- 正在下载 1310133943-2023-12-08.so 文件，请稍后...
+[2023-12-15 15:35:09,690] [bilibili_danmu.py:87] [bilibili_danmu:down_so_files] [INFO]- 正在下载 1310133943-2023-12-09.so 文件，请稍后...
+[2023-12-15 15:35:10,006] [bilibili_danmu.py:87] [bilibili_danmu:down_so_files] [INFO]- 正在下载 1310133943-2023-12-10.so 文件，请稍后...
+[2023-12-15 15:35:10,378] [bilibili_danmu.py:87] [bilibili_danmu:down_so_files] [INFO]- 正在下载 1310133943-2023-12-12.so 文件，请稍后...
+[2023-12-15 15:35:10,767] [bilibili_danmu.py:87] [bilibili_danmu:down_so_files] [INFO]- 正在下载 1310133943-2023-12-13.so 文件，请稍后...
+[2023-12-15 15:35:11,083] [bilibili_danmu.py:87] [bilibili_danmu:down_so_files] [INFO]- 正在下载 1310133943-2023-12-14.so 文件，请稍后...
+[2023-12-15 15:35:11,421] [bilibili_danmu.py:87] [bilibili_danmu:down_so_files] [INFO]- 正在下载 1310133943-2023-12-15.so 文件，请稍后...
+[2023-12-15 15:35:11,724] [bilibili_danmu.py:96] [bilibili_danmu:down_so_files] [INFO]- 下载完成！
+[2023-12-15 15:35:11,842] [bilibili_danmu.py:133] [bilibili_danmu:parse_so_to_json] [INFO]- 找到了 1020 个唯一的 弹幕 在 1310133943这个视频
+[2023-12-15 15:35:11,871] [bilibili_danmu.py:141] [bilibili_danmu:parse_so_to_json] [INFO]- Done!..........
+[2023-12-15 15:35:11,873] [bilibili_danmu.py:145] [bilibili_danmu:parse_so_to_json] [INFO]- 1310133943-2023-12-01.so 文件已删除
+[2023-12-15 15:35:11,874] [bilibili_danmu.py:145] [bilibili_danmu:parse_so_to_json] [INFO]- 1310133943-2023-12-03.so 文件已删除
+[2023-12-15 15:35:11,876] [bilibili_danmu.py:145] [bilibili_danmu:parse_so_to_json] [INFO]- 1310133943-2023-12-04.so 文件已删除
+[2023-12-15 15:35:11,878] [bilibili_danmu.py:145] [bilibili_danmu:parse_so_to_json] [INFO]- 1310133943-2023-12-05.so 文件已删除
+[2023-12-15 15:35:11,880] [bilibili_danmu.py:145] [bilibili_danmu:parse_so_to_json] [INFO]- 1310133943-2023-12-06.so 文件已删除
+[2023-12-15 15:35:11,881] [bilibili_danmu.py:145] [bilibili_danmu:parse_so_to_json] [INFO]- 1310133943-2023-12-07.so 文件已删除
+[2023-12-15 15:35:11,883] [bilibili_danmu.py:145] [bilibili_danmu:parse_so_to_json] [INFO]- 1310133943-2023-12-08.so 文件已删除
+[2023-12-15 15:35:11,884] [bilibili_danmu.py:145] [bilibili_danmu:parse_so_to_json] [INFO]- 1310133943-2023-12-09.so 文件已删除
+[2023-12-15 15:35:11,885] [bilibili_danmu.py:145] [bilibili_danmu:parse_so_to_json] [INFO]- 1310133943-2023-12-10.so 文件已删除
+[2023-12-15 15:35:11,886] [bilibili_danmu.py:145] [bilibili_danmu:parse_so_to_json] [INFO]- 1310133943-2023-12-12.so 文件已删除
+[2023-12-15 15:35:11,888] [bilibili_danmu.py:145] [bilibili_danmu:parse_so_to_json] [INFO]- 1310133943-2023-12-13.so 文件已删除
+[2023-12-15 15:35:11,889] [bilibili_danmu.py:145] [bilibili_danmu:parse_so_to_json] [INFO]- 1310133943-2023-12-14.so 文件已删除
+[2023-12-15 15:35:11,891] [bilibili_danmu.py:145] [bilibili_danmu:parse_so_to_json] [INFO]- 1310133943-2023-12-15.so 文件已删除
+[2023-12-15 15:35:12,154] [views.py:63] [views:danmaku] [INFO]- BV13N4y1y7QQ
+[2023-12-15 15:35:12,336] [basehttp.py:187] [basehttp:log_message] [INFO]- "POST /bilibili/danmaku.html HTTP/1.1" 200 9369
+[2023-12-15 15:35:22,142] [bilibili_utils.py:37] [bilibili_utils:bv_get] [INFO]- 你输入的是BV号BV13N4y1y7QQ，正在解析...
+[2023-12-15 15:35:22,173] [bilibili_utils.py:37] [bilibili_utils:bv_get] [INFO]- 你输入的是BV号BV13N4y1y7QQ，正在解析...
+[2023-12-15 15:35:22,358] [bilibili_utils.py:81] [bilibili_utils:bv2cid] [INFO]- 提取出来的cid是：1310133943
+[2023-12-15 15:35:22,397] [views.py:63] [views:danmaku] [INFO]- BV13N4y1y7QQ
+[2023-12-15 15:35:22,599] [basehttp.py:187] [basehttp:log_message] [INFO]- "POST /bilibili/danmaku.html HTTP/1.1" 200 9369
+[2023-12-15 15:35:24,751] [bilibili_utils.py:37] [bilibili_utils:bv_get] [INFO]- 你输入的是BV号BV13N4y1y7QQ，正在解析...
+[2023-12-15 15:35:24,770] [bilibili_utils.py:37] [bilibili_utils:bv_get] [INFO]- 你输入的是BV号BV13N4y1y7QQ，正在解析...
+[2023-12-15 15:35:24,947] [bilibili_utils.py:84] [bilibili_utils:bv2cid] [ERROR]- 服务器返回错误！请稍后再试！
+[2023-12-15 15:35:25,106] [bilibili_utils.py:84] [bilibili_utils:bv2cid] [ERROR]- 服务器返回错误！请稍后再试！
+[2023-12-15 15:35:25,281] [bilibili_utils.py:84] [bilibili_utils:bv2cid] [ERROR]- 服务器返回错误！请稍后再试！
+[2023-12-15 15:35:25,453] [bilibili_utils.py:84] [bilibili_utils:bv2cid] [ERROR]- 服务器返回错误！请稍后再试！
+[2023-12-15 15:35:25,630] [bilibili_utils.py:84] [bilibili_utils:bv2cid] [ERROR]- 服务器返回错误！请稍后再试！
+[2023-12-15 15:35:25,800] [bilibili_utils.py:84] [bilibili_utils:bv2cid] [ERROR]- 服务器返回错误！请稍后再试！
+[2023-12-15 15:35:25,966] [bilibili_utils.py:81] [bilibili_utils:bv2cid] [INFO]- 提取出来的cid是：1310133943
+[2023-12-15 15:35:26,006] [views.py:63] [views:danmaku] [INFO]- BV13N4y1y7QQ
+[2023-12-15 15:35:26,367] [bilibili_utils.py:84] [bilibili_utils:bv2cid] [ERROR]- 服务器返回错误！请稍后再试！
+[2023-12-15 15:35:26,538] [bilibili_utils.py:81] [bilibili_utils:bv2cid] [INFO]- 提取出来的cid是：1310133943
+[2023-12-15 15:35:26,539] [views.py:74] [views:danmaku] [INFO]- 1310133943, cid
+[2023-12-15 15:35:26,559] [views.py:88] [views:danmaku] [INFO]- 新视频信息已添加
+[2023-12-15 15:35:26,691] [basehttp.py:187] [basehttp:log_message] [INFO]- "POST /bilibili/danmaku.html HTTP/1.1" 200 21704
+[2023-12-15 15:36:15,264] [bilibili_utils.py:27] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-15 15:36:15,265] [bilibili_utils.py:31] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1qG411e7t5
+[2023-12-15 15:36:15,290] [bilibili_utils.py:27] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-15 15:36:15,291] [bilibili_utils.py:31] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1qG411e7t5
+[2023-12-15 15:36:15,451] [bilibili_utils.py:84] [bilibili_utils:bv2cid] [ERROR]- 服务器返回错误！请稍后再试！
+[2023-12-15 15:36:15,620] [bilibili_utils.py:84] [bilibili_utils:bv2cid] [ERROR]- 服务器返回错误！请稍后再试！
+[2023-12-15 15:36:15,795] [bilibili_utils.py:81] [bilibili_utils:bv2cid] [INFO]- 提取出来的cid是：1366752555
+[2023-12-15 15:36:16,031] [bilibili_danmu.py:87] [bilibili_danmu:down_so_files] [INFO]- 正在下载 1366752555-2023-12-14.so 文件，请稍后...
+[2023-12-15 15:36:16,262] [bilibili_danmu.py:87] [bilibili_danmu:down_so_files] [INFO]- 正在下载 1366752555-2023-12-15.so 文件，请稍后...
+[2023-12-15 15:36:16,602] [bilibili_danmu.py:96] [bilibili_danmu:down_so_files] [INFO]- 下载完成！
+[2023-12-15 15:36:16,632] [bilibili_danmu.py:133] [bilibili_danmu:parse_so_to_json] [INFO]- 找到了 223 个唯一的 弹幕 在 1366752555这个视频
+[2023-12-15 15:36:16,643] [bilibili_danmu.py:141] [bilibili_danmu:parse_so_to_json] [INFO]- Done!..........
+[2023-12-15 15:36:16,645] [bilibili_danmu.py:145] [bilibili_danmu:parse_so_to_json] [INFO]- 1366752555-2023-12-14.so 文件已删除
+[2023-12-15 15:36:16,648] [bilibili_danmu.py:145] [bilibili_danmu:parse_so_to_json] [INFO]- 1366752555-2023-12-15.so 文件已删除
+[2023-12-15 15:36:16,788] [views.py:63] [views:danmaku] [INFO]- BV1qG411e7t5
+[2023-12-15 15:36:17,140] [bilibili_utils.py:81] [bilibili_utils:bv2cid] [INFO]- 提取出来的cid是：1366752555
+[2023-12-15 15:36:17,142] [views.py:74] [views:danmaku] [INFO]- 1366752555, cid
+[2023-12-15 15:36:17,161] [views.py:88] [views:danmaku] [INFO]- 新视频信息已添加
+[2023-12-15 15:36:17,264] [basehttp.py:187] [basehttp:log_message] [INFO]- "POST /bilibili/danmaku.html HTTP/1.1" 200 20607
+[2023-12-15 15:36:21,794] [basehttp.py:187] [basehttp:log_message] [INFO]- "GET /bilibili/danmaku.html HTTP/1.1" 200 9258
+[2023-12-15 15:36:23,844] [bilibili_utils.py:27] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-15 15:36:23,847] [bilibili_utils.py:31] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1qG411e7t5
+[2023-12-15 15:36:23,900] [views.py:63] [views:danmaku] [INFO]- BV1qG411e7t5
+[2023-12-15 15:36:24,016] [basehttp.py:187] [basehttp:log_message] [INFO]- "POST /bilibili/danmaku.html HTTP/1.1" 200 20608
+[2023-12-15 15:36:26,208] [basehttp.py:187] [basehttp:log_message] [INFO]- "GET /bilibili/comment.html HTTP/1.1" 200 9270
+[2023-12-15 15:36:27,936] [bilibili_utils.py:27] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-15 15:36:27,937] [bilibili_utils.py:31] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1qG411e7t5
+[2023-12-15 15:36:27,938] [views.py:122] [views:comment] [INFO]- bv_====>BV1qG411e7t5
+[2023-12-15 15:36:28,095] [bilibili_utils.py:55] [bilibili_utils:bv2av] [INFO]- 服务器返回错误！请稍后再试！{'code': -412, 'message': 'request was banned', 'ttl': 1}
+[2023-12-15 15:36:28,096] [bilibili_utils.py:56] [bilibili_utils:bv2av] [INFO]- 正在重新尝试获取aid，尝试次数==》1
+[2023-12-15 15:36:30,384] [log.py:241] [log:log_response] [ERROR]- Internal Server Error: /bilibili/comment.html
+Traceback (most recent call last):
+  File "D:\python_code\django_site\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\python_code\django_site\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\python_code\django_site\biliscrapy\views.py", line 125, in comment
+    av = utils.bv2av(bv_)
+  File "D:\python_code\django_site\biliscrapy\network\bilibili_utils.py", line 60, in bv2av
+    if js_str['data']['aid']:
+KeyError: 'data'
+[2023-12-15 15:36:30,394] [basehttp.py:187] [basehttp:log_message] [ERROR]- "POST /bilibili/comment.html HTTP/1.1" 500 79914
+[2023-12-15 15:37:41,522] [autoreload.py:266] [autoreload:trigger_reload] [INFO]- D:\python_code\django_site\biliscrapy\network\bilibili_utils.py changed, reloading.
+[2023-12-15 15:37:42,909] [autoreload.py:677] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2023-12-15 15:40:40,780] [autoreload.py:266] [autoreload:trigger_reload] [INFO]- D:\python_code\django_site\biliscrapy\network\bilibili_utils.py changed, reloading.
+[2023-12-15 15:40:41,854] [autoreload.py:677] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2023-12-15 15:41:54,967] [autoreload.py:266] [autoreload:trigger_reload] [INFO]- D:\python_code\django_site\biliscrapy\network\bilibili_utils.py changed, reloading.
+[2023-12-15 15:41:56,173] [autoreload.py:677] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2023-12-15 15:42:13,094] [bilibili_utils.py:27] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-15 15:42:13,095] [bilibili_utils.py:31] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1qG411e7t5
+[2023-12-15 15:42:13,096] [views.py:122] [views:comment] [INFO]- bv_====>BV1qG411e7t5
+[2023-12-15 15:42:13,128] [bilibili_utils.py:69] [bilibili_utils:bv2av] [INFO]- 请求发生错误：HTTPSConnectionPool(host='api.bilibili.com', port=443): Max retries exceeded with url: /x/web-interface/view?bvid=BV1qG411e7t5 (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:997)'))))
+[2023-12-15 15:42:13,129] [bilibili_utils.py:71] [bilibili_utils:bv2av] [INFO]- 服务器返回错误！请稍后再试！
+[2023-12-15 15:42:13,130] [bilibili_utils.py:72] [bilibili_utils:bv2av] [INFO]- 正在重新尝试获取aid，尝试次数==>1
+[2023-12-15 15:42:14,154] [bilibili_utils.py:69] [bilibili_utils:bv2av] [INFO]- 请求发生错误：HTTPSConnectionPool(host='api.bilibili.com', port=443): Max retries exceeded with url: /x/web-interface/view?bvid=BV1qG411e7t5 (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:997)'))))
+[2023-12-15 15:42:14,156] [bilibili_utils.py:71] [bilibili_utils:bv2av] [INFO]- 服务器返回错误！请稍后再试！
+[2023-12-15 15:42:14,157] [bilibili_utils.py:72] [bilibili_utils:bv2av] [INFO]- 正在重新尝试获取aid，尝试次数==>2
+[2023-12-15 15:42:15,190] [bilibili_utils.py:69] [bilibili_utils:bv2av] [INFO]- 请求发生错误：HTTPSConnectionPool(host='api.bilibili.com', port=443): Max retries exceeded with url: /x/web-interface/view?bvid=BV1qG411e7t5 (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:997)'))))
+[2023-12-15 15:42:15,191] [bilibili_utils.py:71] [bilibili_utils:bv2av] [INFO]- 服务器返回错误！请稍后再试！
+[2023-12-15 15:42:15,192] [bilibili_utils.py:72] [bilibili_utils:bv2av] [INFO]- 正在重新尝试获取aid，尝试次数==>3
+[2023-12-15 15:42:16,217] [bilibili_utils.py:69] [bilibili_utils:bv2av] [INFO]- 请求发生错误：HTTPSConnectionPool(host='api.bilibili.com', port=443): Max retries exceeded with url: /x/web-interface/view?bvid=BV1qG411e7t5 (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:997)'))))
+[2023-12-15 15:42:16,218] [bilibili_utils.py:71] [bilibili_utils:bv2av] [INFO]- 服务器返回错误！请稍后再试！
+[2023-12-15 15:42:16,219] [bilibili_utils.py:72] [bilibili_utils:bv2av] [INFO]- 正在重新尝试获取aid，尝试次数==>4
+[2023-12-15 15:42:17,261] [bilibili_utils.py:69] [bilibili_utils:bv2av] [INFO]- 请求发生错误：HTTPSConnectionPool(host='api.bilibili.com', port=443): Max retries exceeded with url: /x/web-interface/view?bvid=BV1qG411e7t5 (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:997)'))))
+[2023-12-15 15:42:17,264] [bilibili_utils.py:71] [bilibili_utils:bv2av] [INFO]- 服务器返回错误！请稍后再试！
+[2023-12-15 15:42:17,272] [bilibili_utils.py:72] [bilibili_utils:bv2av] [INFO]- 正在重新尝试获取aid，尝试次数==>5
+[2023-12-15 15:42:18,298] [bilibili_utils.py:69] [bilibili_utils:bv2av] [INFO]- 请求发生错误：HTTPSConnectionPool(host='api.bilibili.com', port=443): Max retries exceeded with url: /x/web-interface/view?bvid=BV1qG411e7t5 (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:997)'))))
+[2023-12-15 15:42:18,299] [bilibili_utils.py:71] [bilibili_utils:bv2av] [INFO]- 服务器返回错误！请稍后再试！
+[2023-12-15 15:42:18,300] [bilibili_utils.py:72] [bilibili_utils:bv2av] [INFO]- 正在重新尝试获取aid，尝试次数==>6
+[2023-12-15 15:42:19,328] [bilibili_utils.py:69] [bilibili_utils:bv2av] [INFO]- 请求发生错误：HTTPSConnectionPool(host='api.bilibili.com', port=443): Max retries exceeded with url: /x/web-interface/view?bvid=BV1qG411e7t5 (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:997)'))))
+[2023-12-15 15:42:19,330] [bilibili_utils.py:71] [bilibili_utils:bv2av] [INFO]- 服务器返回错误！请稍后再试！
+[2023-12-15 15:42:19,331] [bilibili_utils.py:72] [bilibili_utils:bv2av] [INFO]- 正在重新尝试获取aid，尝试次数==>7
+[2023-12-15 15:42:20,353] [bilibili_utils.py:69] [bilibili_utils:bv2av] [INFO]- 请求发生错误：HTTPSConnectionPool(host='api.bilibili.com', port=443): Max retries exceeded with url: /x/web-interface/view?bvid=BV1qG411e7t5 (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:997)'))))
+[2023-12-15 15:42:20,354] [bilibili_utils.py:71] [bilibili_utils:bv2av] [INFO]- 服务器返回错误！请稍后再试！
+[2023-12-15 15:42:20,355] [bilibili_utils.py:72] [bilibili_utils:bv2av] [INFO]- 正在重新尝试获取aid，尝试次数==>8
+[2023-12-15 15:42:21,378] [bilibili_utils.py:69] [bilibili_utils:bv2av] [INFO]- 请求发生错误：HTTPSConnectionPool(host='api.bilibili.com', port=443): Max retries exceeded with url: /x/web-interface/view?bvid=BV1qG411e7t5 (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:997)'))))
+[2023-12-15 15:42:21,379] [bilibili_utils.py:71] [bilibili_utils:bv2av] [INFO]- 服务器返回错误！请稍后再试！
+[2023-12-15 15:42:21,380] [bilibili_utils.py:72] [bilibili_utils:bv2av] [INFO]- 正在重新尝试获取aid，尝试次数==>9
+[2023-12-15 15:42:22,405] [bilibili_utils.py:69] [bilibili_utils:bv2av] [INFO]- 请求发生错误：HTTPSConnectionPool(host='api.bilibili.com', port=443): Max retries exceeded with url: /x/web-interface/view?bvid=BV1qG411e7t5 (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:997)'))))
+[2023-12-15 15:42:22,407] [bilibili_utils.py:71] [bilibili_utils:bv2av] [INFO]- 服务器返回错误！请稍后再试！
+[2023-12-15 15:42:22,409] [bilibili_utils.py:72] [bilibili_utils:bv2av] [INFO]- 正在重新尝试获取aid，尝试次数==>10
+[2023-12-15 15:42:23,414] [views.py:128] [views:comment] [INFO]- av is None, retrying...1
+[2023-12-15 15:42:23,434] [bilibili_utils.py:69] [bilibili_utils:bv2av] [INFO]- 请求发生错误：HTTPSConnectionPool(host='api.bilibili.com', port=443): Max retries exceeded with url: /x/web-interface/view?bvid=BV1qG411e7t5 (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:997)'))))
+[2023-12-15 15:42:23,435] [bilibili_utils.py:71] [bilibili_utils:bv2av] [INFO]- 服务器返回错误！请稍后再试！
+[2023-12-15 15:42:23,436] [bilibili_utils.py:72] [bilibili_utils:bv2av] [INFO]- 正在重新尝试获取aid，尝试次数==>1
+[2023-12-15 15:42:24,464] [bilibili_utils.py:69] [bilibili_utils:bv2av] [INFO]- 请求发生错误：HTTPSConnectionPool(host='api.bilibili.com', port=443): Max retries exceeded with url: /x/web-interface/view?bvid=BV1qG411e7t5 (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:997)'))))
+[2023-12-15 15:42:24,465] [bilibili_utils.py:71] [bilibili_utils:bv2av] [INFO]- 服务器返回错误！请稍后再试！
+[2023-12-15 15:42:24,466] [bilibili_utils.py:72] [bilibili_utils:bv2av] [INFO]- 正在重新尝试获取aid，尝试次数==>2
+[2023-12-15 15:42:25,687] [bilibili_utils.py:62] [bilibili_utils:bv2av] [INFO]- 找到的avid409671935
+[2023-12-15 15:42:25,708] [views.py:132] [views:comment] [INFO]- avid=====>409671935
+[2023-12-15 15:42:25,741] [bilibili_comment.py:65] [bilibili_comment:get_comments] [INFO]- Getting comments for bvorurl:https://www.bilibili.com/video/BV1qG411e7t5?spm_id_from=333.1007.tianma.2-1-4.click
+[2023-12-15 15:42:25,742] [bilibili_utils.py:27] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-15 15:42:25,743] [bilibili_utils.py:31] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1qG411e7t5
+[2023-12-15 15:42:25,956] [bilibili_utils.py:62] [bilibili_utils:bv2av] [INFO]- 找到的avid409671935
+[2023-12-15 15:42:25,959] [bilibili_comment.py:74] [bilibili_comment:get_comments] [INFO]- avid===>409671935
+[2023-12-15 15:42:26,221] [bilibili_comment.py:94] [bilibili_comment:get_comments] [INFO]- 提取到了56条评论，从第 1 页
+[2023-12-15 15:42:26,223] [bilibili_comment.py:107] [bilibili_comment:get_comments] [INFO]- 开始提取第2页评论
+[2023-12-15 15:42:27,658] [bilibili_comment.py:94] [bilibili_comment:get_comments] [INFO]- 提取到了38条评论，从第 2 页
+[2023-12-15 15:42:27,659] [bilibili_comment.py:107] [bilibili_comment:get_comments] [INFO]- 开始提取第3页评论
+[2023-12-15 15:42:29,179] [bilibili_comment.py:94] [bilibili_comment:get_comments] [INFO]- 提取到了28条评论，从第 3 页
+[2023-12-15 15:42:29,181] [bilibili_comment.py:107] [bilibili_comment:get_comments] [INFO]- 开始提取第4页评论
+[2023-12-15 15:42:30,088] [bilibili_comment.py:94] [bilibili_comment:get_comments] [INFO]- 提取到了26条评论，从第 4 页
+[2023-12-15 15:42:30,089] [bilibili_comment.py:107] [bilibili_comment:get_comments] [INFO]- 开始提取第5页评论
+[2023-12-15 15:42:31,080] [bilibili_comment.py:94] [bilibili_comment:get_comments] [INFO]- 提取到了23条评论，从第 5 页
+[2023-12-15 15:42:31,081] [bilibili_comment.py:107] [bilibili_comment:get_comments] [INFO]- 开始提取第6页评论
+[2023-12-15 15:42:32,408] [bilibili_comment.py:94] [bilibili_comment:get_comments] [INFO]- 提取到了21条评论，从第 6 页
+[2023-12-15 15:42:32,409] [bilibili_comment.py:107] [bilibili_comment:get_comments] [INFO]- 开始提取第7页评论
+[2023-12-15 15:42:33,442] [bilibili_comment.py:94] [bilibili_comment:get_comments] [INFO]- 提取到了23条评论，从第 7 页
+[2023-12-15 15:42:33,443] [bilibili_comment.py:107] [bilibili_comment:get_comments] [INFO]- 开始提取第8页评论
+[2023-12-15 15:42:34,631] [bilibili_comment.py:94] [bilibili_comment:get_comments] [INFO]- 提取到了2条评论，从第 8 页
+[2023-12-15 15:42:34,632] [bilibili_comment.py:107] [bilibili_comment:get_comments] [INFO]- 开始提取第9页评论
+[2023-12-15 15:42:36,320] [bilibili_comment.py:94] [bilibili_comment:get_comments] [INFO]- 提取到了0条评论，从第 9 页
+[2023-12-15 15:42:36,321] [bilibili_comment.py:96] [bilibili_comment:get_comments] [INFO]- 提取完毕所有评论，共提取到217条评论！=====>avid409671935
+[2023-12-15 15:42:36,322] [bilibili_comment.py:109] [bilibili_comment:get_comments] [INFO]- 总共217条评论！
+[2023-12-15 15:42:36,614] [basehttp.py:187] [basehttp:log_message] [INFO]- "POST /bilibili/comment.html HTTP/1.1" 200 19883
+[2023-12-15 15:42:55,030] [bilibili_utils.py:27] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-15 15:42:55,031] [bilibili_utils.py:31] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1Sb4y157eA
+[2023-12-15 15:42:55,032] [views.py:122] [views:comment] [INFO]- bv_====>BV1Sb4y157eA
+[2023-12-15 15:42:55,245] [bilibili_utils.py:62] [bilibili_utils:bv2av] [INFO]- 找到的avid622244182
+[2023-12-15 15:42:55,262] [views.py:132] [views:comment] [INFO]- avid=====>622244182
+[2023-12-15 15:42:55,294] [bilibili_comment.py:65] [bilibili_comment:get_comments] [INFO]- Getting comments for bvorurl:https://www.bilibili.com/video/BV1Sb4y157eA?spm_id_from=333.1007.tianma.1-3-3.click
+[2023-12-15 15:42:55,295] [bilibili_utils.py:27] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-15 15:42:55,297] [bilibili_utils.py:31] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1Sb4y157eA
+[2023-12-15 15:42:55,574] [bilibili_utils.py:69] [bilibili_utils:bv2av] [INFO]- 请求发生错误：412 Client Error: Precondition Failed for url: https://api.bilibili.com/x/web-interface/view?bvid=BV1Sb4y157eA
+[2023-12-15 15:42:55,575] [bilibili_utils.py:71] [bilibili_utils:bv2av] [INFO]- 服务器返回错误！请稍后再试！
+[2023-12-15 15:42:55,576] [bilibili_utils.py:72] [bilibili_utils:bv2av] [INFO]- 正在重新尝试获取aid，尝试次数==>1
+[2023-12-15 15:42:56,809] [bilibili_utils.py:62] [bilibili_utils:bv2av] [INFO]- 找到的avid622244182
+[2023-12-15 15:42:56,811] [bilibili_comment.py:74] [bilibili_comment:get_comments] [INFO]- avid===>622244182
+[2023-12-15 15:42:57,038] [bilibili_comment.py:94] [bilibili_comment:get_comments] [INFO]- 提取到了43条评论，从第 1 页
+[2023-12-15 15:42:57,039] [bilibili_comment.py:107] [bilibili_comment:get_comments] [INFO]- 开始提取第2页评论
+[2023-12-15 15:42:58,295] [bilibili_comment.py:94] [bilibili_comment:get_comments] [INFO]- 提取到了3条评论，从第 2 页
+[2023-12-15 15:42:58,296] [bilibili_comment.py:107] [bilibili_comment:get_comments] [INFO]- 开始提取第3页评论
+[2023-12-15 15:42:59,514] [bilibili_comment.py:94] [bilibili_comment:get_comments] [INFO]- 提取到了0条评论，从第 3 页
+[2023-12-15 15:42:59,515] [bilibili_comment.py:96] [bilibili_comment:get_comments] [INFO]- 提取完毕所有评论，共提取到46条评论！=====>avid622244182
+[2023-12-15 15:42:59,516] [bilibili_comment.py:109] [bilibili_comment:get_comments] [INFO]- 总共46条评论！
+[2023-12-15 15:43:00,084] [bilibili_utils.py:86] [bilibili_utils:bv2cid] [INFO]- 提取出来的cid是：1366435757
+[2023-12-15 15:43:00,178] [basehttp.py:187] [basehttp:log_message] [INFO]- "POST /bilibili/comment.html HTTP/1.1" 200 19801
+[2023-12-15 15:43:13,925] [bilibili_utils.py:27] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-15 15:43:13,926] [bilibili_utils.py:31] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1Sb4y157eA
+[2023-12-15 15:43:13,927] [views.py:122] [views:comment] [INFO]- bv_====>BV1Sb4y157eA
+[2023-12-15 15:43:14,147] [bilibili_utils.py:69] [bilibili_utils:bv2av] [INFO]- 请求发生错误：412 Client Error: Precondition Failed for url: https://api.bilibili.com/x/web-interface/view?bvid=BV1Sb4y157eA
+[2023-12-15 15:43:14,148] [bilibili_utils.py:71] [bilibili_utils:bv2av] [INFO]- 服务器返回错误！请稍后再试！
+[2023-12-15 15:43:14,149] [bilibili_utils.py:72] [bilibili_utils:bv2av] [INFO]- 正在重新尝试获取aid，尝试次数==>1
+[2023-12-15 15:43:15,372] [bilibili_utils.py:62] [bilibili_utils:bv2av] [INFO]- 找到的avid622244182
+[2023-12-15 15:43:15,388] [views.py:132] [views:comment] [INFO]- avid=====>622244182
+[2023-12-15 15:43:15,539] [basehttp.py:187] [basehttp:log_message] [INFO]- "POST /bilibili/comment.html HTTP/1.1" 200 14286
+[2023-12-15 15:43:18,046] [bilibili_utils.py:27] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-15 15:43:18,047] [bilibili_utils.py:31] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1Sb4y157eA
+[2023-12-15 15:43:18,048] [views.py:122] [views:comment] [INFO]- bv_====>BV1Sb4y157eA
+[2023-12-15 15:43:18,284] [bilibili_utils.py:69] [bilibili_utils:bv2av] [INFO]- 请求发生错误：412 Client Error: Precondition Failed for url: https://api.bilibili.com/x/web-interface/view?bvid=BV1Sb4y157eA
+[2023-12-15 15:43:18,285] [bilibili_utils.py:71] [bilibili_utils:bv2av] [INFO]- 服务器返回错误！请稍后再试！
+[2023-12-15 15:43:18,286] [bilibili_utils.py:72] [bilibili_utils:bv2av] [INFO]- 正在重新尝试获取aid，尝试次数==>1
+[2023-12-15 15:43:19,484] [bilibili_utils.py:62] [bilibili_utils:bv2av] [INFO]- 找到的avid622244182
+[2023-12-15 15:43:19,501] [views.py:132] [views:comment] [INFO]- avid=====>622244182
+[2023-12-15 15:43:19,667] [basehttp.py:187] [basehttp:log_message] [INFO]- "POST /bilibili/comment.html HTTP/1.1" 200 21153
+[2023-12-15 15:43:22,941] [basehttp.py:187] [basehttp:log_message] [INFO]- "GET /bilibili/danmaku.html HTTP/1.1" 200 9258
+[2023-12-15 15:43:24,739] [bilibili_utils.py:27] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-15 15:43:24,740] [bilibili_utils.py:31] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1Sb4y157eA
+[2023-12-15 15:43:25,055] [bilibili_danmu.py:87] [bilibili_danmu:down_so_files] [INFO]- 正在下载 1366435757-2023-12-14.so 文件，请稍后...
+[2023-12-15 15:43:25,254] [bilibili_danmu.py:87] [bilibili_danmu:down_so_files] [INFO]- 正在下载 1366435757-2023-12-15.so 文件，请稍后...
+[2023-12-15 15:43:25,456] [bilibili_danmu.py:96] [bilibili_danmu:down_so_files] [INFO]- 下载完成！
+[2023-12-15 15:43:25,471] [bilibili_danmu.py:133] [bilibili_danmu:parse_so_to_json] [INFO]- 找到了 3 个唯一的 弹幕 在 1366435757这个视频
+[2023-12-15 15:43:25,473] [bilibili_danmu.py:141] [bilibili_danmu:parse_so_to_json] [INFO]- Done!..........
+[2023-12-15 15:43:25,474] [bilibili_danmu.py:145] [bilibili_danmu:parse_so_to_json] [INFO]- 1366435757-2023-12-14.so 文件已删除
+[2023-12-15 15:43:25,475] [bilibili_danmu.py:145] [bilibili_danmu:parse_so_to_json] [INFO]- 1366435757-2023-12-15.so 文件已删除
+[2023-12-15 15:43:25,571] [views.py:63] [views:danmaku] [INFO]- BV1Sb4y157eA
+[2023-12-15 15:43:25,687] [basehttp.py:187] [basehttp:log_message] [INFO]- "POST /bilibili/danmaku.html HTTP/1.1" 200 10685
+[2023-12-15 15:43:34,612] [bilibili_utils.py:27] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-15 15:43:34,613] [bilibili_utils.py:31] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1GH4y117nd
+[2023-12-15 15:43:34,629] [bilibili_utils.py:27] [bilibili_utils:bv_get] [INFO]- 你输入的是http链接，正在解析...
+[2023-12-15 15:43:34,631] [bilibili_utils.py:31] [bilibili_utils:bv_get] [INFO]- BV号为......: BV1GH4y117nd
+[2023-12-15 15:43:34,913] [bilibili_utils.py:89] [bilibili_utils:bv2cid] [ERROR]- 服务器返回错误！请稍后再试！
+[2023-12-15 15:43:35,158] [bilibili_utils.py:89] [bilibili_utils:bv2cid] [ERROR]- 服务器返回错误！请稍后再试！
+[2023-12-15 15:43:35,425] [bilibili_utils.py:86] [bilibili_utils:bv2cid] [INFO]- 提取出来的cid是：1350384479
+[2023-12-15 15:43:35,777] [bilibili_danmu.py:87] [bilibili_danmu:down_so_files] [INFO]- 正在下载 1350384479-2023-12-02.so 文件，请稍后...
+[2023-12-15 15:43:36,072] [bilibili_danmu.py:87] [bilibili_danmu:down_so_files] [INFO]- 正在下载 1350384479-2023-12-03.so 文件，请稍后...
+[2023-12-15 15:43:36,406] [bilibili_danmu.py:87] [bilibili_danmu:down_so_files] [INFO]- 正在下载 1350384479-2023-12-04.so 文件，请稍后...
+[2023-12-15 15:43:36,735] [bilibili_danmu.py:87] [bilibili_danmu:down_so_files] [INFO]- 正在下载 1350384479-2023-12-05.so 文件，请稍后...
+[2023-12-15 15:43:37,041] [bilibili_danmu.py:87] [bilibili_danmu:down_so_files] [INFO]- 正在下载 1350384479-2023-12-06.so 文件，请稍后...
+[2023-12-15 15:43:37,313] [bilibili_danmu.py:87] [bilibili_danmu:down_so_files] [INFO]- 正在下载 1350384479-2023-12-07.so 文件，请稍后...
+[2023-12-15 15:43:37,602] [bilibili_danmu.py:87] [bilibili_danmu:down_so_files] [INFO]- 正在下载 1350384479-2023-12-08.so 文件，请稍后...
+[2023-12-15 15:43:37,874] [bilibili_danmu.py:87] [bilibili_danmu:down_so_files] [INFO]- 正在下载 1350384479-2023-12-09.so 文件，请稍后...
+[2023-12-15 15:43:38,133] [bilibili_danmu.py:87] [bilibili_danmu:down_so_files] [INFO]- 正在下载 1350384479-2023-12-10.so 文件，请稍后...
+[2023-12-15 15:43:38,387] [bilibili_danmu.py:87] [bilibili_danmu:down_so_files] [INFO]- 正在下载 1350384479-2023-12-11.so 文件，请稍后...
+[2023-12-15 15:43:38,689] [bilibili_danmu.py:87] [bilibili_danmu:down_so_files] [INFO]- 正在下载 1350384479-2023-12-12.so 文件，请稍后...
+[2023-12-15 15:43:38,968] [bilibili_danmu.py:87] [bilibili_danmu:down_so_files] [INFO]- 正在下载 1350384479-2023-12-13.so 文件，请稍后...
+[2023-12-15 15:43:39,247] [bilibili_danmu.py:87] [bilibili_danmu:down_so_files] [INFO]- 正在下载 1350384479-2023-12-14.so 文件，请稍后...
+[2023-12-15 15:43:39,549] [bilibili_danmu.py:87] [bilibili_danmu:down_so_files] [INFO]- 正在下载 1350384479-2023-12-15.so 文件，请稍后...
+[2023-12-15 15:43:39,812] [bilibili_danmu.py:96] [bilibili_danmu:down_so_files] [INFO]- 下载完成！
+[2023-12-15 15:43:39,904] [bilibili_danmu.py:133] [bilibili_danmu:parse_so_to_json] [INFO]- 找到了 207 个唯一的 弹幕 在 1350384479这个视频
+[2023-12-15 15:43:39,909] [bilibili_danmu.py:141] [bilibili_danmu:parse_so_to_json] [INFO]- Done!..........
+[2023-12-15 15:43:39,910] [bilibili_danmu.py:145] [bilibili_danmu:parse_so_to_json] [INFO]- 1350384479-2023-12-02.so 文件已删除
+[2023-12-15 15:43:39,911] [bilibili_danmu.py:145] [bilibili_danmu:parse_so_to_json] [INFO]- 1350384479-2023-12-03.so 文件已删除
+[2023-12-15 15:43:39,912] [bilibili_danmu.py:145] [bilibili_danmu:parse_so_to_json] [INFO]- 1350384479-2023-12-04.so 文件已删除
+[2023-12-15 15:43:39,913] [bilibili_danmu.py:145] [bilibili_danmu:parse_so_to_json] [INFO]- 1350384479-2023-12-05.so 文件已删除
+[2023-12-15 15:43:39,915] [bilibili_danmu.py:145] [bilibili_danmu:parse_so_to_json] [INFO]- 1350384479-2023-12-06.so 文件已删除
+[2023-12-15 15:43:39,916] [bilibili_danmu.py:145] [bilibili_danmu:parse_so_to_json] [INFO]- 1350384479-2023-12-07.so 文件已删除
+[2023-12-15 15:43:39,917] [bilibili_danmu.py:145] [bilibili_danmu:parse_so_to_json] [INFO]- 1350384479-2023-12-08.so 文件已删除
+[2023-12-15 15:43:39,919] [bilibili_danmu.py:145] [bilibili_danmu:parse_so_to_json] [INFO]- 1350384479-2023-12-09.so 文件已删除
+[2023-12-15 15:43:39,920] [bilibili_danmu.py:145] [bilibili_danmu:parse_so_to_json] [INFO]- 1350384479-2023-12-10.so 文件已删除
+[2023-12-15 15:43:39,921] [bilibili_danmu.py:145] [bilibili_danmu:parse_so_to_json] [INFO]- 1350384479-2023-12-11.so 文件已删除
+[2023-12-15 15:43:39,923] [bilibili_danmu.py:145] [bilibili_danmu:parse_so_to_json] [INFO]- 1350384479-2023-12-12.so 文件已删除
+[2023-12-15 15:43:39,924] [bilibili_danmu.py:145] [bilibili_danmu:parse_so_to_json] [INFO]- 1350384479-2023-12-13.so 文件已删除
+[2023-12-15 15:43:39,925] [bilibili_danmu.py:145] [bilibili_danmu:parse_so_to_json] [INFO]- 1350384479-2023-12-14.so 文件已删除
+[2023-12-15 15:43:39,926] [bilibili_danmu.py:145] [bilibili_danmu:parse_so_to_json] [INFO]- 1350384479-2023-12-15.so 文件已删除
+[2023-12-15 15:43:40,038] [views.py:63] [views:danmaku] [INFO]- BV1GH4y117nd
+[2023-12-15 15:43:40,300] [basehttp.py:187] [basehttp:log_message] [INFO]- "POST /bilibili/danmaku.html HTTP/1.1" 200 9369
+[2023-12-15 15:43:59,657] [bilibili_utils.py:37] [bilibili_utils:bv_get] [INFO]- 你输入的是BV号BV1GH4y117nd，正在解析...
+[2023-12-15 15:43:59,679] [bilibili_utils.py:37] [bilibili_utils:bv_get] [INFO]- 你输入的是BV号BV1GH4y117nd，正在解析...
+[2023-12-15 15:43:59,911] [bilibili_utils.py:89] [bilibili_utils:bv2cid] [ERROR]- 服务器返回错误！请稍后再试！
+[2023-12-15 15:44:00,152] [bilibili_utils.py:86] [bilibili_utils:bv2cid] [INFO]- 提取出来的cid是：1350384479
+[2023-12-15 15:44:00,199] [views.py:63] [views:danmaku] [INFO]- BV1GH4y117nd
+[2023-12-15 15:44:00,469] [basehttp.py:187] [basehttp:log_message] [INFO]- "POST /bilibili/danmaku.html HTTP/1.1" 200 9369
+[2023-12-15 15:44:11,977] [bilibili_utils.py:37] [bilibili_utils:bv_get] [INFO]- 你输入的是BV号BV1GH4y117nd，正在解析...
+[2023-12-15 15:44:11,993] [bilibili_utils.py:37] [bilibili_utils:bv_get] [INFO]- 你输入的是BV号BV1GH4y117nd，正在解析...
+[2023-12-15 15:44:12,246] [bilibili_utils.py:89] [bilibili_utils:bv2cid] [ERROR]- 服务器返回错误！请稍后再试！
+[2023-12-15 15:44:12,513] [bilibili_utils.py:86] [bilibili_utils:bv2cid] [INFO]- 提取出来的cid是：1350384479
+[2023-12-15 15:44:12,550] [views.py:63] [views:danmaku] [INFO]- BV1GH4y117nd
+[2023-12-15 15:44:13,019] [bilibili_utils.py:89] [bilibili_utils:bv2cid] [ERROR]- 服务器返回错误！请稍后再试！
+[2023-12-15 15:44:13,279] [bilibili_utils.py:89] [bilibili_utils:bv2cid] [ERROR]- 服务器返回错误！请稍后再试！
+[2023-12-15 15:44:13,502] [bilibili_utils.py:89] [bilibili_utils:bv2cid] [ERROR]- 服务器返回错误！请稍后再试！
+[2023-12-15 15:44:13,760] [bilibili_utils.py:86] [bilibili_utils:bv2cid] [INFO]- 提取出来的cid是：1350384479
+[2023-12-15 15:44:13,761] [views.py:74] [views:danmaku] [INFO]- 1350384479, cid
+[2023-12-15 15:44:13,777] [views.py:88] [views:danmaku] [INFO]- 新视频信息已添加
+[2023-12-15 15:44:13,873] [basehttp.py:187] [basehttp:log_message] [INFO]- "POST /bilibili/danmaku.html HTTP/1.1" 200 20088
+[2023-12-15 15:44:19,853] [basehttp.py:187] [basehttp:log_message] [INFO]- "GET /bilibili/comment.html HTTP/1.1" 200 9270
+[2023-12-15 15:44:21,569] [bilibili_utils.py:37] [bilibili_utils:bv_get] [INFO]- 你输入的是BV号BV1GH4y117nd，正在解析...
+[2023-12-15 15:44:21,570] [views.py:122] [views:comment] [INFO]- bv_====>BV1GH4y117nd
+[2023-12-15 15:44:21,813] [bilibili_utils.py:69] [bilibili_utils:bv2av] [INFO]- 请求发生错误：412 Client Error: Precondition Failed for url: https://api.bilibili.com/x/web-interface/view?bvid=BV1GH4y117nd
+[2023-12-15 15:44:21,815] [bilibili_utils.py:71] [bilibili_utils:bv2av] [INFO]- 服务器返回错误！请稍后再试！
+[2023-12-15 15:44:21,818] [bilibili_utils.py:72] [bilibili_utils:bv2av] [INFO]- 正在重新尝试获取aid，尝试次数==>1
+[2023-12-15 15:44:23,032] [bilibili_utils.py:62] [bilibili_utils:bv2av] [INFO]- 找到的avid964033061
+[2023-12-15 15:44:23,054] [views.py:132] [views:comment] [INFO]- avid=====>964033061
+[2023-12-15 15:44:23,089] [bilibili_comment.py:65] [bilibili_comment:get_comments] [INFO]- Getting comments for bvorurl:BV1GH4y117nd
+[2023-12-15 15:44:23,090] [bilibili_utils.py:37] [bilibili_utils:bv_get] [INFO]- 你输入的是BV号BV1GH4y117nd，正在解析...
+[2023-12-15 15:44:23,354] [bilibili_utils.py:62] [bilibili_utils:bv2av] [INFO]- 找到的avid964033061
+[2023-12-15 15:44:23,361] [bilibili_comment.py:74] [bilibili_comment:get_comments] [INFO]- avid===>964033061
+[2023-12-15 15:44:23,647] [bilibili_comment.py:94] [bilibili_comment:get_comments] [INFO]- 提取到了51条评论，从第 1 页
+[2023-12-15 15:44:23,662] [bilibili_comment.py:107] [bilibili_comment:get_comments] [INFO]- 开始提取第2页评论
+[2023-12-15 15:44:25,106] [bilibili_comment.py:94] [bilibili_comment:get_comments] [INFO]- 提取到了26条评论，从第 2 页
+[2023-12-15 15:44:25,107] [bilibili_comment.py:107] [bilibili_comment:get_comments] [INFO]- 开始提取第3页评论
+[2023-12-15 15:44:26,026] [bilibili_comment.py:94] [bilibili_comment:get_comments] [INFO]- 提取到了28条评论，从第 3 页
+[2023-12-15 15:44:26,028] [bilibili_comment.py:107] [bilibili_comment:get_comments] [INFO]- 开始提取第4页评论
+[2023-12-15 15:44:27,641] [bilibili_comment.py:94] [bilibili_comment:get_comments] [INFO]- 提取到了7条评论，从第 4 页
+[2023-12-15 15:44:27,642] [bilibili_comment.py:107] [bilibili_comment:get_comments] [INFO]- 开始提取第5页评论
+[2023-12-15 15:44:28,474] [bilibili_comment.py:94] [bilibili_comment:get_comments] [INFO]- 提取到了0条评论，从第 5 页
+[2023-12-15 15:44:28,475] [bilibili_comment.py:96] [bilibili_comment:get_comments] [INFO]- 提取完毕所有评论，共提取到112条评论！=====>avid964033061
+[2023-12-15 15:44:28,476] [bilibili_comment.py:109] [bilibili_comment:get_comments] [INFO]- 总共112条评论！
+[2023-12-15 15:44:28,721] [basehttp.py:187] [basehttp:log_message] [INFO]- "POST /bilibili/comment.html HTTP/1.1" 200 19699
+[2023-12-15 15:44:31,495] [bilibili_utils.py:37] [bilibili_utils:bv_get] [INFO]- 你输入的是BV号BV1GH4y117nd，正在解析...
+[2023-12-15 15:44:31,496] [views.py:122] [views:comment] [INFO]- bv_====>BV1GH4y117nd
+[2023-12-15 15:44:31,741] [bilibili_utils.py:69] [bilibili_utils:bv2av] [INFO]- 请求发生错误：412 Client Error: Precondition Failed for url: https://api.bilibili.com/x/web-interface/view?bvid=BV1GH4y117nd
+[2023-12-15 15:44:31,742] [bilibili_utils.py:71] [bilibili_utils:bv2av] [INFO]- 服务器返回错误！请稍后再试！
+[2023-12-15 15:44:31,743] [bilibili_utils.py:72] [bilibili_utils:bv2av] [INFO]- 正在重新尝试获取aid，尝试次数==>1
+[2023-12-15 15:44:32,990] [bilibili_utils.py:69] [bilibili_utils:bv2av] [INFO]- 请求发生错误：412 Client Error: Precondition Failed for url: https://api.bilibili.com/x/web-interface/view?bvid=BV1GH4y117nd
+[2023-12-15 15:44:32,991] [bilibili_utils.py:71] [bilibili_utils:bv2av] [INFO]- 服务器返回错误！请稍后再试！
+[2023-12-15 15:44:32,992] [bilibili_utils.py:72] [bilibili_utils:bv2av] [INFO]- 正在重新尝试获取aid，尝试次数==>2
+[2023-12-15 15:44:34,220] [bilibili_utils.py:62] [bilibili_utils:bv2av] [INFO]- 找到的avid964033061
+[2023-12-15 15:44:34,235] [views.py:132] [views:comment] [INFO]- avid=====>964033061
+[2023-12-15 15:44:34,380] [basehttp.py:187] [basehttp:log_message] [INFO]- "POST /bilibili/comment.html HTTP/1.1" 200 23237
+[2023-12-15 15:45:25,297] [basehttp.py:187] [basehttp:log_message] [INFO]- "GET /bilibili/generate-chart/ HTTP/1.1" 200 13843
+[2023-12-15 15:45:27,675] [basehttp.py:187] [basehttp:log_message] [INFO]- "GET /bilibili/generate-chart/?page=7 HTTP/1.1" 200 6843
+[2023-12-15 15:45:31,345] [basehttp.py:187] [basehttp:log_message] [INFO]- "GET /bilibili/generate-chart/?page=6 HTTP/1.1" 200 13932
+[2023-12-15 15:45:36,336] [basehttp.py:187] [basehttp:log_message] [INFO]- "GET /bilibili/generate-chart/?page=5 HTTP/1.1" 200 13867
+[2023-12-15 15:47:41,386] [autoreload.py:266] [autoreload:trigger_reload] [INFO]- D:\python_code\django_site\biliscrapy\network\bilibili_utils.py changed, reloading.
+[2023-12-15 15:47:43,033] [autoreload.py:677] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
