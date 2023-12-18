@@ -210,6 +210,8 @@ def reflash_cookie(request):
 
 
 def generate_chart(request):
+    keyword = request.POST.get("keyword")
+    print(keyword)
     """
     生成图表
     :param request:
@@ -222,8 +224,9 @@ def generate_chart(request):
 
     }
     videos = BiliVideo.objects.all().values().order_by('pubdate')
-    # 分页
-    paginator = Paginator(videos, 6)  # 每页显示10个视频
+
+    # 分页 # 每页显示6个视频
+    paginator = Paginator(videos, 6)
     page_number = request.GET.get('page', 1)
     page_obj = paginator.get_page(page_number)
     if videos:
@@ -233,6 +236,10 @@ def generate_chart(request):
 
     return render(request, 'generate_chart.html', context)
 
+
+def download_video(request):
+    return render(request, 'download_video.html')
+    pass
 
 def enter_card(request):
     if request.method == 'POST':
