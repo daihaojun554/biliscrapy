@@ -53,7 +53,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     'biliscrapy.middleware.Middleware.MyCardMiddleware',
 ]
-
+# CRONJOBS = [('0 0 * * *', 'your_app_name.cron.my_cron_job') ]
 ROOT_URLCONF = "django_site.urls"
 TEMPLATES = [
     {
@@ -83,8 +83,8 @@ DATABASES = {
         "ENGINE": 'django.db.backends.mysql',
         'NAME': 'tb_bilibili',
         'USER': 'root',
-        'PASSWORD': 'root',
-        'HOST': 'localhost',
+        'PASSWORD': 'daihaojun',
+        'HOST': '47.97.114.21',
         'PORT': '3306',
         "OPTIONS": {
             'charset': 'utf8mb4',
