@@ -6,3 +6,6 @@ db.*
 */migrations/*
 /data/
 /biliscrapy/migrations/
+logs
+_pycache_
+logs/**
