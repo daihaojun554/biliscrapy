@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% csrf_token %}
 {% block title %}生成图表界面{% endblock %}
 {{ message }}
 {% block styles %}
@@ -29,8 +30,16 @@
 
 {% block content %}
     <div class="container">
-        {#        {{ data.object_list }}#}
+        <center>
+            <form action="{% url 'generate_chart' %}" name="searchForm" onclick="return validateForm(event)">
+                {% csrf_token %}
+                <input type="text" name="keyword">
+                <button type="submit">搜索</button>
+            </form>
+        </center>
+
         <h1 class="page-title ">生成图表</h1>
+
 
         <div class="row">
             {% for video in data %}
@@ -41,8 +50,16 @@
                         </div>
                         <div class="card-body">
 
-                            <p class="item-info">弹幕数量: {{ video.danmaku_count }}</p>
-                            <p class="item-info">评论数量: {{ video.comment_count }}</p>
+                            <p class="item-info">弹幕数量: {{ video.danmaku_count }}
+                                {% if video.danmaku_count > 0 %}
+                                    <button onclick="viewDanmaku('{{ video.bvid }}')">查看弹幕</button>
+                                {% endif %}
+                            </p>
+                            <p class="item-info">评论数量: {{ video.comment_count }}
+                                {% if video.comment_count > 0 %}
+                                    <button onclick="viewComments('{{ video.bvid }}')">查看评论</button>
+                                {% endif %}
+                            </p>
                             <p class="item-info">avid: {{ video.avid }}</p>
                             <p class="item-info">bvid: {{ video.bvid }}</p>
                             <p class="item-info">cvid: {{ video.oid }}</p>
@@ -86,5 +103,85 @@
                 </a>
             {% endif %}
         </div>
+
+
+        <div id="emptyInputAlert" class="alert alert-danger fade" role="alert">
+            输入不能为空，请重新输入！
+        </div>
     </div>
+
+    <script>
+        function getCookie(name) {
+            var cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                var cookies = document.cookie.split(';');
+                for (var i = 0; i < cookies.length; i++) {
+                    var cookie = cookies[i].trim();
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+
+        function viewDanmaku(bvid) {
+            var form = document.createElement('form');
+            form.method = 'POST';
+            form.action = '/bilibili/danmaku.html';
+
+            var csrfToken = document.createElement('input');
+            csrfToken.type = 'hidden';
+            csrfToken.name = 'csrfmiddlewaretoken';
+            csrfToken.value = '{{ csrf_token }}'; // 在Django模板中使用{{ csrf_token }}获取CSRF令牌的值
+            form.appendChild(csrfToken);
+
+            var input = document.createElement('input');
+            input.type = 'hidden';
+            input.name = 'bv';
+            input.value = bvid;
+            form.appendChild(input);
+
+            document.body.appendChild(form);
+            form.submit();
+        }
+
+        function viewComments(bvid) {
+            var form = document.createElement('form');
+            form.method = 'POST';
+            form.action = '/bilibili/comment.html';
+
+            var csrfToken = document.createElement('input');
+            csrfToken.type = 'hidden';
+            csrfToken.name = 'csrfmiddlewaretoken';
+            csrfToken.value = '{{ csrf_token }}'; // 在Django模板中使用{{ csrf_token }}获取CSRF令牌的值
+            form.appendChild(csrfToken);
+
+            var input = document.createElement('input');
+            input.type = 'hidden';
+            input.name = 'bv';
+            input.value = bvid;
+            form.appendChild(input);
+
+            document.body.appendChild(form);
+            form.submit();
+        }
+
+        function validateForm(event) {
+            var keywordInput = document.forms["searchForm"]["keyword"];
+            var keywordValue = keywordInput.value.trim();
+            form.addEventListener('submit', function (event) {
+                var keywordValue = keywordInput.value.trim();
+                if (keywordValue === '') {
+                    alert(keywordValue)
+                    event.preventDefault(); // 阻止表单提交
+                    // 可以在这里进行提示或其他操作
+                }
+            });
+
+
+        }
+
+    </script>
 {% endblock %}
