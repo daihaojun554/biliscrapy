@@ -8,5 +8,6 @@ urlpatterns = [
     path('generate-chart/', views.generate_chart, name='generate_chart'),
     path('enter_card.html', views.enter_card, name='enter_card'),
     path('export_data/',views.export_data,name='export_data'),
-    path('exit_card',views.exit_card,name='exit_card')
+    path('exit_card',views.exit_card,name='exit_card'),
+    path('download_video',views.download_video,name='download_video')
 ]
