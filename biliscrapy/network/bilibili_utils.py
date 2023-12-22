@@ -12,11 +12,32 @@ import json
 import os
 
 import logging
-
+headers = {
+    'authority': 'message.bilibili.com',
+    'accept': 'application/json, text/plain, */*',
+    'accept-language': 'zh-CN,zh;q=0.9',
+    'cache-control': 'no-cache',
+    'origin': 'https://www.bilibili.com',
+    'pragma': 'no-cache',
+    'referer': 'https://www.bilibili.com/',
+    'sec-ch-ua': '"Chromium";v="118", "Google Chrome";v="118", "Not=A?Brand";v="99"',
+    'sec-ch-ua-mobile': '?0',
+    'sec-ch-ua-platform': '"Windows"',
+    'sec-fetch-dest': 'empty',
+    'sec-fetch-mode': 'cors',
+    'sec-fetch-site': 'same-site',
+    'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36',
+}
 
 class bili_utils:
     def __init__(self):
         self.logger = logging.getLogger('log')
+        self.header = headers
+        self.script_dir = os.path.dirname(os.path.abspath(__file__))
+        file_path = os.path.join(self.script_dir, 'bilibili_cookies.json')
+        with open(file_path, 'r') as file:
+            self.cookies_data = json.load(file)
+        self.cookies = {cookie['name']: cookie['value'] for cookie in self.cookies_data}
 
     def bv_get(self, bvorurl):
         # https://api.bilibili.com/x/web-interface/view?bvid=BV1uG41197Tf
@@ -135,12 +156,16 @@ class bili_utils:
 
     def get_info_by_bv(self, bv):
         url = f"https://api.bilibili.com/x/web-interface/view?bvid={str(bv)}"
-        js_str = requests.get(url).json()
-
-        if js_str['code'] == 0:
+        js_str = requests.get(url,headers=self.header,cookies=self.cookies).json()
+        retry_count = 1
+        while js_str['code']!=0:
+            js_str = requests.get(url,headers=self.header,cookies=self.cookies).json()
+            retry_count+=1
+            self.logger.info(f"服务器返回错误！请稍后再试！,{retry_count}")
             return js_str['data']
-        else:
-            return None
+            
+            
+        
 
 
 if __name__ == '__main__':

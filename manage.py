@@ -4,6 +4,8 @@ import os
 import sys
 
 
+# 你好
+
 def main():
     """Run administrative tasks."""
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "django_site.settings")
