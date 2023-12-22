@@ -35,6 +35,7 @@ def danmaku(request):
             cid = vv[0]['oid'] if vv else danmu.bv2cid(bv)
             bvid_exists = BiliDanmu.objects.filter(cid=cid).exists()
             if not bvid_exists:
+                logger.info("bvid_exists，不存在！！！")
                 dates = danmu.get_available_dates(cid)  # 获取视频的所有日期列表
                 danmu.down_so_files(cid, dates)  # 下载所有弹ci幕文件
                 unique_danmakus = danmu.parse_so_to_json(cid, dates)  # 解析并保存为 JSON 文件
@@ -58,16 +59,21 @@ def danmaku(request):
                 BiliDanmu.objects.bulk_create(danmu_objects)
             #     不存在 弹幕信息
             danmaku_count = BiliDanmu.objects.filter(cid=cid).count()
+            print(danmaku_count)
             try:
+                logger.info("try.....")
                 # 尝试更新视频的抓取弹幕的状态
                 logger.info(bvid)
                 video = BiliVideo.objects.get(bvid=bvid)
                 video.danmu_fetched = True
                 video.danmaku_count = danmaku_count
                 video.save()
-            except  BiliVideo.DoesNotExist:
+            except  Exception as e:
+                logger.error("error~~~~~~~~~")
+                logger.error(e)
                 # 如果视频记录不存在，则创建新的视频记录
                 info = utils.get_info_by_bv(bvid)
+                logger.info("info---->{}".format(info))
                 if info is None:
                     return render(request, 'danmaku.html', context)
                 cid = utils.bv2cid(bvid)
@@ -92,6 +98,7 @@ def danmaku(request):
             paginator = Paginator(danmakus, 15)  # 每页显示10条记录
             page_number = request.POST.get('page') if request.POST.get('page') else 1  # 获取页码参数
             page_obj = paginator.get_page(page_number)  # 获取对应页码的数据
+            print(paginator.count)
             context = {
                 "url": url,
                 'result': 'error',
@@ -240,6 +247,7 @@ def generate_chart(request):
 def download_video(request):
     return render(request, 'download_video.html')
     pass
+
 
 def enter_card(request):
     if request.method == 'POST':
