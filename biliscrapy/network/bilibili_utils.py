@@ -12,6 +12,7 @@ import json
 import os
 
 import logging
+
 headers = {
     'authority': 'message.bilibili.com',
     'accept': 'application/json, text/plain, */*',
@@ -28,6 +29,7 @@ headers = {
     'sec-fetch-site': 'same-site',
     'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36',
 }
+
 
 class bili_utils:
     def __init__(self):
@@ -156,16 +158,19 @@ class bili_utils:
 
     def get_info_by_bv(self, bv):
         url = f"https://api.bilibili.com/x/web-interface/view?bvid={str(bv)}"
-        js_str = requests.get(url,headers=self.header,cookies=self.cookies).json()
-        retry_count = 1
-        while js_str['code']!=0:
-            js_str = requests.get(url,headers=self.header,cookies=self.cookies).json()
-            retry_count+=1
-            self.logger.info(f"服务器返回错误！请稍后再试！,{retry_count}")
-            return js_str['data']
-            
-            
-        
+        retry_count = 10
+        result = None
+        for _ in range(retry_count):
+            try:
+                response = requests.get(url, headers=self.header, cookies=self.cookies)
+                js_str = response.json()
+                if js_str['code'] == 0:
+                    result = js_str['data']
+                    break
+            except requests.exceptions.RequestException as e:
+                self.logger.error(f"An error occurred: {e}")
+            time.sleep(2)
+        return result
 
 
 if __name__ == '__main__':
