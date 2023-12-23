@@ -158,19 +158,38 @@ class bili_utils:
 
     def get_info_by_bv(self, bv):
         url = f"https://api.bilibili.com/x/web-interface/view?bvid={str(bv)}"
-        retry_count = 10
-        result = None
-        for _ in range(retry_count):
+
+        def try_get(url):
             try:
                 response = requests.get(url, headers=self.header, cookies=self.cookies)
                 js_str = response.json()
-                if js_str['code'] == 0:
-                    result = js_str['data']
-                    break
+                if js_str.get('code', 0) == 0:
+                    return js_str['data']
+                else:
+                    # 可能需要根据API的设计，记录不同的错误
+                    self.logger.error(
+                        f"Video API returned non-success code: {js_str.get('code', 'Unknown')} with message: {js_str.get('msg', 'Unknown')}")
             except requests.exceptions.RequestException as e:
                 self.logger.error(f"An error occurred: {e}")
-            time.sleep(2)
+            return None
+
+        result = None
+        retry_count = 10
+        for _ in range(retry_count):
+            result = try_get(url)
+            if result:
+                break
+
         return result
+
+    # 检查url是否合法
+    def check_url(self, url):
+        if url.startswith("BV"):
+            return True
+        elif url.startswith("https://www.bilibili.com/"):
+            return True
+        else:
+            return False
 
 
 if __name__ == '__main__':
@@ -185,5 +204,5 @@ if __name__ == '__main__':
     #
     # # 使用 cookies 字典
     # self.logger.info(cookies)
-    get = utils.bv_get("BV1uG41197Tf")
-    utils.bv2av(get)
+    get = utils.get_info_by_bv("BV1uG41197Tf")
+    print(get)
