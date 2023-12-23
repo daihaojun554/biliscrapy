@@ -8,6 +8,7 @@ from .models import BiliDanmu, BiliComment, BiliVideo, Card
 from .network.bilibili_danmu import *
 from .network.bilibili_comment import Comments
 from .network.bilibili_utils import bili_utils
+from .network.bilibili_video import Video
 
 from django.utils import timezone
 
@@ -15,8 +16,10 @@ from django.http import JsonResponse, HttpResponse
 
 # Create your views here.
 utils = bili_utils()
+bili_video = Video()
 
 logger = logging.getLogger('log')
+base_url = 'https://www.bilibili.com/video/'
 
 
 def danmaku(request):
@@ -245,8 +248,46 @@ def generate_chart(request):
 
 
 def download_video(request):
-    return render(request, 'download_video.html')
-    pass
+    context = {}
+    if request.method == 'POST':
+        bvid = request.POST.get('bvid')
+        print(bvid)
+        if not utils.check_url(bvid):
+            context['message'] = 'url 不合法！'
+            context['code'] = -1
+            return render(request, 'download_video.html', context)
+        url = base_url + bvid
+        info = bili_video.get_video_info(url)
+        if not info:
+            context['message'] = '获取视频信息失败！'
+            context['code'] = -1
+        data = json.loads(info)
+        video_name = data[1]['videoData']['title']
+        v_urls = [i['baseUrl'] for i in data[0]['data']['dash']['video']]
+        a_urls = [i['baseUrl'] for i in data[0]['data']['dash']['audio']]
+        print(v_urls[0], a_urls[0])
+        v_suffix = 'flv'
+        a_suffix = 'mp3'
+        bili_video.download_file(v_urls[0], f'{video_name}.{v_suffix}')
+        bili_video.download_file(a_urls[0], f'{video_name}.{a_suffix}')
+        # 如果已经存在的话不需要合并
+        if not os.path.exists(os.path.join(
+                os.path.dirname(os.path.abspath(__file__)),
+                "network",
+                "data",
+                "video",
+                f"{video_name}.mp4")):
+            logger.info(f"开始合并视频和音频")
+            bili_video.merge_video_audio(f"{video_name}.{v_suffix}", f"{video_name}.{a_suffix}")
+        #     返回给前端响应流数据
+        logger.info(f"视频数据已存在！")
+        with open(
+                f'{os.path.join(os.path.dirname(os.path.abspath(__file__)), "network", "data", "video", f"{video_name}.mp4")}',
+                'rb') as f:
+            response = HttpResponse(f.read(), content_type='video/mp4')
+            response['Content-Disposition'] = 'attachment; filename="{}"'.format(f"{video_name}.mp4")
+            return response
+    return render(request, 'download_video.html', context)
 
 
 def parse_video(request):
