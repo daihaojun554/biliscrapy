@@ -194,7 +194,7 @@ class bili_utils:
 
 if __name__ == '__main__':
     utils = bili_utils()
-    # utils.get_bilibili_cookies()
+    # utils.js.get_bilibili_cookies()
     #
     # with open('./bilibili_cookies.json', 'r') as file:
     #     cookies_data = json.load(file)
