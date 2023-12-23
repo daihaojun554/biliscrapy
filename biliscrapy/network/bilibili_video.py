@@ -8,7 +8,6 @@ import os
 import json
 from tqdm import tqdm
 
-
 headers = {
     'authority': 'message.bilibili.com',
     'accept': 'application/json, text/plain, */*',
@@ -29,6 +28,9 @@ headers = {
 
 class Video:
     def __init__(self):
+        script_path = os.path.dirname(os.path.abspath(__file__))
+        self.dir_path = os.path.join(script_path, 'data', 'video')
+        os.makedirs(self.dir_path, exist_ok=True)
         self.utils = bili_utils()
         self.script_dir = os.path.dirname(os.path.abspath(__file__))
         # 构建文件路径
@@ -73,7 +75,7 @@ class Video:
             total_size = int(response.headers.get('Content-Length', 0))
             block_size = 1024
             progress_bar = tqdm(total=total_size, unit='B', unit_scale=True)
-            with open(filename, 'wb') as file:
+            with open(os.path.join(self.dir_path, filename), 'wb') as file:
                 for data in response.iter_content(block_size):
                     file.write(data)
                     progress_bar.update(len(data))
@@ -81,7 +83,6 @@ class Video:
             self.logger.info("Downloading file.{}".format(filename))
         except requests.exceptions.RequestException as e:
             self.logger.error("Error occurred while downloading the file: {}".format(str(e)))
-
 
     def merge_video_audio(self, video_file, audio_file):
         """
@@ -99,16 +100,17 @@ class Video:
             合并后的文件以视频文件的基础名称和 '.mp4' 扩展名的形式保存。
             原始视频和音频文件在合并成功后会被删除。
         """
-        if not os.path.isfile(video_file):
+        if not os.path.isfile(os.path.join(self.dir_path, video_file)):
             print(f"Error: {video_file} 不是文件或不存在。")
             return
-        if not os.path.isfile(audio_file):
+        if not os.path.isfile(os.path.join(self.dir_path, audio_file)):
             print(f"Error: {audio_file} 不是文件或不存在。")
             return
 
         # 合并视频和音频文件
         # 使用ffmpeg命令行工具将视频和音频文件合并为mp4格式文件
-        cmd = f"ffmpeg -i {video_file} -i {audio_file} -c:v copy -c:a aac -strict experimental {os.path.splitext(video_file)[0]}.mp4"
+        cmd = f"ffmpeg -i {os.path.join(self.dir_path, video_file)} -i {os.path.join(self.dir_path, audio_file)} -c:v copy -c:a aac -strict experimental {os.path.join(self.dir_path, video_file.replace('.flv', ''))}.mp4"
+        self.logger.info(cmd)
         try:
             os.system(cmd)
         except Exception as e:
@@ -117,20 +119,19 @@ class Video:
 
         # 检查合并后的文件是否成功创建
         output_file = os.path.splitext(os.path.basename(video_file))[0] + '.mp4'
-        if not os.path.isfile(output_file):
+        if not os.path.isfile(os.path.join(self.dir_path, output_file)):
             print("文件合并失败。")
             return
 
         # 删除原始视频和音频文件
-        os.remove(video_file)
-        os.remove(audio_file)
+        os.remove(os.path.join(self.dir_path, video_file))
+        os.remove(os.path.join(self.dir_path, audio_file))
         self.logger.info(f"成功合并视频和音频,------->{output_file}")
-
 
 
 if __name__ == '__main__':
     v = Video()
-    u='https://www.bilibili.com/video/BV1Le411C7LV?spm_id_from=333.1007.tianma.2-2-5.click'
+    u = 'https://www.bilibili.com/video/BV1Le411C7LV?spm_id_from=333.1007.tianma.2-2-5.click'
     _bv = v.utils.bv_get(u)
     print(_bv)
     info = v.get_video_info(u)
