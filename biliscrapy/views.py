@@ -249,6 +249,31 @@ def download_video(request):
     pass
 
 
+def parse_video(request):
+    context = {
+        'message': 'success',
+        'data': [],
+        'code': 0
+    }
+    if request.method == 'POST':
+        url = request.POST.get("_bv")
+        if not utils.check_url(url):
+            context['message'] = 'url 不合法！'
+            context['code'] = -1
+            return render(request, 'download_video.html', context)
+
+        logger.info(url)
+        bv = utils.bv_get(url)
+        logger.info(f"bv,--->{bv}")
+
+        info = utils.get_info_by_bv(bv)
+        if info is None:
+            context.update({"message": "fail", "code": -1})
+            return render(request, 'download_video.html', context)
+        context.update({"data": info})
+    return render(request, 'download_video.html', context)
+
+
 def enter_card(request):
     if request.method == 'POST':
         card_code = request.POST.get('card_code')
