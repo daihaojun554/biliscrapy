@@ -268,8 +268,7 @@ def download_video(request):
         print(v_urls[0], a_urls[0])
         v_suffix = 'flv'
         a_suffix = 'mp3'
-        bili_video.download_file(v_urls[0], f'{video_name}.{v_suffix}')
-        bili_video.download_file(a_urls[0], f'{video_name}.{a_suffix}')
+
         # 如果已经存在的话不需要合并
         if not os.path.exists(os.path.join(
                 os.path.dirname(os.path.abspath(__file__)),
@@ -278,6 +277,8 @@ def download_video(request):
                 "video",
                 f"{video_name}.mp4")):
             logger.info(f"开始合并视频和音频")
+            bili_video.download_file(v_urls[0], f'{video_name}.{v_suffix}')
+            bili_video.download_file(a_urls[0], f'{video_name}.{a_suffix}')
             bili_video.merge_video_audio(f"{video_name}.{v_suffix}", f"{video_name}.{a_suffix}")
         #     返回给前端响应流数据
         logger.info(f"视频数据已存在！")
