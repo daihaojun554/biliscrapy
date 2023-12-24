@@ -47,7 +47,7 @@ def danmaku(request):
                                   context.update({'message': '解析弹幕失败，请检查BV号是否正确！'}))
                 danmu_objects = [
                     BiliDanmu(
-                        id=danmaku['id'],
+                        _id=danmaku['_id'],
                         cid=cid,
                         content=danmaku['content'],
                         color=danmaku['color'],
