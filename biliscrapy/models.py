@@ -3,7 +3,7 @@ from django.db import models
 
 # Create your models here.
 class BiliDanmu(models.Model):
-    id = models.CharField(max_length=255, primary_key=True)
+    _id = models.CharField(max_length=255)
     cid = models.CharField(max_length=255)
     content = models.TextField()
     color = models.CharField(max_length=255)
