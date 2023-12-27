@@ -112,7 +112,7 @@ class Danmu:
 
                 for item in my_seg.elems:
                     danmaku_dict = {
-                        'id': item.id,
+                        '_id': item.id,
                         'progress': item.progress,
                         'mode': item.mode,
                         'fontsize': item.fontsize,
@@ -123,7 +123,6 @@ class Danmu:
                         'idStr': item.idStr
                         # 添加其他字段以适应 Protobuf 消息结构
                     }
-
                     # 将字典对象转换为元组，然后添加到集合中进行去重
                     danmaku_tuple = tuple(sorted(danmaku_dict.items()))
                     all_danmaku.add(danmaku_tuple)
