@@ -83,8 +83,8 @@ DATABASES = {
         "ENGINE": 'django.db.backends.mysql',
         'NAME': 'tb_bilibili',
         'USER': 'root',
-        'PASSWORD': 'daihaojun',
-        'HOST': '47.97.114.21',
+        'PASSWORD': 'root',
+        'HOST': 'localhost',
         'PORT': '3306',
         "OPTIONS": {
             'charset': 'utf8mb4',
