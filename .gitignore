@@ -1,11 +1,9 @@
 .idea
-_pycache_/*
+**/__pycache__/**
 venv
 db.*
-*.pyc
+**.pyc
 */migrations/*
 /data/
 /biliscrapy/migrations/
 logs
-_pycache_
-logs/**
