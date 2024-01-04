@@ -127,6 +127,7 @@ class bili_utils:
         service = Service(driver_path)
         # service = Service('./chromedriver.exe')
         options.add_argument('--no-sandbox')
+        # options.binary_location='C:\\Program Files\\Google\\chrome-win64\\chrome.exe'
         driver = webdriver.Chrome(options=options, service=service)
 
         # 打开 Bilibili 网站

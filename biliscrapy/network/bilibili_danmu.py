@@ -58,6 +58,9 @@ class Danmu:
             now = datetime.now()
             year = now.year
             month = now.month
+             # 如果month 是1.2.3.4.5.6.7.8.9 前面补0
+            if month < 10:
+                month = '0' + str(month)
         url = f'https://api.bilibili.com/x/v2/dm/history/index?type=1&oid={oid}&month={year}-{month}'
         response = requests.get(url, cookies=self.cookies, headers=self.headers)
         if response.status_code == 200:
@@ -145,7 +148,7 @@ class Danmu:
                 # 返回一个集合
             return unique_danmaku
         except Exception as e:
-            self.logger.info(e)
+            self.logger.error(e)
             return []
 
 
