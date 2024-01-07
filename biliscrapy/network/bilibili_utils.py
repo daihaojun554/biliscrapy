@@ -76,9 +76,10 @@ class bili_utils:
             retry_delay = 1  # seconds
             while retry_count < max_retries:
                 try:
-                    response = requests.get(url)
+                    response = requests.get(url,headers=headers,cookies=self.cookies)
                     response.raise_for_status()  # 检查请求是否成功
                     data = response.json()
+                    # self.logger.info(data)
                     if 'data' in data and 'aid' in data['data']:
                         avid = data['data']['aid']
                         self.logger.info(f"找到的avid{avid}")
@@ -102,13 +103,21 @@ class bili_utils:
 
     def bv2cid(self, bv):
         url = f"https://api.bilibili.com/x/player/pagelist?bvid={str(bv)}&jsonp=jsonp"
-        json_s = requests.get(url).json()
+        retry_count = 1
+        json_s = requests.get(url,headers=headers,cookies=self.cookies).json()
+        self.logger.info("bv====》"+bv)
         if json_s['code'] == 0:
             cid = json_s['data'][0]['cid']
             self.logger.info("提取出来的cid是：" + str(cid))
             return cid
         else:
             self.logger.error("服务器返回错误！请稍后再试！")
+            retry_count+=1
+            if retry_count > 10:
+                self.logger.error("尝试次数过多，请稍后再试！")
+                return None
+            else:
+                self.logger.error("正在重新尝试获取cid，尝试次数==>" + str(retry_count))
             return self.bv2cid(bv)
 
     def get_bilibili_cookies(self):
@@ -127,7 +136,7 @@ class bili_utils:
         service = Service(driver_path)
         # service = Service('./chromedriver.exe')
         options.add_argument('--no-sandbox')
-        # options.binary_location='C:\\Program Files\\Google\\chrome-win64\\chrome.exe'
+        options.binary_location='C:\\Program Files\\Google\\chrome-win64\\chrome.exe'
         driver = webdriver.Chrome(options=options, service=service)
 
         # 打开 Bilibili 网站
